@@ -1,68 +1,783 @@
-<div class="content-text" style="text-align: center; margin-bottom: 25px;">
-        <img src="ESCU/0FD5FA63A014A58AAD17FE2B445D5D47.png" 
-             alt="ESCU-Nine-Tailed Fox 徽章/图片" 
-             style="max-width: 350px; width: 100%; border-radius: 10px; border: 3px solid #4a9eff; margin: 0 auto 20px; display: block;">
-    </div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCU-Nine-Tailed Fox - Site-114514 维基</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <div class="item-card" style="max-width: 800px; margin: 0 auto;">
-        <div class="item-number">ESCU</div>
-        <div class="item-title">九尾狐实验性收容小组</div>
-        <div class="item-subtitle">Experimental Secure Containment Unit - Nine-Tailed Fox</div>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', 'Linux Libertine', 'Georgia', 'Times', serif;
+    }
+    
+    body {
+        background-color: #1a1a1a;
+        color: #e6e6e6;
+        line-height: 1.6;
+        min-height: 100vh;
+        background-image: 
+            radial-gradient(circle at 10% 20%, rgba(42, 74, 106, 0.1) 0%, transparent 20%),
+            radial-gradient(circle at 90% 80%, rgba(74, 158, 255, 0.05) 0%, transparent 20%);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    /* 头部样式 */
+    .page-header {
+        background-color: #0d0d0d;
+        border-bottom: 2px solid #ff9900;
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .logo-icon {
+        font-size: 2.5rem;
+        color: #ff9900;
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+    
+    .logo-text {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .logo-subtext {
+        color: #8a9bba;
+        font-size: 0.9rem;
+        margin-top: 2px;
+    }
+    
+    .back-button {
+        background: linear-gradient(135deg, #ff9900, #ff6600);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+    }
+    
+    .back-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
+    }
+    
+    /* 主要内容区 */
+    .main-content {
+        margin-top: 30px;
+    }
+    
+    .hero-section {
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+        color: #fff;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        background: linear-gradient(90deg, #ff9900, #ffcc00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+        color: #8a9bba;
+        margin-bottom: 30px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.8;
+    }
+    
+    /* 图片显示区域 */
+    .image-display {
+        max-width: 500px;
+        margin: 0 auto 40px;
+        position: relative;
+    }
+    
+    .escu-badge {
+        width: 100%;
+        border-radius: 15px;
+        border: 4px solid #ff9900;
+        box-shadow: 
+            0 10px 40px rgba(255, 153, 0, 0.3),
+            inset 0 0 20px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .escu-badge:hover {
+        transform: scale(1.02);
+    }
+    
+    .image-fallback {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, #222, #2a2a2a);
+        border-radius: 15px;
+        border: 4px solid #ff9900;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(255, 153, 0, 0.3);
+    }
+    
+    .image-fallback i {
+        font-size: 5rem;
+        color: #ff9900;
+        margin-bottom: 20px;
+        opacity: 0.8;
+    }
+    
+    .image-fallback p {
+        color: #8a9bba;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    /* 内容卡片样式 */
+    .content-card {
+        background: linear-gradient(135deg, rgba(42, 42, 42, 0.9), rgba(34, 34, 34, 0.9));
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-left: 5px solid #ff9900;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+    
+    .content-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+    
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .card-icon {
+        font-size: 2rem;
+        color: #ff9900;
+        background: rgba(255, 153, 0, 0.1);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card-title {
+        font-size: 1.8rem;
+        color: #fff;
+        margin: 0;
+    }
+    
+    .card-subtitle {
+        color: #8a9bba;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+    
+    .card-content {
+        color: #e6e6e6;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+    
+    .card-content p {
+        margin-bottom: 15px;
+    }
+    
+    .highlight {
+        color: #ffcc00;
+        font-weight: bold;
+    }
+    
+    /* 信息列表 */
+    .info-list {
+        list-style: none;
+        margin: 20px 0;
+    }
+    
+    .info-list li {
+        padding: 15px 0;
+        border-bottom: 1px solid #3a506b;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .info-list li:last-child {
+        border-bottom: none;
+    }
+    
+    .list-icon {
+        color: #ff9900;
+        font-size: 1.2rem;
+        min-width: 25px;
+        margin-top: 2px;
+    }
+    
+    .list-content strong {
+        color: #ffcc00;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+    }
+    
+    /* 武器网格 */
+    .weapon-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 25px;
+    }
+    
+    .weapon-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        padding: 25px;
+        border-top: 3px solid #ff6b6b;
+        transition: all 0.3s ease;
+    }
+    
+    .weapon-card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-5px);
+    }
+    
+    .weapon-card h4 {
+        color: #ff6b6b;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .weapon-card p {
+        color: #ccc;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    /* 游戏集成部分 */
+    .game-integration {
+        background: linear-gradient(135deg, 
+            rgba(255, 153, 0, 0.1), 
+            rgba(74, 158, 255, 0.1));
+        border: 2px solid #4a9eff;
+        border-radius: 15px;
+        padding: 40px;
+        margin-top: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .game-integration::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #ff9900, #4a9eff);
+    }
+    
+    .integration-title {
+        text-align: center;
+        color: #4a9eff;
+        margin-bottom: 30px;
+        font-size: 2rem;
+    }
+    
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    
+    .feature-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-5px);
+        border-color: #ff9900;
+    }
+    
+    .feature-icon {
+        font-size: 3rem;
+        color: #ff9900;
+        margin-bottom: 20px;
+    }
+    
+    .feature-card h4 {
+        color: #fff;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }
+    
+    .feature-card p {
+        color: #ccc;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    /* 标签容器 */
+    .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+    
+    .tag {
+        background: linear-gradient(135deg, #2d4a6a, #1e3a5f);
+        color: #8cc4ff;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    
+    .tag:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(140, 204, 255, 0.3);
+    }
+    
+    .tag.orange {
+        background: linear-gradient(135deg, #664400, #552200);
+        color: #ffcc66;
+    }
+    
+    .tag.red {
+        background: linear-gradient(135deg, #662222, #551111);
+        color: #ff9999;
+    }
+    
+    /* 页脚 */
+    .page-footer {
+        background-color: #0d0d0d;
+        border-top: 1px solid #333;
+        padding: 40px 0;
+        margin-top: 60px;
+    }
+    
+    .footer-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .footer-link {
+        color: #4a9eff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-link:hover {
+        color: #ff9900;
+        text-decoration: underline;
+    }
+    
+    .copyright {
+        color: #777;
+        font-size: 0.9rem;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+        margin-top: 20px;
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .container {
+            padding: 15px;
+        }
         
-        <div class="item-description">
-            <p><strong>ESCU-Nine-Tailed Fox</strong>（九尾狐实验性收容小组）是一支隶属于基金会九尾狐特遣队内部的特殊战术单位。</p>
-            
-            <h4 style="color: #ffcc00; margin: 15px 0 10px;">成立背景与性质</h4>
-            <p>该小组由九尾狐特遣队高层于███年秘密组建，旨在应对日益复杂和危险的SCP收容失效事件。与常规九尾狐单位不同，ESCU专注于使用和测试基金会研发的最新实验性武器系统。</p>
-            
-            <h4 style="color: #ffcc00; margin: 15px 0 10px;">主要职责</h4>
-            <ul style="margin-left: 20px; margin-bottom: 15px;">
-                <li><strong>实验武器测试</strong>：在实战环境中测试基金会研发的新型武器和装备</li>
-                <li><strong>高威胁收容响应</strong>：应对常规MTF无法处理的危险SCP收容失效</li>
-                <li><strong>战术创新</strong>：开发和验证新的SCP收容战术与流程</li>
-                <li><strong>数据收集</strong>：在行动中收集实验性装备的性能数据</li>
-            </ul>
-            
-            <h4 style="color: #ffcc00; margin: 15px 0 10px;">装备特点</h4>
-            <p>ESCU成员装备有设施内部最先进的高新实验型武器系统，包括但不限于：</p>
-            <ul style="margin-left: 20px; margin-bottom: 15px;">
-                <li>原型能量武器系统</li>
-                <li>反现实稳定装置</li>
-                <li>自适应防护装备</li>
-                <li>战术级奇术抑制器</li>
-                <li>数据收集与分析套件</li>
-            </ul>
-            
-            <h4 style="color: #ffcc00; margin: 15px 0 10px;">人员选拔</h4>
-            <p>小组成员均从九尾狐特遣队中挑选最具经验和适应能力的精英人员。选拔标准极其严格，要求成员具备：</p>
-            <ul style="margin-left: 20px;">
-                <li>至少5年MTF服役经验</li>
-                <li>在3次以上Keter级收容失效中幸存</li>
-                <li>对实验性技术的高度适应性</li>
-                <li>优秀的战术决策能力和心理素质</li>
-            </ul>
-            
-            <div style="background-color: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-top: 20px; border-left: 4px solid #ff6b6b;">
-                <p style="margin: 0;"><strong>备注：</strong>由于ESCU装备的实验性质，所有行动均需O5议会或Site主任级别授权。小组成员在执行任务时享有特殊豁免权，但同时也承担更高风险。</p>
+        .hero-title {
+            font-size: 2.2rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+        }
+        
+        .image-display {
+            max-width: 100%;
+        }
+        
+        .content-card {
+            padding: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+        }
+        
+        .weapon-grid, .feature-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .game-integration {
+            padding: 25px;
+        }
+        
+        .header-content {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 1.8rem;
+        }
+        
+        .logo-text {
+            font-size: 1.4rem;
+        }
+        
+        .tag-container {
+            justify-content: flex-start;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-fox"></i>
+                    </div>
+                    <div>
+                        <div class="logo-text">ESCU-Nine-Tailed Fox</div>
+                        <div class="logo-subtext">九尾狐实验性收容小组 | Site-114514 维基</div>
+                    </div>
+                </div>
+                <a href="javascript:history.back()" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    返回主维基
+                </a>
             </div>
         </div>
-        
-        <span class="item-tag">精英单位</span>
-        <span class="item-tag">实验装备</span>
-        <span class="item-tag">九尾狐特遣队</span>
-        <span class="item-tag">高威胁响应</span>
+    </header>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <main class="main-content">
+            <!-- 英雄部分 -->
+            <section class="hero-section">
+                <h1 class="hero-title">ESCU-Nine-Tailed Fox</h1>
+                <p class="hero-subtitle">
+                    九尾狐实验性收容小组——一支由九尾狐特遣队内部打造的特殊战术单位，<br>
+                    专门运用设施内部高新实验型武器，以应对多种SCP收容失效事件。
+                </p>
+                
+                <!-- 图片显示区域 -->
+                <div class="image-display">
+                    <img src="ESCU/0FD5FA63A014A58AAD17FE2B445D5D47.png" 
+                         alt="ESCU-Nine-Tailed Fox 徽章" 
+                         class="escu-badge"
+                         onerror="this.style.display='none'; 
+                                  document.getElementById('image-fallback').style.display='flex';">
+                    
+                    <div id="image-fallback" class="image-fallback" style="display: none;">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>
+                            ESCU-Nine-Tailed Fox 徽章<br>
+                            <small>实验性收容小组的象征 - 图片加载失败</small>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 介绍卡片 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">小组简介</h2>
+                        <div class="card-subtitle">Experimental Secure Containment Unit - Nine-Tailed Fox</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>
+                        <span class="highlight">ESCU-Nine-Tailed Fox</span>（九尾狐实验性收容小组）是一支隶属于基金会九尾狐特遣队内部的精英特殊战术单位。该小组于███年由特遣队高层秘密组建，旨在应对日益复杂和危险的SCP收容失效事件。
+                    </p>
+                    <p>
+                        与常规九尾狐单位不同，ESCU专注于使用和测试基金会研发的最新实验性武器系统，专门处理那些常规MTF无法应对的高威胁SCP实体和异常现象。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 主要职责 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">主要职责</h2>
+                        <div class="card-subtitle">Primary Responsibilities</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <ul class="info-list">
+                        <li>
+                            <div class="list-icon"><i class="fas fa-flask"></i></div>
+                            <div class="list-content">
+                                <strong>实验武器实战测试</strong>
+                                在真实收容失效环境中测试基金会研发的最新型武器和装备性能
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-skull-crossbones"></i></div>
+                            <div class="list-content">
+                                <strong>高威胁响应</strong>
+                                处理Keter级及以上威胁的SCP收容失效事件
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="list-content">
+                                <strong>战术创新开发</strong>
+                                研发和验证针对新型异常实体的收容战术与策略
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-database"></i></div>
+                            <div class="list-content">
+                                <strong>作战数据收集</strong>
+                                在行动中收集实验性装备的性能数据和实战效果
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 装备特点 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">装备特点</h2>
+                        <div class="card-subtitle">Advanced Experimental Equipment</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>ESCU成员装备有设施内部最先进的高新实验型武器系统：</p>
+                    
+                    <div class="weapon-grid">
+                        <div class="weapon-card">
+                            <h4><i class="fas fa-bolt"></i> 原型能量武器</h4>
+                            <p>基于最新能量技术开发的定向能武器系统，具备穿透性攻击能力。</p>
+                        </div>
+                        
+                        <div class="weapon-card">
+                            <h4><i class="fas fa-sync-alt"></i> 现实稳定装置</h4>
+                            <p>便携式现实稳定器，能够暂时抑制局部异常现实扭曲效应。</p>
+                        </div>
+                        
+                        <div class="weapon-card">
+                            <h4><i class="fas fa-shield-alt"></i> 自适应护甲</h4>
+                            <p>能够根据威胁类型自动调整防御特性的智能护甲系统。</p>
+                        </div>
+                        
+                        <div class="weapon-card">
+                            <h4><i class="fas fa-magic"></i> 奇术抑制器</h4>
+                            <p>战术级奇术抑制装置，能够干扰和中和部分异常能力。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 游戏集成 -->
+            <section class="game-integration">
+                <h2 class="integration-title">游戏内表现</h2>
+                <p style="text-align: center; color: #ccc; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    在Site-114514服务器中，ESCU-Nine-Tailed Fox作为特殊单位提供独特的游戏体验
+                </p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-gun"></i>
+                        </div>
+                        <h4>专属武器系统</h4>
+                        <p>配备服务器特有的实验性武器，性能与常规武器有显著差异</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <h4>特殊战术能力</h4>
+                        <p>拥有独特的战术技能和装备效果，适合高级玩家使用</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h4>限定刷新条件</h4>
+                        <p>仅在特定事件或高难度条件下才会出现的精英单位</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h4>平衡性设计</h4>
+                        <p>虽然装备先进，但受到数量限制以保持服务器游戏平衡</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 标签 -->
+            <div class="tag-container">
+                <span class="tag orange">九尾狐特遣队</span>
+                <span class="tag">实验性武器</span>
+                <span class="tag red">高威胁响应</span>
+                <span class="tag">精英战术单位</span>
+                <span class="tag">基金会秘密部队</span>
+                <span class="tag orange">Site-114514专属</span>
+            </div>
+        </main>
     </div>
-    
-    <div class="info-box" style="max-width: 800px; margin: 25px auto 0;">
-        <h3><i class="fas fa-shield-alt"></i> 游戏内表现</h3>
-        <p>在Site-114514服务器中，ESCU-Nine-Tailed Fox作为游戏内可玩阵营或特殊事件单位出现：</p>
-        <ul>
-            <li><strong>专属武器</strong>：配备服务器特有的实验性武器，性能与常规武器有显著差异</li>
-            <li><strong>特殊能力</strong>：可能拥有独特的战术能力或装备效果</li>
-            <li><strong>刷新条件</strong>：通常在特定事件或条件下才会出现</li>
-            <li><strong>平衡性</strong>：虽然装备先进，但通常会受到数量或使用限制以保持游戏平衡</li>
-        </ul>
-        <p style="margin-top: 10px; font-style: italic;">注：具体游戏内表现请以服务器实际设定为准，可能随版本更新而变化。</p>
-    </div>
-    
-</div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="javascript:history.back()" class="footer-link">返回主维基</a>
+                    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="footer-link">返回顶部</a>
+                    <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" target="_blank" class="footer-link">Site-114514维基</a>
+                </div>
+                <div class="copyright">
+                    © 2025-2026 Site-114514服务器社区<br>
+                    九尾狐实验性收容小组资料 - 保密等级：Level 3
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 图片加载失败处理
+        document.addEventListener('DOMContentLoaded', function() {
+            const img = document.querySelector('.escu-badge');
+            if (img && img.complete && img.naturalHeight === 0) {
+                // 如果图片加载失败
+                img.style.display = 'none';
+                document.getElementById('image-fallback').style.display = 'flex';
+            }
+            
+            // 平滑滚动动画
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // 卡片悬停效果增强
+            const cards = document.querySelectorAll('.content-card, .weapon-card, .feature-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
