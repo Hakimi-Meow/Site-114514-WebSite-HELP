@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UIU - 美国异常事务处理组织</title>
+    <title>UIU - 特异事故处综合档案</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -15,14 +15,14 @@
     }
     
     body {
-        background-color: #1a1400;
-        color: #fff8d6;
+        background-color: #1a1500;
+        color: #fff8cc;
         line-height: 1.6;
         min-height: 100vh;
         background-image: 
-            radial-gradient(circle at 20% 30%, rgba(204, 153, 0, 0.15) 0%, transparent 25%),
-            radial-gradient(circle at 80% 70%, rgba(255, 204, 0, 0.1) 0%, transparent 25%),
-            linear-gradient(135deg, #0f0a00 0%, #1a1400 50%, #0a0800 100%);
+            radial-gradient(circle at 20% 30%, rgba(255, 204, 0, 0.15) 0%, transparent 25%),
+            radial-gradient(circle at 80% 70%, rgba(255, 221, 0, 0.1) 0%, transparent 25%),
+            linear-gradient(135deg, #0f0c00 0%, #1a1500 50%, #0a0700 100%);
     }
     
     .container {
@@ -31,9 +31,9 @@
         padding: 20px;
     }
     
-    /* 头部样式 - UIU主题 */
+    /* 头部样式 - 美国主题 */
     .page-header {
-        background-color: #0f0a00;
+        background-color: #0f0c00;
         border-bottom: 3px solid #ffcc00;
         padding: 20px 0;
         position: sticky;
@@ -57,53 +57,50 @@
     }
     
     .logo-icon {
-        font-size: 4rem;
-        animation: flag-wave 5s infinite alternate;
+        font-size: 3.5rem;
+        color: #ffcc00;
+        animation: flag-wave 4s infinite;
         position: relative;
-        text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     
     @keyframes flag-wave {
-        0% { 
-            transform: rotate(0deg); 
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        0%, 100% { 
+            transform: translateY(0) rotate(0deg); 
+            color: #ffcc00;
         }
         25% { 
-            transform: rotate(2deg);
-            text-shadow: 0 0 12px rgba(255, 204, 0, 0.6);
+            transform: translateY(-2px) rotate(2deg);
+            color: #ffdb4d;
         }
         50% { 
-            transform: rotate(0deg);
-            text-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+            transform: translateY(0) rotate(0deg);
+            color: #ffcc00;
         }
         75% { 
-            transform: rotate(-2deg);
-            text-shadow: 0 0 12px rgba(255, 204, 0, 0.6);
-        }
-        100% { 
-            transform: rotate(0deg);
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+            transform: translateY(-2px) rotate(-2deg);
+            color: #ffdb4d;
         }
     }
     
     .logo-text {
-        font-size: 1.8rem;
+        font-size: 2rem;
         font-weight: bold;
         color: #ffcc00;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9),
-                     0 0 8px rgba(255, 204, 0, 0.3);
+                     0 0 10px rgba(255, 204, 0, 0.3);
     }
     
     .logo-subtext {
-        color: #ffdd66;
-        font-size: 0.9rem;
+        color: #ffdb4d;
+        font-size: 0.95rem;
         margin-top: 2px;
     }
     
     .back-button {
         background: linear-gradient(135deg, #ffcc00, #cc9900);
-        color: #1a1400;
-        padding: 12px 25px;
+        color: #1a1500;
+        padding: 10px 25px;
         border-radius: 25px;
         text-decoration: none;
         font-weight: bold;
@@ -112,33 +109,41 @@
         align-items: center;
         gap: 8px;
         box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
-        border: 2px solid rgba(255, 221, 0, 0.3);
+        border: none;
     }
     
     .back-button:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
-        background: linear-gradient(135deg, #ffdd33, #ffbb00);
-        border-color: #ffcc00;
+        background: linear-gradient(135deg, #ffdb4d, #ffcc00);
     }
     
     /* 装备展示区 */
-    .equipment-showcase {
-        background: linear-gradient(135deg, #1a1400, #0f0a00);
-        border: 3px solid #ffcc00;
-        border-radius: 15px;
-        padding: 30px;
+    .equipment-section {
         margin: 30px 0;
-        box-shadow: 0 8px 30px rgba(255, 204, 0, 0.2);
+        background: linear-gradient(135deg, rgba(255, 204, 0, 0.05), rgba(204, 153, 0, 0.05));
+        border: 2px solid #ffcc00;
+        border-radius: 15px;
+        padding: 25px;
         position: relative;
+        overflow: hidden;
+    }
+    
+    .equipment-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #ffcc00, #ffdb4d, #ffcc00);
     }
     
     .equipment-title {
         text-align: center;
         color: #ffcc00;
-        margin-bottom: 30px;
-        font-size: 2.2rem;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        margin-bottom: 20px;
+        font-size: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -149,56 +154,58 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 20px;
-        margin-bottom: 20px;
+        margin-top: 20px;
     }
     
-    .equipment-item {
-        background: rgba(255, 204, 0, 0.05);
-        border: 1px solid rgba(255, 204, 0, 0.2);
+    .equipment-card {
+        background: rgba(26, 21, 0, 0.7);
         border-radius: 10px;
         padding: 15px;
         text-align: center;
+        border: 1px solid rgba(255, 204, 0, 0.3);
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
-    .equipment-item:hover {
+    .equipment-card:hover {
         transform: translateY(-5px);
-        background: rgba(255, 204, 0, 0.1);
         border-color: #ffcc00;
-        box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+        box-shadow: 0 8px 20px rgba(255, 204, 0, 0.3);
     }
     
     .equipment-img {
-        width: 100%;
-        height: 120px;
-        object-fit: cover;
-        border-radius: 8px;
+        max-width: 100%;
+        max-height: 120px;
+        object-fit: contain;
         margin-bottom: 10px;
-        border: 1px solid rgba(255, 204, 0, 0.3);
+        border-radius: 5px;
         transition: transform 0.3s ease;
     }
     
-    .equipment-item:hover .equipment-img {
+    .equipment-card:hover .equipment-img {
         transform: scale(1.05);
     }
     
     .equipment-name {
-        color: #ffcc00;
-        font-size: 1rem;
+        color: #ffdb4d;
+        font-size: 0.9rem;
         font-weight: bold;
-        margin: 0;
+        margin-top: auto;
     }
     
     .equipment-note {
         text-align: center;
-        color: #ffdd66;
-        font-size: 0.85rem;
-        font-style: italic;
+        color: #ffdb4d;
+        font-size: 0.8rem;
         margin-top: 10px;
-        padding: 10px;
-        border-top: 1px solid rgba(255, 204, 0, 0.2);
+        font-style: italic;
+        opacity: 0.8;
     }
     
     /* 主要内容区 */
@@ -213,7 +220,7 @@
     }
     
     .hero-title {
-        font-size: 3.2rem;
+        font-size: 3.5rem;
         color: #ffcc00;
         margin-bottom: 15px;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
@@ -226,17 +233,17 @@
     
     @keyframes title-glow {
         from { 
-            text-shadow: 0 2px 10px rgba(204, 153, 0, 0.3);
+            text-shadow: 0 2px 10px rgba(255, 204, 0, 0.3);
         }
         to { 
-            text-shadow: 0 2px 15px rgba(204, 153, 0, 0.5),
-                         0 0 25px rgba(255, 204, 0, 0.2);
+            text-shadow: 0 2px 15px rgba(255, 204, 0, 0.5),
+                         0 0 25px rgba(255, 221, 0, 0.2);
         }
     }
     
     .hero-subtitle {
-        font-size: 1.4rem;
-        color: #ffdd66;
+        font-size: 1.3rem;
+        color: #ffdb4d;
         margin-bottom: 30px;
         max-width: 900px;
         margin-left: auto;
@@ -244,118 +251,83 @@
         line-height: 1.8;
     }
     
-    /* 部门卡片 */
-    .department-section {
-        margin-bottom: 50px;
-    }
-    
-    .department-title {
-        font-size: 2.5rem;
-        color: #ffcc00;
-        margin-bottom: 20px;
-        text-align: center;
+    /* 单位卡片样式 */
+    .unit-card {
+        background: linear-gradient(135deg, rgba(38, 32, 0, 0.95), rgba(26, 21, 0, 0.95));
+        border-radius: 15px;
+        padding: 35px;
+        margin-bottom: 40px;
+        border-left: 5px solid #ffcc00;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+        transition: transform 0.3s ease;
         position: relative;
-        padding-bottom: 15px;
+        overflow: hidden;
     }
     
-    .department-title::after {
+    .unit-card::before {
         content: '';
         position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 3px;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
         background: linear-gradient(90deg, transparent, #ffcc00, transparent);
     }
     
-    .department-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-        margin-top: 20px;
-    }
-    
-    @media (max-width: 768px) {
-        .department-content {
-            grid-template-columns: 1fr;
-        }
-    }
-    
-    .department-info {
-        background: linear-gradient(135deg, rgba(26, 20, 0, 0.9), rgba(15, 10, 0, 0.9));
-        border-radius: 15px;
-        padding: 30px;
-        border-left: 5px solid #ffcc00;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-        transition: transform 0.3s ease;
-    }
-    
-    .department-info:hover {
+    .unit-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.1);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 204, 0, 0.2);
     }
     
-    .department-img-container {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    
-    .department-img {
-        width: 100%;
-        max-width: 400px;
-        border-radius: 10px;
-        border: 3px solid #ffcc00;
-        box-shadow: 0 8px 25px rgba(255, 204, 0, 0.3);
-    }
-    
-    .info-header {
+    .card-header {
         display: flex;
         align-items: center;
-        gap: 15px;
-        margin-bottom: 25px;
-        padding-bottom: 15px;
+        gap: 20px;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
         border-bottom: 1px solid rgba(255, 204, 0, 0.3);
     }
     
-    .info-icon {
-        font-size: 2rem;
+    .card-icon {
+        font-size: 2.5rem;
         color: #ffcc00;
-        background: rgba(255, 204, 0, 0.1);
-        width: 60px;
-        height: 60px;
+        background: rgba(255, 204, 0, 0.15);
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
     
-    .info-title {
-        font-size: 1.8rem;
-        color: #ffdd33;
+    .card-title {
+        font-size: 2.2rem;
+        color: #ffdb4d;
         margin: 0;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     }
     
-    .info-subtitle {
-        color: #ffdd66;
-        font-size: 1rem;
+    .card-subtitle {
+        color: #ffdb4d;
+        font-size: 1.1rem;
         margin-top: 5px;
+        opacity: 0.9;
     }
     
-    .info-content {
-        color: #fff8d6;
+    .card-content {
+        color: #fff8cc;
         font-size: 1.1rem;
         line-height: 1.8;
     }
     
-    .info-content p {
-        margin-bottom: 15px;
+    .card-content p {
+        margin-bottom: 20px;
     }
     
     .highlight {
-        color: #ffcc00;
+        color: #ffdb4d;
         font-weight: bold;
-        text-shadow: 0 0 8px rgba(255, 204, 0, 0.3);
+        text-shadow: 0 0 8px rgba(255, 219, 77, 0.4);
     }
     
     .warning {
@@ -367,76 +339,15 @@
         border: 1px solid rgba(255, 102, 102, 0.3);
     }
     
-    /* 特性网格 */
-    .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin-top: 25px;
-    }
-    
-    .feature-card {
-        background: rgba(255, 204, 0, 0.05);
-        border-radius: 10px;
-        padding: 20px;
-        border-top: 3px solid #cc9900;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .feature-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 5px;
-        height: 100%;
-        background: #cc9900;
-    }
-    
-    .feature-card:hover {
-        background: rgba(255, 204, 0, 0.08);
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(255, 204, 0, 0.2);
-    }
-    
-    .feature-card h4 {
-        color: #cc9900;
-        margin-bottom: 10px;
-        font-size: 1.2rem;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .feature-card p {
-        color: #fff0cc;
-        font-size: 0.95rem;
-        line-height: 1.7;
-    }
-    
-    /* 美式装备图标样式 */
-    .usa-equipment {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        background: rgba(255, 204, 0, 0.1);
-        padding: 4px 8px;
-        border-radius: 4px;
-        margin: 2px;
-        font-size: 0.9rem;
-    }
-    
     /* 信息列表 */
     .info-list {
         list-style: none;
-        margin: 20px 0;
+        margin: 25px 0;
     }
     
     .info-list li {
-        padding: 15px 0;
-        border-bottom: 1px solid #664400;
+        padding: 18px 0;
+        border-bottom: 1px solid #665500;
         display: flex;
         align-items: flex-start;
         gap: 15px;
@@ -454,17 +365,107 @@
     }
     
     .list-content strong {
-        color: #ffdd33;
+        color: #ffdb4d;
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
         font-size: 1.1rem;
+    }
+    
+    /* 案例展示 */
+    .case-studies {
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 2px solid rgba(255, 204, 0, 0.3);
+    }
+    
+    .case-title {
+        color: #ffcc00;
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .case-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+    
+    .case-card {
+        background: rgba(255, 204, 0, 0.05);
+        border-radius: 10px;
+        padding: 25px;
+        border-left: 4px solid #ffcc00;
+        transition: all 0.3s ease;
+    }
+    
+    .case-card:hover {
+        background: rgba(255, 204, 0, 0.08);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(255, 204, 0, 0.2);
+    }
+    
+    .case-card h4 {
+        color: #ffcc00;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .case-card p {
+        color: #fff8cc;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    
+    /* 标签容器 */
+    .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 40px;
+        justify-content: center;
+    }
+    
+    .tag {
+        background: linear-gradient(135deg, #665500, #443800);
+        color: #ffcc00;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 204, 0, 0.3);
+    }
+    
+    .tag:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+        background: linear-gradient(135deg, #776600, #554400);
+        border-color: #ffcc00;
+    }
+    
+    .tag.blue {
+        background: linear-gradient(135deg, #003366, #002244);
+        color: #66ccff;
+        border-color: rgba(102, 204, 255, 0.3);
+    }
+    
+    .tag.red {
+        background: linear-gradient(135deg, #660000, #440000);
+        color: #ff6666;
+        border-color: rgba(255, 102, 102, 0.3);
     }
     
     /* 页脚 */
     .page-footer {
-        background-color: #0f0a00;
-        border-top: 1px solid #664400;
-        padding: 40px 0;
+        background-color: #0f0c00;
+        border-top: 1px solid #665500;
+        padding: 50px 0;
         margin-top: 60px;
         position: relative;
     }
@@ -496,14 +497,14 @@
     }
     
     .footer-link {
-        color: #ffcc00;
+        color: #ffdb4d;
         text-decoration: none;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         transition: color 0.3s ease;
     }
     
     .footer-link:hover {
-        color: #ffdd66;
+        color: #ffcc00;
         text-decoration: underline;
     }
     
@@ -511,71 +512,109 @@
         color: #cc9900;
         font-size: 0.9rem;
         padding-top: 20px;
-        border-top: 1px solid #664400;
+        border-top: 1px solid #665500;
         margin-top: 20px;
     }
     
     /* 响应式设计 */
+    @media (max-width: 1200px) {
+        .equipment-grid {
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        }
+    }
+    
     @media (max-width: 768px) {
         .container {
             padding: 15px;
         }
         
         .hero-title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
         }
         
         .hero-subtitle {
             font-size: 1.1rem;
         }
         
-        .department-title {
+        .equipment-grid {
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+        }
+        
+        .unit-card {
+            padding: 25px;
+        }
+        
+        .card-title {
             font-size: 1.8rem;
         }
         
-        .equipment-grid {
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        .card-header {
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+        }
+        
+        .case-grid {
+            grid-template-columns: 1fr;
         }
         
         .header-content {
             flex-direction: column;
             text-align: center;
         }
-        
-        .features-grid {
-            grid-template-columns: 1fr;
-        }
     }
     
     @media (max-width: 480px) {
         .hero-title {
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
         
         .logo-text {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
         
         .equipment-grid {
             grid-template-columns: repeat(2, 1fr);
         }
         
+        .tag-container {
+            justify-content: flex-start;
+        }
+        
         .footer-links {
             flex-direction: column;
             gap: 15px;
         }
+        
+        .case-card {
+            padding: 20px;
+        }
     }
     
-    /* 图片加载效果 */
-    .img-loading {
-        background: linear-gradient(90deg, #1a1400 25%, #332800 50%, #1a1400 75%);
-        background-size: 200% 100%;
-        animation: loading 1.5s infinite;
+    /* 加载动画 */
+    .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        color: #ffcc00;
+        font-size: 1.2rem;
     }
     
-    @keyframes loading {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
+    .loading::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(255, 204, 0, 0.3);
+        border-top-color: #ffcc00;
+        border-radius: 50%;
+        animation: loading-spin 1s linear infinite;
+        margin-left: 10px;
+    }
+    
+    @keyframes loading-spin {
+        to { transform: rotate(360deg); }
     }
     </style>
 </head>
@@ -585,10 +624,12 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo-section">
-                    <div class="logo-icon">🇺🇸</div>
+                    <div class="logo-icon">
+                        🇺🇸
+                    </div>
                     <div>
-                        <div class="logo-text">UIU - 美国异常事务处理组织</div>
-                        <div class="logo-subtext">Unusual Incidents Unit | Site-114514 维基</div>
+                        <div class="logo-text">UIU - 特异事故处</div>
+                        <div class="logo-subtext">美国异常事务处理单位综合档案 | Site-114514 维基</div>
                     </div>
                 </div>
                 <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" class="back-button">
@@ -599,430 +640,360 @@
         </div>
     </header>
 
+    <!-- 装备展示区 -->
     <div class="container">
-        <!-- 英雄部分 -->
-        <section class="hero-section">
-            <h1 class="hero-title">美国异常事务处理组织</h1>
-            <p class="hero-subtitle">
-                美国政府下属的秘密组织，专门处理超自然和异常事件。<br>
-                以美式装备和战术著称，与基金会保持竞争关系。
-            </p>
-        </section>
-
-        <!-- 装备展示区 -->
-        <section class="equipment-showcase">
+        <section class="equipment-section">
             <h2 class="equipment-title">
                 <i class="fas fa-shield-alt"></i>
-                美式装备展示
+                UIU美式装备展示
                 <i class="fas fa-shield-alt"></i>
             </h2>
-            
-            <div class="equipment-grid">
-                <!-- 陆军装备 -->
-                <div class="equipment-item">
-                    <img src="/Site-114514-WebSite-HELP/UIU/IMG_1541.jpeg" 
-                         alt="M1A2艾布拉姆斯" 
-                         class="equipment-img img-loading"
-                         data-src="/Site-114514-WebSite-HELP/UIU/IMG_1541.jpeg"
-                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"120\" viewBox=\"0 0 200 120\"><rect width=\"200\" height=\"120\" fill=\"%231a1400\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"14\" fill=\"%23ffcc00\" text-anchor=\"middle\" dominant-baseline=\"middle\">M1A2</text></svg>';">
-                    <p class="equipment-name">M1A2艾布拉姆斯 <span class="usa-equipment"><i class="fas fa-tank"></i></span></p>
-                </div>
-                
-                <div class="equipment-item">
-                    <img src="/Site-114514-WebSite-HELP/UIU/64DB4E709AEA29DA09986B6230EA378F.png" 
-                         alt="M3布莱德利" 
-                         class="equipment-img img-loading"
-                         data-src="/Site-114514-WebSite-HELP/UIU/64DB4E709AEA29DA09986B6230EA378F.png">
-                    <p class="equipment-name">M3布莱德利 <span class="usa-equipment"><i class="fas fa-tank"></i></span></p>
-                </div>
-                
-                <div class="equipment-item">
-                    <img src="/Site-114514-WebSite-HELP/UIU/IMG_1550.jpeg" 
-                         alt="阿帕奇" 
-                         class="equipment-img img-loading"
-                         data-src="/Site-114514-WebSite-HELP/UIU/IMG_1550.jpeg">
-                    <p class="equipment-name">AH-64阿帕奇 <span class="usa-equipment"><i class="fas fa-helicopter"></i></span></p>
-                </div>
-                
-                <div class="equipment-item">
-                    <img src="/Site-114514-WebSite-HELP/UIU/IMG_1551.webp" 
-                         alt="黑鹰" 
-                         class="equipment-img img-loading"
-                         data-src="/Site-114514-WebSite-HELP/UIU/IMG_1551.webp">
-                    <p class="equipment-name">UH-60黑鹰 <span class="usa-equipment"><i class="fas fa-helicopter"></i></span></p>
-                </div>
-                
-                <!-- 空军装备 -->
-                <div class="equipment-item">
-                    <img src="/Site-114514-WebSite-HELP/UIU/IMG_1542.jpeg" 
-                         alt="A10疣猪" 
-                         class="equipment-img img-loading"
-                         data-src="/Site-114514-WebSite-HELP/UIU/IMG_1542.jpeg">
-                    <p class="equipment-name">A-10疣猪 <span class="usa-equipment"><i class="fas fa-plane"></i></span></p>
-                </div>
-                
-                <div class="equipment-item">
-                    <img src="/Site-114514-WebSite-HELP/UIU/IMG_1547.jpeg" 
-                         alt="F22" 
-                         class="equipment-img img-loading"
-                         data-src="/Site-114514-WebSite-HELP/UIU/IMG_1547.jpeg">
-                    <p class="equipment-name">F-22猛禽 <span class="usa-equipment"><i class="fas fa-fighter-jet"></i></span></p>
-                </div>
-                
-                <div class="equipment-item">
-                    <img src="/Site-114514-WebSite-HELP/UIU/9F8339439180129CA91A353CF505789F.png" 
-                         alt="AV8鹞式" 
-                         class="equipment-img img-loading"
-                         data-src="/Site-114514-WebSite-HELP/UIU/9F8339439180129CA91A353CF505789F.png">
-                    <p class="equipment-name">AV-8B鹞式 <span class="usa-equipment"><i class="fas fa-plane"></i></span></p>
-                </div>
-                
-                <div class="equipment-item">
-                    <img src="/Site-114514-WebSite-HELP/UIU/IMG_1546.png" 
-                         alt="B2" 
-                         class="equipment-img img-loading"
-                         data-src="/Site-114514-WebSite-HELP/UIU/IMG_1546.png">
-                    <p class="equipment-name">B-2幽灵 <span class="usa-equipment"><i class="fas fa-plane"></i></span></p>
-                </div>
-                
-                <!-- 海军装备 -->
-                <div class="equipment-item">
-                    <img src="/Site-114514-WebSite-HELP/UIU/EBE8DD6F64F3C4067658C2787F01055E.png" 
-                         alt="福特级" 
-                         class="equipment-img img-loading"
-                         data-src="/Site-114514-WebSite-HELP/UIU/EBE8DD6F64F3C4067658C2787F01055E.png">
-                    <p class="equipment-name">福特级航母 <span class="usa-equipment"><i class="fas fa-ship"></i></span></p>
-                </div>
-                
-                <div class="equipment-item">
-                    <img src="/Site-114514-WebSite-HELP/UIU/IMG_1549.webp" 
-                         alt="尼米兹级" 
-                         class="equipment-img img-loading"
-                         data-src="/Site-114514-WebSite-HELP/UIU/IMG_1549.webp">
-                    <p class="equipment-name">尼米兹级航母 <span class="usa-equipment"><i class="fas fa-ship"></i></span></p>
-                </div>
-                
-                <div class="equipment-item">
-                    <img src="/Site-114514-WebSite-HELP/UIU/IMG_1544.webp" 
-                         alt="朱姆沃尔特级" 
-                         class="equipment-img img-loading"
-                         data-src="/Site-114514-WebSite-HELP/UIU/IMG_1544.webp">
-                    <p class="equipment-name">朱姆沃尔特级 <span class="usa-equipment"><i class="fas fa-ship"></i></span></p>
-                </div>
-                
-                <div class="equipment-item">
-                    <img src="/Site-114514-WebSite-HELP/UIU/IMG_1543.jpeg" 
-                         alt="AC130" 
-                         class="equipment-img img-loading"
-                         data-src="/Site-114514-WebSite-HELP/UIU/IMG_1543.jpeg">
-                    <p class="equipment-name">AC-130炮艇机 <span class="usa-equipment"><i class="fas fa-plane"></i></span></p>
-                </div>
+            <div class="equipment-grid" id="equipment-grid">
+                <!-- 装备将通过JavaScript动态加载 -->
+                <div class="loading">加载装备数据...</div>
             </div>
-            
-            <p class="equipment-note">
-                <i class="fas fa-info-circle"></i> 装备展示仅供参考，实际部署情况可能有所不同
-            </p>
+            <div class="equipment-note">
+                <i class="fas fa-info-circle"></i> *装备展示仅供参考，部分图片可能因权限问题无法加载
+            </div>
         </section>
+    </div>
 
+    <!-- 主要内容 -->
+    <div class="container">
         <main class="main-content">
-            <!-- UIU特异事故处 -->
-            <section class="department-section">
-                <h2 class="department-title">UIU特异事故处</h2>
-                
-                <div class="department-content">
-                    <div class="department-info">
-                        <div class="info-header">
-                            <div class="info-icon">
-                                <i class="fas fa-balance-scale"></i>
-                            </div>
-                            <div>
-                                <h3 class="info-title">"天平" - 平衡的力量</h3>
-                                <div class="info-subtitle">UIU的基础作战单位</div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-content">
-                            <p>
-                                <span class="highlight">UIU特异事故处</span>是UIU组织中最基本、最普遍的作战单位，因其在UIU内部装备武力差异中起到平衡作用，被戏称为"<span class="highlight">天平</span>"。
-                            </p>
-                            <p>
-                                相较于UIU陆军处，特异事故处更适合在<span class="warning">设施内部</span>、<span class="warning">未知环境</span>以及异常面前战斗。他们拥有较强的战场适应能力，同时具备单兵作战能力。
-                            </p>
-                            <p>
-                                主要装备为<span class="usa-equipment"><i class="fas fa-gun"></i> 美军退役装备</span>，战术单位也基本是快被淘汰的美军装备。尽管如此，特异事故处仍拥有<span class="highlight">较强的火力</span>，足以在设施外围撕开防线。
-                            </p>
-                            <p>
-                                可惜的是，UIU高层<span class="warning">缺乏足够的精力和财力</span>来提升特异事故处，导致现在他们逐渐淡出大众视野。
-                            </p>
-                        </div>
+            <!-- 英雄部分 -->
+            <section class="hero-section">
+                <h1 class="hero-title">UIU - 特异事故处综合档案</h1>
+                <p class="hero-subtitle">
+                    美国异常事务处理单位的完整作战档案，涵盖<span class="highlight">特异事故处、特工组、陆军处</span>三大核心单位<br>
+                    从情报骇入到地面作战，全面解析这个与美国政府关系密切的神秘组织
+                </p>
+            </section>
+
+            <!-- 特异事故处 -->
+            <section class="unit-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-balance-scale"></i>
                     </div>
-                    
-                    <div class="department-img-container">
-                        <img src="/Site-114514-WebSite-HELP/UIU/74D74133A7A52A793D2F740D047CF04E.png" 
-                             alt="UIU特异事故处" 
-                             class="department-img img-loading"
-                             data-src="/Site-114514-WebSite-HELP/UIU/74D74133A7A52A793D2F740D047CF04E.png">
+                    <div>
+                        <h2 class="card-title">UIU特异事故处</h2>
+                        <div class="card-subtitle">UIU Unusual Incidents Unit - Standard Division</div>
                     </div>
                 </div>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h4><i class="fas fa-crosshairs"></i> 战术特点</h4>
-                        <p>采用美军小队战术，以小组为单位进行战斗，擅长团队协作</p>
-                    </div>
+                <div class="card-content">
+                    <p>
+                        <span class="highlight">UIU特异事故处</span>是UIU最基本、最普遍的作战单位，被内部戏称为"<span class="highlight">天平</span>"。他们平衡了UIU内部装备和能力的差异，解决了众多潜在问题。
+                    </p>
+                    <p>
+                        相比于UIU陆军处，特异事故处更适合在<span class="highlight">设施内部、未知环境以及异常面前战斗</span>。他们拥有较强的战场适应能力，同时也具备单兵作战能力。
+                    </p>
+                    <p>
+                        然而，在部分装备差异下，他们的行动多以失败告终。主要装备是<span class="warning">美军的退役装备</span>，战术单位也基本是即将被淘汰的美军装备。尽管如此，特异事故处仍拥有足够火力在设施外围撕开防线。
+                    </p>
                     
-                    <div class="feature-card">
-                        <h4><i class="fas fa-shield-alt"></i> 适应能力</h4>
-                        <p>较强的战场适应能力，能在各种环境中保持作战效能</p>
-                    </div>
+                    <ul class="info-list">
+                        <li>
+                            <div class="list-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="list-content">
+                                <strong>适用范围</strong>
+                                比UIU陆军处更广，更多出现于大众视野中
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-adjust"></i></div>
+                            <div class="list-content">
+                                <strong>平衡作用</strong>
+                                平衡UIU内部装备武力差异，解决潜在问题
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-map"></i></div>
+                            <div class="list-content">
+                                <strong>环境适应</strong>
+                                更适合设施内部、未知环境及异常面前的战斗
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-skull-crossbones"></i></div>
+                            <div class="list-content">
+                                <strong>装备现状</strong>
+                                主要使用美军退役装备，高层缺乏精力和财力提升
+                            </div>
+                        </li>
+                    </ul>
                     
-                    <div class="feature-card">
-                        <h4><i class="fas fa-tools"></i> 装备水平</h4>
-                        <p>使用美军退役装备，虽然陈旧但仍具备一定火力</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h4><i class="fas fa-exclamation-triangle"></i> 当前状态</h4>
-                        <p>因缺乏资源支持，逐渐淡出UIU的主要作战序列</p>
+                    <!-- 案例研究 -->
+                    <div class="case-studies">
+                        <h3 class="case-title"><i class="fas fa-clipboard-list"></i> 行动案例</h3>
+                        <div class="case-grid">
+                            <div class="case-card">
+                                <h4><i class="fas fa-exclamation-triangle"></i> 事件 A-07</h4>
+                                <p>在Site-██外围成功建立防线，但由于装备老化无法维持长时间压制，最终被基金会增援部队击退。</p>
+                            </div>
+                            <div class="case-card">
+                                <h4><i class="fas fa-user-injured"></i> 事件 B-12</h4>
+                                <p>面对SCP-███收容失效时表现出色，成功引导平民疏散，但因缺乏专业异常知识导致3名成员受伤。</p>
+                            </div>
+                            <div class="case-card">
+                                <h4><i class="fas fa-ambulance"></i> 事件 C-19</h4>
+                                <p>在都市异常事件中有效控制现场，与当地执法部门协作良好，展示了优秀的公共关系处理能力。</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- UIU特工组 -->
-            <section class="department-section">
-                <h2 class="department-title">UIU特工组</h2>
-                
-                <div class="department-content">
-                    <div class="department-info">
-                        <div class="info-header">
-                            <div class="info-icon">
-                                <i class="fas fa-user-secret"></i>
-                            </div>
-                            <div>
-                                <h3 class="info-title">"安全系统杀手"</h3>
-                                <div class="info-subtitle">专业的骇入与渗透单位</div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-content">
-                            <p>
-                                <span class="highlight">UIU特工组</span>是UIU单独成立的专业骇入小组，被称为"<span class="highlight">基金会的安全系统杀手</span>"。他们拥有真正的特制骇客装置，是概念上专门黑入设施内部系统的主力部队。
-                            </p>
-                            <p>
-                                由UIU组织内部的<span class="highlight">高级骇入专员</span>和拥有极强骇入能力的人员组成，主要包括<span class="highlight">2只骇入小组</span>和<span class="highlight">3只网络破译小组</span>。
-                            </p>
-                            <p>
-                                他们的渗透和隐蔽能力是UIU中的顶尖水平。常常在任务执行前的<span class="warning">4-5个月甚至1年</span>就潜伏进设施，开展大量的设施内部情报窃取。曾有设施内部高级管理人员被检测出是潜伏许久的UIU特工组成员。
-                            </p>
-                            <p>
-                                但特工组有明显的缺陷：<span class="warning">作战能力几乎为0</span>，依赖性强，人员特别少。一旦损失，将对UIU造成沉重打击。
-                            </p>
-                        </div>
+            <!-- 特工组 -->
+            <section class="unit-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-user-secret"></i>
                     </div>
-                    
-                    <div class="department-img-container">
-                        <img src="/Site-114514-WebSite-HELP/UIU/F452ED3BBDF3EA3077D6FC346CBE94CC.png" 
-                             alt="UIU特工组" 
-                             class="department-img img-loading"
-                             data-src="/Site-114514-WebSite-HELP/UIU/F452ED3BBDF3EA3077D6FC346CBE94CC.png">
+                    <div>
+                        <h2 class="card-title">UIU特工组</h2>
+                        <div class="card-subtitle">UIU Special Agent Division - "基金会的安全系统杀手"</div>
                     </div>
                 </div>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h4><i class="fas fa-laptop-code"></i> 骇入能力</h4>
-                        <p>拥有特制骇客装置，能渗透基金会各级安全系统</p>
-                    </div>
+                <div class="card-content">
+                    <p>
+                        <span class="highlight">UIU特工组</span>是特异事故处单独成立的专业骇入小组，被称为"<span class="highlight">基金会的安全系统杀手</span>"。他们拥有真正的特制骇客装置，是黑入基金会内部系统的主力部队。
+                    </p>
+                    <p>
+                        由UIU组织内部的<span class="highlight">高级骇入专员和拥有极强骇入能力的人员</span>组成，主要包含2个骇入小组和3个网络破译小组。他们的渗透和隐蔽能力也是UIU中的顶尖水平。
+                    </p>
+                    <p>
+                        特工组成员常常在任务执行前的<span class="warning">4-5个月甚至1年</span>就潜伏进目标设施，开展大量的情报窃取工作。曾有设施内部高级管理人员被检测出是潜伏许久的UIU特工组成员。
+                    </p>
                     
-                    <div class="feature-card">
-                        <h4><i class="fas fa-user-ninja"></i> 渗透能力</h4>
-                        <p>顶尖的潜伏和隐蔽能力，能长期潜伏而不被发现</p>
-                    </div>
+                    <ul class="info-list">
+                        <li>
+                            <div class="list-icon"><i class="fas fa-laptop-code"></i></div>
+                            <div class="list-content">
+                                <strong>骇客能力</strong>
+                                拥有特制骇客装置，能破解基金会各级机密系统
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-user-ninja"></i></div>
+                            <div class="list-content">
+                                <strong>渗透能力</strong>
+                                提前数月甚至数年潜伏，隐蔽能力极强
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-users"></i></div>
+                            <div class="list-content">
+                                <strong>团队组成</strong>
+                                2个骇入小组 + 3个网络破译小组，人员稀少但精锐
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-exclamation-circle"></i></div>
+                            <div class="list-content">
+                                <strong>致命缺陷</strong>
+                                作战能力几乎为零，高度依赖陆军处保护
+                            </div>
+                        </li>
+                    </ul>
                     
-                    <div class="feature-card">
-                        <h4><i class="fas fa-clock"></i> 行动特点</h4>
-                        <p>行动极为隐秘，准备工作可能长达数月甚至一年</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h4><i class="fas fa-exclamation-triangle"></i> 致命弱点</h4>
-                        <p>作战能力极弱，完全依赖其他单位的保护</p>
+                    <!-- 案例研究 -->
+                    <div class="case-studies">
+                        <h3 class="case-title"><i class="fas fa-clipboard-list"></i> 骇入行动案例</h3>
+                        <div class="case-grid">
+                            <div class="case-card">
+                                <h4><i class="fas fa-database"></i> 行动 "沉默突破"</h4>
+                                <p>成功渗透Site-19数据核心，获取了███份4级机密文件，潜伏期长达14个月未被发现。</p>
+                            </div>
+                            <div class="case-card">
+                                <h4><i class="fas fa-user-tie"></i> 特工 "影子"</h4>
+                                <p>一名特工组成员在Area-14潜伏3年，晋升至安全主管职位后才被基金会反情报部门识破。</p>
+                            </div>
+                            <div class="case-card">
+                                <h4><i class="fas fa-network-wired"></i> 行动 "防火墙崩塌"</h4>
+                                <p>短时间内瘫痪了基金会区域通信网络，但因陆军处支援不及时导致特工组全员被俘。</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- UIU陆军处 -->
-            <section class="department-section">
-                <h2 class="department-title">UIU陆军处</h2>
-                
-                <div class="department-content">
-                    <div class="department-info">
-                        <div class="info-header">
-                            <div class="info-icon">
-                                <i class="fas fa-helmet-battle"></i>
-                            </div>
-                            <div>
-                                <h3 class="info-title">美国政府的利剑</h3>
-                                <div class="info-subtitle">基本战斗单位与技术支持</div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-content">
-                            <p>
-                                <span class="highlight">UIU陆军处</span>是UIU的基本战斗单位，拥有大量的<span class="usa-equipment"><i class="fas fa-tank"></i> 美式战斗单位</span>以及武器，似乎与<span class="highlight">美国政府有大量的合作关系</span>。
-                            </p>
-                            <p>
-                                他们拥有强大的情报局支持以及特制的骇客装置，使他们能直接骇入基金会内部的大量文件——<span class="warning">不管是1级机密还是5级机密</span>，只要数据还在基本就能骇入。
-                            </p>
-                            <p>
-                                UIU陆军处还拥有被称为"<span class="highlight">地表最强人类</span>"的渗透者。据称其拥有强大的抗性，<span class="warning">能用肉身抵御子弹？(保持质疑态度)</span>，同时还能强化自己的身体机能，拥有恐怖的奔跑速度，还有一个异常尖利的爪刀，<span class="warning">似乎能砍断坚硬的铁棒？(保持怀疑)</span>。
-                            </p>
-                            <p>
-                                根据基金会推测，渗透者可能本身就是一个异常。虽然UIU陆军处战斗能力不弱，但他们对异常的了解就像"<span class="highlight">三维物种想要了解四维物种</span>"一样，只有模糊的观念，根本不了解异常，这也导致了不少的行动失败。
-                            </p>
-                        </div>
+            <!-- 陆军处 -->
+            <section class="unit-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    
-                    <div class="department-img-container">
-                        <img src="/Site-114514-WebSite-HELP/UIU/42F31A79E4858801E01B8B63A21FF83A.png" 
-                             alt="UIU陆军处" 
-                             class="department-img img-loading"
-                             data-src="/Site-114514-WebSite-HELP/UIU/42F31A79E4858801E01B8B63A21FF83A.png">
+                    <div>
+                        <h2 class="card-title">UIU陆军处</h2>
+                        <div class="card-subtitle">UIU Army Division - 美国政府的异常作战单位</div>
                     </div>
                 </div>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h4><i class="fas fa-laptop"></i> 骇客技术</h4>
-                        <p>拥有特制骇客装置，能渗透基金会1-5级机密系统</p>
-                    </div>
+                <div class="card-content">
+                    <p>
+                        <span class="highlight">UIU陆军处</span>是特异事故处的核心战斗单位，拥有大量美式战斗装备和武器，似乎与美国政府有着密切的合作关系。他们拥有强大的情报支持和特制骇客装置。
+                    </p>
+                    <p>
+                        陆军处最令人畏惧的是被称为"<span class="highlight">地表最强人类</span>"的渗透者。据报告，这名渗透者拥有强大的抗性，<span class="warning">能用肉身抵御子弹</span>（保持质疑态度），并能强化身体机能达到恐怖的奔跑速度，还配备异常尖利的爪刀。
+                    </p>
+                    <p>
+                        然而，他们对异常的了解<span class="warning">就像三维物种想要了解四维物种一样模糊</span>，这导致了不少行动失败，曾间接导致一只精英小组覆灭和金鹰小组被困。他们的战斗风格完全仿制美国海豹突击队，但在基金会内部设施中效果有限。
+                    </p>
                     
-                    <div class="feature-card">
-                        <h4><i class="fas fa-user-injured"></i> 渗透者</h4>
-                        <p>"地表最强人类"，疑似异常，拥有超常身体能力</p>
-                    </div>
+                    <ul class="info-list">
+                        <li>
+                            <div class="list-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="list-content">
+                                <strong>政府关系</strong>
+                                与美国政府有大量合作，装备先进美式武器
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-user-injured"></i></div>
+                            <div class="list-content">
+                                <strong>渗透者能力</strong>
+                                疑似异常个体，拥有超常抗性和身体强化能力
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-users"></i></div>
+                            <div class="list-content">
+                                <strong>战术风格</strong>
+                                仿制海豹突击队，小组单位，快速精确打击
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-brain"></i></div>
+                            <div class="list-content">
+                                <strong>认知局限</strong>
+                                对异常现象理解有限，常因此导致行动失败
+                            </div>
+                        </li>
+                    </ul>
                     
-                    <div class="feature-card">
-                        <h4><i class="fas fa-handshake"></i> 政府关系</h4>
-                        <p>与美国政府有深度合作，获得大量资源支持</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h4><i class="fas fa-exclamation-circle"></i> 认知缺陷</h4>
-                        <p>对异常现象缺乏理解，常因此导致行动失败</p>
-                    </div>
-                </div>
-                
-                <!-- 陆军处详细能力 -->
-                <div class="department-info" style="margin-top: 30px;">
-                    <div class="info-header">
-                        <div class="info-icon">
-                            <i class="fas fa-tasks"></i>
+                    <!-- 案例研究 -->
+                    <div class="case-studies">
+                        <h3 class="case-title"><i class="fas fa-clipboard-list"></i> 作战行动案例</h3>
+                        <div class="case-grid">
+                            <div class="case-card">
+                                <h4><i class="fas fa-skull"></i> "金鹰"被困事件</h4>
+                                <p>因对SCP-███特性不了解，导致整支精英小组被困异常空间，仅渗透者一人逃生。</p>
+                            </div>
+                            <div class="case-card">
+                                <h4><i class="fas fa-radiation"></i> 核弹质疑事件</h4>
+                                <p>对基金会拥有核武能力表示质疑，认为这是战术吹嘘，导致情报评估严重失误。</p>
+                            </div>
+                            <div class="case-card">
+                                <h4><i class="fas fa-running"></i> 渗透者记录</h4>
+                                <p>在Site-██突袭中，渗透者单人突破三层防线，速度达到██km/h，爪刀破坏了██cm厚合金门。</p>
+                            </div>
+                            <div class="case-card">
+                                <h4><i class="fas fa-sync-alt"></i> 团队依赖问题</h4>
+                                <p>与特工组联合行动时表现出色，但单独作战时因缺乏情报支持多次失败。</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="info-title">作战特点与缺陷</h3>
-                            <div class="info-subtitle">战术分析与弱点评估</div>
-                        </div>
-                    </div>
-                    
-                    <div class="info-content">
-                        <ul class="info-list">
-                            <li>
-                                <div class="list-icon"><i class="fas fa-users"></i></div>
-                                <div class="list-content">
-                                    <strong>作战风格</strong>
-                                    完全仿制美国海豹突击队的作战方式，以小组为单位，进行快速、精确、高效率的精准打击目标
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list-icon"><i class="fas fa-building"></i></div>
-                                <div class="list-content">
-                                    <strong>设施适应性</strong>
-                                    这种战术在基金会内部设施中似乎完全没用，他们甚至对基金会拥有核弹这一事情完全保持质疑，并认为这是一种战术吹嘘
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list-icon"><i class="fas fa-user-friends"></i></div>
-                                <div class="list-content">
-                                    <strong>协同作战</strong>
-                                    基本与UIU特工组一起行动，主要任务为掩护UIU特工组完成对基金会的情报骇入，这也使他们较为依赖团队作战，单兵作战能力稍弱
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list-icon"><i class="fas fa-history"></i></div>
-                                <div class="list-content">
-                                    <strong>历史记录</strong>
-                                    曾经间接导致了一只精英小组的覆灭和金鹰小组的被困，显示出对异常环境的不适应
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </section>
+
+            <!-- 标签 -->
+            <div class="tag-container">
+                <span class="tag">UIU特异事故处</span>
+                <span class="tag blue">美国异常事务</span>
+                <span class="tag">骇客特工组</span>
+                <span class="tag red">陆军作战单位</span>
+                <span class="tag">美式装备</span>
+                <span class="tag">情报骇入</span>
+                <span class="tag blue">政府合作</span>
+                <span class="tag">异常对抗</span>
+            </div>
         </main>
+    </div>
 
-        <!-- 页脚 -->
-        <footer class="page-footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-links">
-                        <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" class="footer-link">返回主维基</a>
-                        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="footer-link">返回顶部</a>
-                        <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" target="_blank" class="footer-link">Site-114514维基</a>
-                    </div>
-                    <div class="copyright">
-                        © 2025-2026 Site-114514服务器社区<br>
-                        UIU组织资料 - 威胁等级：<span class="highlight">中等威胁</span><br>
-                        警告：UIU为敌对组织，但其对异常的认知有限，威胁程度相对可控
-                    </div>
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" class="footer-link">返回主维基</a>
+                    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="footer-link">返回顶部</a>
+                    <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" target="_blank" class="footer-link">Site-114514维基</a>
+                </div>
+                <div class="copyright">
+                    © 2025-2026 Site-114514服务器社区<br>
+                    UIU特异事故处综合档案 - 情报等级：<span class="highlight">3级机密</span><br>
+                    警告：此档案仅供授权人员查阅，未经授权传播将受到法律追究
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
     <script>
         // 页面加载完成后执行
         document.addEventListener('DOMContentLoaded', function() {
-            // 异步加载图片
-            function lazyLoadImages() {
-                const images = document.querySelectorAll('img[data-src]');
+            // 美国装备数据
+            const equipmentData = [
+                { name: "M3布莱德利步兵战车", img: "/Site-114514-WebSite-HELP/UIU/64DB4E709AEA29DA09986B6230EA378F.png" },
+                { name: "AV-8B鹞式攻击机", img: "/Site-114514-WebSite-HELP/UIU/9F8339439180129CA91A353CF505789F.png" },
+                { name: "福特级航空母舰", img: "/Site-114514-WebSite-HELP/UIU/EBE8DD6F64F3C4067658C2787F01055E.png" },
+                { name: "M1A2艾布拉姆斯坦克", img: "/Site-114514-WebSite-HELP/UIU/IMG_1541.jpeg" },
+                { name: "F-35闪电II战斗机", img: "/Site-114514-WebSite-HELP/UIU/IMG_1548.webp" },
+                { name: "A-10疣猪攻击机", img: "/Site-114514-WebSite-HELP/UIU/IMG_1542.jpeg" },
+                { name: "AC-130空中炮艇", img: "/Site-114514-WebSite-HELP/UIU/IMG_1543.jpeg" },
+                { name: "朱姆沃尔特级驱逐舰", img: "/Site-114514-WebSite-HELP/UIU/IMG_1544.webp" },
+                { name: "B-2幽灵战略轰炸机", img: "/Site-114514-WebSite-HELP/UIU/IMG_1546.png" },
+                { name: "F-22猛禽战斗机", img: "/Site-114514-WebSite-HELP/UIU/IMG_1547.jpeg" },
+                { name: "尼米兹级航空母舰", img: "/Site-114514-WebSite-HELP/UIU/IMG_1549.webp" },
+                { name: "AH-64阿帕奇直升机", img: "/Site-114514-WebSite-HELP/UIU/IMG_1550.jpeg" },
+                { name: "UH-60黑鹰直升机", img: "/Site-114514-WebSite-HELP/UIU/IMG_1551.webp" }
+            ];
+
+            // 异步加载装备图片
+            async function loadEquipment() {
+                const equipmentGrid = document.getElementById('equipment-grid');
+                equipmentGrid.innerHTML = '';
                 
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            const src = img.getAttribute('data-src');
-                            
-                            // 创建新图片对象预加载
-                            const tempImage = new Image();
-                            tempImage.onload = function() {
-                                img.src = src;
-                                img.classList.remove('img-loading');
-                            };
-                            tempImage.onerror = function() {
-                                // 图片加载失败时显示占位符
-                                img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%231a1400"/><text x="50%" y="50%" font-family="Arial" font-size="16" fill="%23ffcc00" text-anchor="middle" dominant-baseline="middle">图片加载失败</text></svg>';
-                                img.classList.remove('img-loading');
-                            };
-                            tempImage.src = src;
-                            
-                            observer.unobserve(img);
-                        }
+                // 添加加载动画
+                const loadingDiv = document.createElement('div');
+                loadingDiv.className = 'loading';
+                loadingDiv.textContent = '加载装备数据...';
+                equipmentGrid.appendChild(loadingDiv);
+                
+                // 模拟异步加载
+                setTimeout(() => {
+                    equipmentGrid.innerHTML = '';
+                    
+                    equipmentData.forEach(equipment => {
+                        const equipmentCard = document.createElement('div');
+                        equipmentCard.className = 'equipment-card';
+                        
+                        const img = document.createElement('img');
+                        img.className = 'equipment-img';
+                        img.alt = equipment.name;
+                        img.loading = 'lazy';
+                        
+                        // 设置图片源，添加错误处理
+                        img.src = equipment.img;
+                        
+                        const nameDiv = document.createElement('div');
+                        nameDiv.className = 'equipment-name';
+                        nameDiv.textContent = equipment.name;
+                        
+                        equipmentCard.appendChild(img);
+                        equipmentCard.appendChild(nameDiv);
+                        equipmentGrid.appendChild(equipmentCard);
+                        
+                        // 图片加载错误处理
+                        img.onerror = function() {
+                            this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="80" viewBox="0 0 120 80"><rect width="120" height="80" fill="%231a1500" stroke="%23ffcc00" stroke-width="2"/><text x="60" y="40" text-anchor="middle" fill="%23ffcc00" font-family="Arial" font-size="10">图片加载失败</text></svg>';
+                            this.alt = '图片无法加载: ' + equipment.name;
+                        };
                     });
-                });
-                
-                images.forEach(img => {
-                    imageObserver.observe(img);
-                });
+                }, 800);
             }
             
-            // 初始加载可视区域内的图片
-            lazyLoadImages();
-            
-            // 滚动时加载新进入视口的图片
-            window.addEventListener('scroll', function() {
-                lazyLoadImages();
-            });
+            // 初始加载装备
+            loadEquipment();
             
             // 平滑滚动动画
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1042,7 +1013,7 @@
             });
             
             // 卡片悬停效果增强
-            const cards = document.querySelectorAll('.department-info, .feature-card, .equipment-item');
+            const cards = document.querySelectorAll('.unit-card, .equipment-card, .case-card');
             cards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
                     this.style.zIndex = '10';
@@ -1052,43 +1023,25 @@
                 });
             });
             
-            // 美国国旗图标动画增强
+            // 国旗图标动画增强
             const flagIcon = document.querySelector('.logo-icon');
             if (flagIcon) {
                 flagIcon.addEventListener('mouseenter', function() {
-                    this.style.animation = 'flag-wave 0.8s infinite alternate';
+                    this.style.animation = 'flag-wave 0.8s infinite';
                     this.style.transform = 'scale(1.1)';
                 });
                 flagIcon.addEventListener('mouseleave', function() {
-                    this.style.animation = 'flag-wave 5s infinite alternate';
+                    this.style.animation = 'flag-wave 4s infinite';
                     this.style.transform = 'scale(1)';
                 });
             }
             
-            // 装备项目悬停效果
-            const equipmentItems = document.querySelectorAll('.equipment-item');
-            equipmentItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    const icon = this.querySelector('.usa-equipment i');
-                    if (icon) {
-                        icon.style.transform = 'scale(1.2)';
-                        icon.style.transition = 'transform 0.3s ease';
-                    }
-                });
-                item.addEventListener('mouseleave', function() {
-                    const icon = this.querySelector('.usa-equipment i');
-                    if (icon) {
-                        icon.style.transform = 'scale(1)';
-                    }
-                });
-            });
-            
             // 黄色主题脉冲效果
             setInterval(() => {
-                const randomYellow = Math.floor(Math.random() * 100) + 155;
+                const randomYellow = Math.floor(Math.random() * 100) + 200;
                 const randomShadow = `0 2px 10px rgba(${randomYellow}, ${randomYellow-50}, 0, 0.3)`;
                 
-                const titles = document.querySelectorAll('.department-title, .hero-title');
+                const titles = document.querySelectorAll('.card-title, .hero-title');
                 titles.forEach(title => {
                     const originalShadow = title.style.textShadow;
                     title.style.textShadow = randomShadow;
@@ -1100,61 +1053,66 @@
             }, 5000);
             
             // 标签点击效果
-            const usaEquipments = document.querySelectorAll('.usa-equipment');
-            usaEquipments.forEach(item => {
-                item.addEventListener('click', function() {
+            const tags = document.querySelectorAll('.tag');
+            tags.forEach(tag => {
+                tag.addEventListener('click', function() {
                     this.style.transform = 'scale(0.95)';
                     setTimeout(() => {
                         this.style.transform = '';
                     }, 150);
-                });
-            });
-            
-            // 部门切换效果
-            const departmentSections = document.querySelectorAll('.department-section');
-            departmentSections.forEach(section => {
-                section.addEventListener('mouseenter', function() {
-                    const title = this.querySelector('.department-title');
-                    if (title) {
-                        title.style.transform = 'translateY(-5px)';
-                        title.style.transition = 'transform 0.3s ease';
-                    }
-                });
-                section.addEventListener('mouseleave', function() {
-                    const title = this.querySelector('.department-title');
-                    if (title) {
-                        title.style.transform = 'translateY(0)';
+                    
+                    // 根据标签内容滚动到对应部分
+                    const tagText = this.textContent.toLowerCase();
+                    if (tagText.includes('特异事故处')) {
+                        document.querySelector('.unit-card:nth-child(1)').scrollIntoView({ behavior: 'smooth' });
+                    } else if (tagText.includes('特工组')) {
+                        document.querySelector('.unit-card:nth-child(2)').scrollIntoView({ behavior: 'smooth' });
+                    } else if (tagText.includes('陆军')) {
+                        document.querySelector('.unit-card:nth-child(3)').scrollIntoView({ behavior: 'smooth' });
                     }
                 });
             });
             
-            // 模拟UIU骇入警告
-            const playUIUSound = () => {
-                console.log('UIU威胁警告：检测到美国异常事务处理组织活动');
+            // 页面加载时的特殊效果
+            setTimeout(() => {
+                const mainContent = document.querySelector('.main-content');
+                if (mainContent) {
+                    mainContent.style.opacity = '0';
+                    mainContent.style.transition = 'opacity 1.5s ease';
+                    mainContent.style.opacity = '1';
+                }
+                
+                // 装备卡片动画
+                const equipmentCards = document.querySelectorAll('.equipment-card');
+                equipmentCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    }, index * 50);
+                });
+            }, 500);
+            
+            // 模拟UIU骇入音效
+            const playHackSound = () => {
+                console.log('[UIU系统] 档案访问记录已上传至中央数据库');
             };
             
-            // 页面加载时播放音效
-            setTimeout(playUIUSound, 1000);
-            
-            // 随机显示UIU活动警告
-            setInterval(() => {
-                if (Math.random() > 0.95) {
-                    const warnings = [
-                        "网络安全系统检测到异常访问...",
-                        "IFF识别系统运行正常，保持警惕...",
-                        "警告：检测到疑似UIU特工组渗透活动",
-                        "安全协议更新中，防止骇客入侵...",
-                        "UIU组织活动数据库更新中..."
-                    ];
-                    const randomWarning = warnings[Math.floor(Math.random() * warnings.length)];
-                    console.log(`[基金会安全系统] ${randomWarning}`);
-                }
-            }, 10000);
+            setTimeout(playHackSound, 1500);
         });
         
-        // 页面离开警告
-        window.addEventListener('beforeunload', function(e) {
-            console.log('用户离开UIU档案页面 - 安全协议维持中');
+        // 页面可见性变化时的效果
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                console.log('UIU档案页面被隐藏 - 访问记录保存中');
+            } else {
+                console.log('UIU档案页面重新可见 - 欢迎回来，特工');
+            }
         });
     </script>
 </body>
