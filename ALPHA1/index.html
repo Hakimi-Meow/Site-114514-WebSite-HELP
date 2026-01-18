@@ -712,6 +712,28 @@
             letter-spacing: 5px;
         }
     }
+        
+.strikethrough {
+    text-decoration: line-through;
+    text-decoration-color: #ff0000;
+    text-decoration-thickness: 2px;
+    position: relative;
+    color: #ff6666;
+    opacity: 0.7;
+}
+
+.strikethrough::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    right: -5px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff0000, transparent);
+    transform: translateY(-50%);
+    z-index: -1;
+}
+        
     </style>
 </head>
 <body>
@@ -852,9 +874,9 @@
                         </div>
                         
                         <div class="feature-card">
-                            <h4><i class="fas fa-shield-alt"></i> 绝对忠诚</h4>
-                            <p>成员经过特殊忠诚度测试，确保对O5议会绝对服从</p>
-                        </div>
+    <h4><i class="fas fa-shield-alt"></i> <span class="strikethrough">绝对忠诚</span></h4>
+    <p>成员经过特殊忠诚度测试，确保对O5议会绝对服从</p>
+</div>
                         
                         <div class="feature-card">
                             <h4><i class="fas fa-gem"></i> 精英中的精英</h4>
