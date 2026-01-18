@@ -1,1 +1,1235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快速空降部队 "猎鹰" - 混沌分裂者</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', 'Linux Libertine', 'Georgia', 'Times', serif;
+    }
+    
+    body {
+        background-color: #0a140a;
+        color: #d4ffd4;
+        line-height: 1.6;
+        min-height: 100vh;
+        background-image: 
+            radial-gradient(circle at 20% 30%, rgba(0, 100, 0, 0.15) 0%, transparent 25%),
+            radial-gradient(circle at 80% 70%, rgba(0, 150, 0, 0.1) 0%, transparent 25%),
+            linear-gradient(135deg, #050a05 0%, #0a140a 50%, #030803 100%);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    /* 头部样式 - 混沌分裂者主题 */
+    .page-header {
+        background-color: #050a05;
+        border-bottom: 3px solid #00cc44;
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .logo-icon {
+        font-size: 3rem;
+        color: #00cc44;
+        animation: falcon-soar 4s infinite;
+        position: relative;
+    }
+    
+    @keyframes falcon-soar {
+        0% { 
+            transform: translateY(0) rotate(0deg); 
+            color: #00cc44;
+            text-shadow: 0 0 5px rgba(0, 204, 68, 0.5);
+        }
+        25% { 
+            transform: translateY(-5px) rotate(5deg);
+            color: #33ff66;
+            text-shadow: 0 0 8px rgba(51, 255, 102, 0.7);
+        }
+        50% { 
+            transform: translateY(-10px) rotate(0deg);
+            color: #00ff44;
+            text-shadow: 0 0 10px rgba(0, 255, 68, 0.8);
+        }
+        75% { 
+            transform: translateY(-5px) rotate(-5deg);
+            color: #33ff66;
+            text-shadow: 0 0 8px rgba(51, 255, 102, 0.7);
+        }
+        100% { 
+            transform: translateY(0) rotate(0deg);
+            color: #00cc44;
+            text-shadow: 0 0 5px rgba(0, 204, 68, 0.5);
+        }
+    }
+    
+    .logo-text {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #00cc44;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9),
+                     0 0 8px rgba(0, 204, 68, 0.3);
+    }
+    
+    .logo-subtext {
+        color: #66ff99;
+        font-size: 0.9rem;
+        margin-top: 2px;
+    }
+    
+    /* 混沌分裂者警告横幅 */
+    .chaos-banner {
+        background: linear-gradient(135deg, #051405, #0a1a0a);
+        border: 2px solid #ff3333;
+        border-radius: 10px;
+        padding: 15px 20px;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
+        animation: chaos-pulse 3s infinite alternate;
+    }
+    
+    @keyframes chaos-pulse {
+        from { 
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
+            border-color: #ff3333;
+        }
+        to { 
+            box-shadow: 0 4px 20px rgba(255, 51, 51, 0.5),
+                        0 0 15px rgba(255, 51, 51, 0.2);
+            border-color: #ff6666;
+        }
+    }
+    
+    .chaos-icon {
+        font-size: 1.8rem;
+        color: #ff3333;
+        min-width: 40px;
+    }
+    
+    .chaos-text {
+        color: #ff6666;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    /* 主要内容区 */
+    .main-content {
+        margin-top: 30px;
+    }
+    
+    .hero-section {
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+        color: #00cc44;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        background: linear-gradient(90deg, #006622, #00cc44, #006622);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: title-glow 3s infinite alternate;
+    }
+    
+    @keyframes title-glow {
+        from { 
+            text-shadow: 0 2px 10px rgba(0, 204, 68, 0.3);
+        }
+        to { 
+            text-shadow: 0 2px 15px rgba(0, 204, 68, 0.5),
+                         0 0 25px rgba(0, 255, 68, 0.2);
+        }
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+        color: #66ff99;
+        margin-bottom: 30px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.8;
+    }
+    
+    /* 图片显示区域 */
+    .image-display {
+        max-width: 450px;
+        margin: 0 auto 40px;
+        position: relative;
+    }
+    
+    .unit-badge {
+        width: 100%;
+        border-radius: 15px;
+        border: 4px solid #00cc44;
+        box-shadow: 
+            0 10px 40px rgba(0, 204, 68, 0.4),
+            inset 0 0 20px rgba(51, 255, 102, 0.1),
+            0 0 30px rgba(0, 204, 68, 0.3);
+        transition: transform 0.3s ease;
+        filter: drop-shadow(0 0 10px rgba(0, 204, 68, 0.6));
+        animation: badge-pulse 5s infinite alternate;
+    }
+    
+    @keyframes badge-pulse {
+        from { 
+            box-shadow: 
+                0 10px 40px rgba(0, 204, 68, 0.4),
+                inset 0 0 20px rgba(51, 255, 102, 0.1),
+                0 0 30px rgba(0, 204, 68, 0.3);
+        }
+        to { 
+            box-shadow: 
+                0 10px 40px rgba(0, 204, 68, 0.6),
+                inset 0 0 25px rgba(51, 255, 102, 0.2),
+                0 0 40px rgba(0, 204, 68, 0.5);
+        }
+    }
+    
+    .unit-badge:hover {
+        transform: scale(1.02) rotate(1deg);
+        filter: drop-shadow(0 0 15px rgba(0, 204, 68, 0.8));
+    }
+    
+    .image-fallback {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, #051a05, #0a220a);
+        border-radius: 15px;
+        border: 4px solid #00cc44;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(0, 204, 68, 0.4);
+    }
+    
+    .image-fallback i {
+        font-size: 5rem;
+        color: #00cc44;
+        margin-bottom: 20px;
+        opacity: 0.8;
+    }
+    
+    .image-fallback p {
+        color: #66ff99;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    /* 内容卡片样式 */
+    .content-card {
+        background: linear-gradient(135deg, rgba(10, 34, 10, 0.95), rgba(8, 26, 8, 0.95));
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-left: 5px solid #00cc44;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+        transition: transform 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .content-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #00cc44, transparent);
+    }
+    
+    .content-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 204, 68, 0.2);
+    }
+    
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(0, 204, 68, 0.3);
+    }
+    
+    .card-icon {
+        font-size: 2rem;
+        color: #00cc44;
+        background: rgba(0, 204, 68, 0.15);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card-title {
+        font-size: 1.8rem;
+        color: #33ff66;
+        margin: 0;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    
+    .card-subtitle {
+        color: #66ff99;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+    
+    .card-content {
+        color: #d4ffd4;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+    
+    .card-content p {
+        margin-bottom: 15px;
+    }
+    
+    .highlight {
+        color: #33ff66;
+        font-weight: bold;
+        text-shadow: 0 0 8px rgba(51, 255, 102, 0.4);
+    }
+    
+    .chaos {
+        color: #ff3333;
+        font-weight: bold;
+        background: rgba(255, 51, 51, 0.1);
+        padding: 2px 6px;
+        border-radius: 3px;
+        border: 1px solid rgba(255, 51, 51, 0.3);
+    }
+    
+    /* 信息列表 */
+    .info-list {
+        list-style: none;
+        margin: 20px 0;
+    }
+    
+    .info-list li {
+        padding: 15px 0;
+        border-bottom: 1px solid #006622;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .info-list li:last-child {
+        border-bottom: none;
+    }
+    
+    .list-icon {
+        color: #00cc44;
+        font-size: 1.2rem;
+        min-width: 25px;
+        margin-top: 2px;
+    }
+    
+    .list-content strong {
+        color: #33ff66;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+    }
+    
+    /* 部队组成网格 */
+    .unit-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 25px;
+    }
+    
+    .unit-card {
+        background: rgba(0, 204, 68, 0.05);
+        border-radius: 10px;
+        padding: 20px;
+        border-top: 3px solid #006622;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .unit-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: #006622;
+    }
+    
+    .unit-card:hover {
+        background: rgba(0, 204, 68, 0.08);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 204, 68, 0.3);
+    }
+    
+    .unit-card h4 {
+        color: #006622;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .unit-card p {
+        color: #b3ffcc;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    
+    /* 作战风格部分 */
+    .combat-style {
+        background: linear-gradient(135deg, 
+            rgba(0, 204, 68, 0.1), 
+            rgba(0, 102, 34, 0.1));
+        border: 2px solid #00cc44;
+        border-radius: 15px;
+        padding: 30px;
+        margin: 40px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .combat-style::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #00cc44, #006622);
+    }
+    
+    .combat-title {
+        text-align: center;
+        color: #33ff66;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    /* 部队编制部分 */
+    .unit-composition {
+        margin-top: 40px;
+    }
+    
+    .composition-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+    }
+    
+    .composition-card {
+        background: rgba(0, 102, 34, 0.08);
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid rgba(0, 204, 68, 0.3);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .composition-card::before {
+        content: '✪';
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5rem;
+        color: rgba(0, 204, 68, 0.1);
+    }
+    
+    .composition-card:hover {
+        transform: translateY(-5px);
+        border-color: #00cc44;
+        box-shadow: 0 8px 20px rgba(0, 204, 68, 0.3);
+    }
+    
+    .composition-icon {
+        font-size: 3rem;
+        color: #00cc44;
+        margin-bottom: 15px;
+    }
+    
+    .composition-card h4 {
+        color: #33ff66;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    
+    .composition-card p {
+        color: #b3ffcc;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    /* 基金会警告框 */
+    .foundation-warning {
+        background: linear-gradient(135deg, rgba(255, 51, 51, 0.1), rgba(204, 0, 0, 0.1));
+        border: 2px solid #ff3333;
+        border-radius: 10px;
+        padding: 25px;
+        margin: 30px 0;
+        position: relative;
+    }
+    
+    .foundation-warning::before {
+        content: '⚠️';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        background: #0a140a;
+        color: #ff3333;
+        padding: 0 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    
+    .foundation-warning h4 {
+        color: #ff3333;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    /* 标签容器 */
+    .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+    
+    .tag {
+        background: linear-gradient(135deg, #006622, #004411);
+        color: #33ff66;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 204, 68, 0.3);
+    }
+    
+    .tag:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(51, 255, 102, 0.3);
+        background: linear-gradient(135deg, #008833, #006622);
+        border-color: #00cc44;
+    }
+    
+    .tag.red {
+        background: linear-gradient(135deg, #661a1a, #440a0a);
+        color: #ff6666;
+        border-color: rgba(255, 51, 51, 0.3);
+    }
+    
+    .tag.black {
+        background: linear-gradient(135deg, #222, #111);
+        color: #ccc;
+        border-color: rgba(102, 102, 102, 0.3);
+    }
+    
+    .tag.green {
+        background: linear-gradient(135deg, #1a661a, #0a440a);
+        color: #66ff66;
+        border-color: rgba(0, 204, 68, 0.3);
+    }
+    
+    /* 页脚 */
+    .page-footer {
+        background-color: #050a05;
+        border-top: 1px solid #006622;
+        padding: 40px 0;
+        margin-top: 60px;
+        position: relative;
+    }
+    
+    .page-footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #00cc44, transparent);
+    }
+    
+    .footer-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .footer-link {
+        color: #66ff99;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-link:hover {
+        color: #00cc44;
+        text-decoration: underline;
+    }
+    
+    .copyright {
+        color: #339966;
+        font-size: 0.9rem;
+        padding-top: 20px;
+        border-top: 1px solid #006622;
+        margin-top: 20px;
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .container {
+            padding: 15px;
+        }
+        
+        .hero-title {
+            font-size: 2.2rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+        }
+        
+        .image-display {
+            max-width: 100%;
+        }
+        
+        .content-card {
+            padding: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+        }
+        
+        .chaos-banner {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+        
+        .unit-grid, .composition-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .combat-style {
+            padding: 20px;
+        }
+        
+        .header-content {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 1.8rem;
+        }
+        
+        .logo-text {
+            font-size: 1.4rem;
+        }
+        
+        .tag-container {
+            justify-content: flex-start;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .unit-card, .composition-card {
+            padding: 15px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-fighter-jet"></i>
+                    </div>
+                    <div>
+                        <div class="logo-text">快速空降部队 "猎鹰"</div>
+                        <div class="logo-subtext">混沌分裂者空中突击部队 | Site-114514 维基</div>
+                    </div>
+                </div>
+                <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" class="back-button" style="background: linear-gradient(135deg, #ff3333, #990000); box-shadow: 0 4px 15px rgba(255, 51, 51, 0.4);">
+                    <i class="fas fa-arrow-left"></i>
+                    返回主维基
+                </a>
+            </div>
+        </div>
+    </header>
 
+    <!-- 混沌分裂者警告横幅 -->
+    <div class="container">
+        <div class="chaos-banner">
+            <div class="chaos-icon">
+                <i class="fas fa-skull-crossbones"></i>
+            </div>
+            <div class="chaos-text">
+                <strong>混沌分裂者警告：</strong>以下信息涉及敌对组织战斗单位。基金会人员请保持警惕，发现该部队活动立即报告。
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <main class="main-content">
+            <!-- 英雄部分 -->
+            <section class="hero-section">
+                <h1 class="hero-title">快速空降部队 "猎鹰"</h1>
+                <p class="hero-subtitle">
+                    "我们是在黑暗中翱翔的猎鹰，将会处决在光明中的所有人"<br>
+                    由俄罗斯VDV空降部队退役成员组成的精锐突击部队，混沌分裂者的空中铁拳。
+                </p>
+                
+                <!-- 图片显示区域 -->
+                <div class="image-display">
+                    <img src="/Site-114514-WebSite-HELP/CIKJ/0B569D9A227F0718B48BEFCB0F8BB266.png" 
+                         alt="快速空降部队 '猎鹰' 徽章" 
+                         class="unit-badge"
+                         onerror="this.style.display='none'; 
+                                  document.getElementById('image-fallback').style.display='flex';">
+                    
+                    <div id="image-fallback" class="image-fallback" style="display: none;">
+                        <i class="fas fa-fighter-jet"></i>
+                        <p>
+                            快速空降部队 "猎鹰" 徽章<br>
+                            <small>混沌分裂者空中力量象征 - 图片加载失败</small>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 基金会警告 -->
+            <div class="foundation-warning">
+                <h4><i class="fas fa-exclamation-triangle"></i> 基金会安全警告</h4>
+                <p>
+                    该部队已被基金会列为<span class="highlight">最高威胁等级</span>。其强大的空中突袭能力迫使基金会建立了专门的<span class="highlight">IFF防空系统</span>。
+                    任何目击该部队活动的设施应立即启动<span class="chaos">最高警戒状态</span>并请求支援。
+                </p>
+            </div>
+
+            <!-- 介绍卡片 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">部队简介</h2>
+                        <div class="card-subtitle">Rapid Airborne Forces "Falcons"</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>
+                        <span class="highlight">快速空降部队 "猎鹰"</span>是混沌分裂者最精锐的空中突击力量，由前<span class="highlight">俄罗斯VDV空降部队</span>退役成员组成。这支部队以其标志性的口号而闻名："我们是在黑暗中翱翔的猎鹰，将会处决在光明中的所有人"。
+                    </p>
+                    <p>
+                        该部队继承了俄罗斯空降兵的优良传统，拥有卓越的<span class="highlight">空中突袭能力</span>和强大的<span class="highlight">地面单兵作战能力</span>。他们的战斗风格以<span class="chaos">迅速、隐蔽</span>著称，特别擅长夜间行动和侧面突袭。
+                    </p>
+                    <p>
+                        在混沌分裂者内部，这支部队被称为"<span class="highlight">暴力美学</span>"的典范，他们的作战行动兼具实用性与艺术性，每一次突袭都经过精心策划和完美执行。
+                    </p>
+                    <p>
+                        该部队拥有独立的指挥体系，不直接听从阿尔法指挥官和德尔塔指挥部，但对混沌高层保持绝对的忠诚。他们的自主性和专业性使他们成为混沌分裂者最可靠的尖刀部队。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 部队组成 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">部队组成</h2>
+                        <div class="card-subtitle">Unit Composition</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>鼎盛时期，快速空降部队 "猎鹰" 由以下单位组成：</p>
+                    
+                    <div class="composition-grid">
+                        <div class="composition-card">
+                            <div class="composition-icon">
+                                <i class="fas fa-plane"></i>
+                            </div>
+                            <h4>空中战斗护航编队</h4>
+                            <p>3个编队，提供空中掩护和火力支援</p>
+                        </div>
+                        
+                        <div class="composition-card">
+                            <div class="composition-icon">
+                                <i class="fas fa-parachute-box"></i>
+                            </div>
+                            <h4>空输部队</h4>
+                            <p>2个单位，负责人员和装备的快速投送</p>
+                        </div>
+                        
+                        <div class="composition-card">
+                            <div class="composition-icon">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <h4>地面战斗小组</h4>
+                            <p>2个小组，执行地面突袭和占领任务</p>
+                        </div>
+                        
+                        <div class="composition-card">
+                            <div class="composition-icon">
+                                <i class="fas fa-swimmer"></i>
+                            </div>
+                            <h4>蛙人小组</h4>
+                            <p>1个小组，执行水下渗透和破坏任务</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chaos-banner" style="margin-top: 25px; background: rgba(255, 153, 0, 0.1); border-color: #ff9900;">
+                        <div class="chaos-icon" style="color: #ff9900;">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="chaos-text" style="color: #ff9900;">
+                            <strong>现状：</strong>阿尔法指挥官篡位后，部队规模被缩减至：2个空中战斗编队、1个航空运输单位、1个地面战斗小组、12名蛙人成员
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 作战风格 -->
+            <div class="combat-style">
+                <div class="combat-title">
+                    <i class="fas fa-fist-raised"></i>
+                    暴力美学：作战风格
+                    <i class="fas fa-fist-raised"></i>
+                </div>
+                <div class="card-content">
+                    <p>快速空降部队 "猎鹰" 的战斗风格体现了混沌分裂者的"暴力美学"理念：</p>
+                    
+                    <div class="unit-grid">
+                        <div class="unit-card">
+                            <h4><i class="fas fa-bolt"></i> 闪电突袭</h4>
+                            <p>利用空中优势进行快速、突然的打击，在敌人反应之前完成主要作战目标</p>
+                        </div>
+                        
+                        <div class="unit-card">
+                            <h4><i class="fas fa-moon"></i> 夜间优势</h4>
+                            <p>擅长夜间作战，利用夜视装备和隐蔽行动在黑暗中消灭敌人</p>
+                        </div>
+                        
+                        <div class="unit-card">
+                            <h4><i class="fas fa-crosshairs"></i> 侧面打击</h4>
+                            <p>避免正面冲突，专注于敌人侧翼和后勤的破坏，制造混乱</p>
+                        </div>
+                        
+                        <div class="unit-card">
+                            <h4><i class="fas fa-dove"></i> 心理威慑</h4>
+                            <p>通过精确打击和震慑行动在敌人心中制造恐惧，瓦解抵抗意志</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 战绩与能力 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">战绩与能力</h2>
+                        <div class="card-subtitle">Achievements & Capabilities</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>快速空降部队 "猎鹰" 在其作战历史中创造了多项惊人战绩：</p>
+                    
+                    <ul class="info-list">
+                        <li>
+                            <div class="list-icon"><i class="fas fa-star"></i></div>
+                            <div class="list-content">
+                                <strong>一战成名</strong>
+                                仅用1个地面战斗小组和蛙人小组就基本夺取了Site-███的控制权，创造了快速突击的典范
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-star"></i></div>
+                            <div class="list-content">
+                                <strong>心理威慑</strong>
+                                尽管最终因基金会外部武装支援而任务失败，但给设施人员留下了深刻的心理阴影
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-star"></i></div>
+                            <div class="list-content">
+                                <strong>装备优势</strong>
+                                主要装备苏式空中单位，在机动性和火力方面具有明显优势
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-star"></i></div>
+                            <div class="list-content">
+                                <strong>独立指挥</strong>
+                                拥有单独的指挥层面，作战决策迅速，不受常规指挥链束缚
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div style="margin-top: 25px; padding: 15px; background: rgba(0, 204, 68, 0.1); border-left: 3px solid #00cc44; border-radius: 5px;">
+                        <h4 style="color: #00cc44; margin-bottom: 10px;"><i class="fas fa-chart-line"></i> 威胁评估</h4>
+                        <p style="color: #b3ffcc; font-size: 0.95rem;">
+                            基金会威胁等级：<span class="chaos">极端威胁</span><br>
+                            空中突袭能力：<span class="highlight">S级</span> | 地面作战能力：<span class="highlight">A+级</span><br>
+                            应对建议：加强空中监视，完善IFF系统，建立快速反应机制
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 基金会应对措施 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">基金会应对措施</h2>
+                        <div class="card-subtitle">Foundation Countermeasures</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>针对快速空降部队 "猎鹰" 的威胁，基金会采取了以下应对措施：</p>
+                    
+                    <div class="unit-grid">
+                        <div class="unit-card" style="border-top-color: #ff3333;">
+                            <h4><i class="fas fa-satellite"></i> IFF防空系统</h4>
+                            <p>建立敌我识别系统，防止空中突袭和误击友军</p>
+                        </div>
+                        
+                        <div class="unit-card" style="border-top-color: #ff9900;">
+                            <h4><i class="fas fa-radar"></i> 空中监视网络</h4>
+                            <p>扩大空中监视范围，提前发现和预警空中威胁</p>
+                        </div>
+                        
+                        <div class="unit-card" style="border-top-color: #3366ff;">
+                            <h4><i class="fas fa-running"></i> 快速反应部队</h4>
+                            <p>组建专门应对空中突袭的快速反应部队，缩短响应时间</p>
+                        </div>
+                        
+                        <div class="unit-card" style="border-top-color: #cc00cc;">
+                            <h4><i class="fas fa-brain"></i> 心理防护训练</h4>
+                            <p>加强人员心理防护训练，减轻"猎鹰"部队造成的心理影响</p>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 20px; font-style: italic; color: #66ff99;">
+                        *注：尽管采取了多项措施，"猎鹰"部队仍然构成严重威胁。所有基金会设施必须保持高度警惕。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 训练与选拔 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">训练与选拔</h2>
+                        <div class="card-subtitle">Training & Selection</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>
+                        "猎鹰"部队的成员选拔极其严格，训练标准远超常规部队：
+                    </p>
+                    
+                    <ul class="info-list">
+                        <li>
+                            <div class="list-icon"><i class="fas fa-medal"></i></div>
+                            <div class="list-content">
+                                <strong>VDV背景</strong>
+                                成员必须具有俄罗斯VDV空降部队服役经历，且获得优秀评价
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-parachute-box"></i></div>
+                            <div class="list-content">
+                                <strong>高级空降训练</strong>
+                                包括高空跳伞、低空开伞、精确着陆等高级空降技能
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-crosshairs"></i></div>
+                            <div class="list-content">
+                                <strong>特种作战训练</strong>
+                                渗透、侦察、破坏、反审讯等特种作战技能
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-language"></i></div>
+                            <div class="list-content">
+                                <strong>多语言能力</strong>
+                                至少掌握两种语言，以适应跨国作战需求
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-brain"></i></div>
+                            <div class="list-content">
+                                <strong>心理素质评估</strong>
+                                通过严格的心理测试，确保在高压力环境下保持稳定
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 标签 -->
+            <div class="tag-container">
+                <span class="tag green">混沌分裂者</span>
+                <span class="tag">快速空降部队</span>
+                <span class="tag red">猎鹰</span>
+                <span class="tag">VDV空降兵</span>
+                <span class="tag gold">暴力美学</span>
+                <span class="tag">空中突袭</span>
+                <span class="tag green">极端威胁</span>
+            </div>
+        </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" class="footer-link">返回主维基</a>
+                    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="footer-link">返回顶部</a>
+                    <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" target="_blank" class="footer-link">Site-114514维基</a>
+                </div>
+                <div class="copyright">
+                    © 2025-2026 Site-114514服务器社区<br>
+                    快速空降部队 "猎鹰"资料 - 威胁等级：<span class="chaos">极端威胁</span><br>
+                    警告：该部队为敌对组织作战单位，发现其活动应立即报告并采取防御措施。
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 图片加载失败处理
+            const img = document.querySelector('.unit-badge');
+            if (img && img.complete && img.naturalHeight === 0) {
+                img.style.display = 'none';
+                document.getElementById('image-fallback').style.display = 'flex';
+            }
+            
+            // 平滑滚动动画
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // 卡片悬停效果增强
+            const cards = document.querySelectorAll('.content-card, .unit-card, .composition-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+            
+            // 猎鹰图标动画增强
+            const falconIcon = document.querySelector('.logo-icon');
+            if (falconIcon) {
+                falconIcon.addEventListener('mouseenter', function() {
+                    this.style.animation = 'falcon-soar 0.8s infinite';
+                    this.style.transform = 'scale(1.1)';
+                });
+                falconIcon.addEventListener('mouseleave', function() {
+                    this.style.animation = 'falcon-soar 4s infinite';
+                    this.style.transform = 'scale(1)';
+                });
+            }
+            
+            // 混沌横幅闪烁效果
+            const chaosBanner = document.querySelector('.chaos-banner');
+            if (chaosBanner) {
+                setInterval(() => {
+                    chaosBanner.style.borderColor = 
+                        Math.random() > 0.5 ? '#ff3333' : '#ff6666';
+                }, 1500);
+            }
+            
+            // 混沌文字闪烁效果
+            const chaosTexts = document.querySelectorAll('.chaos');
+            chaosTexts.forEach(text => {
+                setInterval(() => {
+                    text.style.color = Math.random() > 0.5 ? '#ff3333' : '#ff6666';
+                    text.style.textShadow = Math.random() > 0.5 
+                        ? '0 0 5px rgba(255, 51, 51, 0.3)' 
+                        : '0 0 8px rgba(255, 102, 102, 0.4)';
+                }, 2000);
+            });
+            
+            // 绿色主题脉冲效果
+            setInterval(() => {
+                const randomGreen = Math.floor(Math.random() * 100) + 155;
+                const randomShadow = `0 2px 10px rgba(0, ${randomGreen}, 0, 0.3)`;
+                
+                const titles = document.querySelectorAll('.card-title, .hero-title');
+                titles.forEach(title => {
+                    const originalShadow = title.style.textShadow;
+                    title.style.textShadow = randomShadow;
+                    
+                    setTimeout(() => {
+                        title.style.textShadow = originalShadow;
+                    }, 400);
+                });
+            }, 5000);
+            
+            // 标签点击效果
+            const tags = document.querySelectorAll('.tag');
+            tags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // 威胁评估动画
+            const threatBox = document.querySelector('.card-content').lastElementChild;
+            if (threatBox && threatBox.querySelector('.fa-chart-line')) {
+                setTimeout(() => {
+                    threatBox.style.transform = 'scale(1.02)';
+                    threatBox.style.transition = 'transform 0.3s ease';
+                    
+                    setTimeout(() => {
+                        threatBox.style.transform = 'scale(1)';
+                    }, 300);
+                }, 1000);
+            }
+            
+            // 模拟空中突袭音效（可选）
+            const playAirborneSound = () => {
+                // 这里可以添加空中突袭主题的音效
+                console.log('空中威胁警告：检测到快速空降部队活动');
+            };
+            
+            // 页面加载时播放音效
+            setTimeout(playAirborneSound, 1000);
+            
+            // 随机显示空中威胁警告
+            setInterval(() => {
+                if (Math.random() > 0.95) {
+                    const warnings = [
+                        "空中监视网络检测到异常活动...",
+                        "IFF系统运行正常，保持警惕...",
+                        "警告：可能存在空中突袭威胁",
+                        "快速反应部队待命中...",
+                        "猎鹰部队活动数据库更新中..."
+                    ];
+                    const randomWarning = warnings[Math.floor(Math.random() * warnings.length)];
+                    console.log(`[基金会空中防御系统] ${randomWarning}`);
+                }
+            }, 10000);
+        });
+        
+        // 页面离开警告
+        window.addEventListener('beforeunload', function(e) {
+            console.log('用户离开猎鹰部队档案页面 - 空中防御协议维持中');
+        });
+    </script>
+</body>
+</html>
