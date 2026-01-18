@@ -1,1 +1,1044 @@
 
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NU-7 "Hammer Down" - Site-114514 维基</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', 'Linux Libertine', 'Georgia', 'Times', serif;
+    }
+    
+    body {
+        background-color: #0f1319;
+        color: #e6e6e6;
+        line-height: 1.6;
+        min-height: 100vh;
+        background-image: 
+            radial-gradient(circle at 10% 20%, rgba(28, 58, 82, 0.1) 0%, transparent 20%),
+            radial-gradient(circle at 90% 80%, rgba(120, 0, 0, 0.08) 0%, transparent 20%);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    /* 头部样式 */
+    .page-header {
+        background-color: #0a0d12;
+        border-bottom: 3px solid #c41e3a;
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .logo-icon {
+        font-size: 2.5rem;
+        color: #c41e3a;
+        animation: hammer-pulse 3s infinite;
+    }
+    
+    @keyframes hammer-pulse {
+        0% { transform: rotate(0deg) scale(1); }
+        25% { transform: rotate(5deg) scale(1.05); }
+        50% { transform: rotate(0deg) scale(1); }
+        75% { transform: rotate(-5deg) scale(1.05); }
+        100% { transform: rotate(0deg) scale(1); }
+    }
+    
+    .logo-text {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    
+    .logo-subtext {
+        color: #8a9bba;
+        font-size: 0.9rem;
+        margin-top: 2px;
+    }
+    
+    .back-button {
+        background: linear-gradient(135deg, #c41e3a, #8b0000);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4);
+    }
+    
+    .back-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(196, 30, 58, 0.6);
+        background: linear-gradient(135deg, #d42f4a, #9b0f0f);
+    }
+    
+    /* 主要内容区 */
+    .main-content {
+        margin-top: 30px;
+    }
+    
+    .hero-section {
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+        color: #fff;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        background: linear-gradient(90deg, #c41e3a, #ff6b6b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+        color: #8a9bba;
+        margin-bottom: 30px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.8;
+    }
+    
+    /* 图片显示区域 */
+    .image-display {
+        max-width: 500px;
+        margin: 0 auto 40px;
+        position: relative;
+    }
+    
+    .unit-badge {
+        width: 100%;
+        border-radius: 15px;
+        border: 4px solid #c41e3a;
+        box-shadow: 
+            0 10px 40px rgba(196, 30, 58, 0.3),
+            inset 0 0 20px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .unit-badge:hover {
+        transform: scale(1.02);
+    }
+    
+    .image-fallback {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, #1a1f2a, #232936);
+        border-radius: 15px;
+        border: 4px solid #c41e3a;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(196, 30, 58, 0.3);
+    }
+    
+    .image-fallback i {
+        font-size: 5rem;
+        color: #c41e3a;
+        margin-bottom: 20px;
+        opacity: 0.8;
+    }
+    
+    .image-fallback p {
+        color: #8a9bba;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    /* 内容卡片样式 */
+    .content-card {
+        background: linear-gradient(135deg, rgba(26, 31, 42, 0.95), rgba(19, 23, 32, 0.95));
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-left: 5px solid #c41e3a;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease;
+    }
+    
+    .content-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
+    
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .card-icon {
+        font-size: 2rem;
+        color: #c41e3a;
+        background: rgba(196, 30, 58, 0.1);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card-title {
+        font-size: 1.8rem;
+        color: #fff;
+        margin: 0;
+    }
+    
+    .card-subtitle {
+        color: #8a9bba;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+    
+    .card-content {
+        color: #e6e6e6;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+    
+    .card-content p {
+        margin-bottom: 15px;
+    }
+    
+    .highlight {
+        color: #ff6b6b;
+        font-weight: bold;
+    }
+    
+    /* 信息列表 */
+    .info-list {
+        list-style: none;
+        margin: 20px 0;
+    }
+    
+    .info-list li {
+        padding: 15px 0;
+        border-bottom: 1px solid #3a506b;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .info-list li:last-child {
+        border-bottom: none;
+    }
+    
+    .list-icon {
+        color: #c41e3a;
+        font-size: 1.2rem;
+        min-width: 25px;
+        margin-top: 2px;
+    }
+    
+    .list-content strong {
+        color: #ff6b6b;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+    }
+    
+    /* 单位组成网格 */
+    .unit-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 25px;
+    }
+    
+    .unit-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        padding: 20px;
+        border-top: 3px solid #4a9eff;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .unit-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: #4a9eff;
+    }
+    
+    .unit-card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-5px);
+    }
+    
+    .unit-card h4 {
+        color: #4a9eff;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .unit-card p {
+        color: #ccc;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    
+    /* 装备特点部分 */
+    .equipment-section {
+        margin-top: 40px;
+    }
+    
+    .equipment-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+    }
+    
+    .equipment-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .equipment-card:hover {
+        transform: translateY(-5px);
+        border-color: #c41e3a;
+        box-shadow: 0 8px 20px rgba(196, 30, 58, 0.2);
+    }
+    
+    .equipment-icon {
+        font-size: 3rem;
+        color: #c41e3a;
+        margin-bottom: 15px;
+    }
+    
+    .equipment-card h4 {
+        color: #fff;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    
+    .equipment-card p {
+        color: #aaa;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    /* 游戏集成部分 */
+    .game-integration {
+        background: linear-gradient(135deg, 
+            rgba(196, 30, 58, 0.1), 
+            rgba(42, 74, 106, 0.1));
+        border: 2px solid #c41e3a;
+        border-radius: 15px;
+        padding: 40px;
+        margin-top: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .game-integration::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #c41e3a, #4a9eff);
+    }
+    
+    .integration-title {
+        text-align: center;
+        color: #c41e3a;
+        margin-bottom: 30px;
+        font-size: 2rem;
+    }
+    
+    .game-feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    
+    .game-feature-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .game-feature-card:hover {
+        transform: translateY(-5px);
+        border-color: #4a9eff;
+    }
+    
+    .game-feature-icon {
+        font-size: 2.5rem;
+        color: #4a9eff;
+        margin-bottom: 15px;
+    }
+    
+    .game-feature-card h4 {
+        color: #fff;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    
+    .game-feature-card p {
+        color: #ccc;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    /* 标签容器 */
+    .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+    
+    .tag {
+        background: linear-gradient(135deg, #2d1a1a, #451212);
+        color: #ff9999;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    
+    .tag:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 153, 153, 0.3);
+    }
+    
+    .tag.blue {
+        background: linear-gradient(135deg, #1a2d3a, #123045);
+        color: #8cc4ff;
+    }
+    
+    .tag.green {
+        background: linear-gradient(135deg, #1a2d1a, #123012);
+        color: #99ff99;
+    }
+    
+    /* 分隔线样式 */
+    .divider {
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #c41e3a, transparent);
+        margin: 40px 0;
+        border: none;
+    }
+    
+    /* 页脚 */
+    .page-footer {
+        background-color: #0a0d12;
+        border-top: 1px solid #333;
+        padding: 40px 0;
+        margin-top: 60px;
+    }
+    
+    .footer-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .footer-link {
+        color: #4a9eff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-link:hover {
+        color: #c41e3a;
+        text-decoration: underline;
+    }
+    
+    .copyright {
+        color: #777;
+        font-size: 0.9rem;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+        margin-top: 20px;
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .container {
+            padding: 15px;
+        }
+        
+        .hero-title {
+            font-size: 2.2rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+        }
+        
+        .image-display {
+            max-width: 100%;
+        }
+        
+        .content-card {
+            padding: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+        }
+        
+        .unit-grid, .equipment-grid, .game-feature-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .game-integration {
+            padding: 25px;
+        }
+        
+        .header-content {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 1.8rem;
+        }
+        
+        .logo-text {
+            font-size: 1.4rem;
+        }
+        
+        .tag-container {
+            justify-content: flex-start;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .unit-card, .equipment-card, .game-feature-card {
+            padding: 15px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <div>
+                        <div class="logo-text">NU-7 "Hammer Down"</div>
+                        <div class="logo-subtext">武装机动特遣队 | Site-114514 维基</div>
+                    </div>
+                </div>
+                <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    返回主维基
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <main class="main-content">
+            <!-- 英雄部分 -->
+            <section class="hero-section">
+                <h1 class="hero-title">NU-7 "Hammer Down"</h1>
+                <p class="hero-subtitle">
+                    基金会最强大的常规军事力量之一，一个营级规模的武装机动特遣队，<br>
+                    拥有完整的陆军作战单位编制，负责应对大规模收容失效与敌对入侵。
+                </p>
+                
+                <!-- 图片显示区域 -->
+                <div class="image-display">
+                    <img src="/Site-114514-WebSite-HELP/NU7/122BEC1B98A04AAD30416F279BFFD40A.png" 
+                         alt="NU-7 'Hammer Down' 徽章" 
+                         class="unit-badge"
+                         onerror="this.style.display='none'; 
+                                  document.getElementById('image-fallback').style.display='flex';">
+                    
+                    <div id="image-fallback" class="image-fallback" style="display: none;">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>
+                            NU-7 "Hammer Down" 徽章<br>
+                            <small>"锤击"战术单位的象征 - 图片加载失败</small>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 介绍卡片 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">特遣队简介</h2>
+                        <div class="card-subtitle">Mobile Task Force Nu-7 "Hammer Down"</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>
+                        <span class="highlight">NU-7 "Hammer Down"</span>（武装机动特遣队Nu-7）是一个营级规模的特遣队，拥有完整的陆军作战单位编制。作为基金会最强大的常规军事力量之一，该特遣队被部署在全球关键基金会设施附近，随时准备应对大规模紧急事件。
+                    </p>
+                    <p>
+                        NU-7成立于19██年，其设计理念是创建一支能够独立应对Site级收容失效事件的强大军事力量。特遣队拥有三个由特种步兵组成的连级分队，一个轻装甲车连，一个坦克排，一个直升机中队，一个化学-生物-辐射-核能（CBRN）排，一个战斗工兵排，一个核武器专家（NWS）小组，以及额外的战斗专家和支援人员。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 主要职责 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">主要职责</h2>
+                        <div class="card-subtitle">Primary Responsibilities</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <ul class="info-list">
+                        <li>
+                            <div class="list-icon"><i class="fas fa-skull-crossbones"></i></div>
+                            <div class="list-content">
+                                <strong>Site级收容失效响应</strong>
+                                在主要基金会设施失去联络或发生大规模收容失效时，快速部署并进行控制
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-user-secret"></i></div>
+                            <div class="list-content">
+                                <strong>敌方渗透清除</strong>
+                                应对GOI或其他敌对势力对基金会设施的渗透与攻击
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-radiation-alt"></i></div>
+                            <div class="list-content">
+                                <strong>CBRN事件处理</strong>
+                                处理涉及化学、生物、辐射或核能的异常事件
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-hard-hat"></i></div>
+                            <div class="list-content">
+                                <strong>大规模灾害响应</strong>
+                                应对其他类似灾害事件，确保基金会资产安全
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 单位组成 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">单位组成</h2>
+                        <div class="card-subtitle">Unit Composition</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>NU-7作为一个完整的营级特遣队，包含以下作战单位：</p>
+                    
+                    <div class="unit-grid">
+                        <div class="unit-card">
+                            <h4><i class="fas fa-user-graduate"></i> 特种步兵连</h4>
+                            <p>三个由特种步兵组成的连级分队，共计约360名精锐士兵</p>
+                        </div>
+                        
+                        <div class="unit-card">
+                            <h4><i class="fas fa-tank"></i> 装甲单位</h4>
+                            <p>一个轻装甲车连和一个坦克排，提供重火力支援</p>
+                        </div>
+                        
+                        <div class="unit-card">
+                            <h4><i class="fas fa-helicopter"></i> 空中单位</h4>
+                            <p>一个直升机中队，负责空中侦察、运输和火力支援</p>
+                        </div>
+                        
+                        <div class="unit-card">
+                            <h4><i class="fas fa-radiation"></i> CBRN排</h4>
+                            <p>化学-生物-辐射-核能专门处置单位</p>
+                        </div>
+                        
+                        <div class="unit-card">
+                            <h4><i class="fas fa-hard-hat"></i> 战斗工兵排</h4>
+                            <p>负责爆破、障碍清除和工程支援</p>
+                        </div>
+                        
+                        <div class="unit-card">
+                            <h4><i class="fas fa-atom"></i> 核武器专家组</h4>
+                            <p>核武器(NWS)专家小组，应对最极端情况</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 装备特点 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">装备特点</h2>
+                        <div class="card-subtitle">Advanced Military Equipment</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>NU-7装备有基金会常规军事力量中最先进的武器系统：</p>
+                    
+                    <div class="equipment-grid">
+                        <div class="equipment-card">
+                            <div class="equipment-icon">
+                                <i class="fas fa-gun"></i>
+                            </div>
+                            <h4>重火力单位</h4>
+                            <p>配备重型机枪、榴弹发射器、反坦克导弹等重武器</p>
+                        </div>
+                        
+                        <div class="equipment-card">
+                            <div class="equipment-icon">
+                                <i class="fas fa-tank"></i>
+                            </div>
+                            <h4>装甲单位</h4>
+                            <p>拥有轻型装甲车、主战坦克等机械化装备</p>
+                        </div>
+                        
+                        <div class="equipment-card">
+                            <div class="equipment-icon">
+                                <i class="fas fa-helicopter"></i>
+                            </div>
+                            <h4>空中单位</h4>
+                            <p>武装直升机、运输直升机提供立体作战能力</p>
+                        </div>
+                        
+                        <div class="equipment-card">
+                            <div class="equipment-icon">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <h4>开阔地作战</h4>
+                            <p>擅长在开阔场地执行大规模军事行动</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="divider">
+
+            <!-- NU-7 SOF特战A连 -->
+            <section class="hero-section">
+                <h1 class="hero-title">NU-7 SOF特战A连</h1>
+                <p class="hero-subtitle">
+                    NU-7下属的特种作战分队，作为主力到达前的先锋力量，<br>
+                    擅长对人作战和巷道区域作战，应对小规模威胁。
+                </p>
+                
+                <!-- 图片显示区域 -->
+                <div class="image-display">
+                    <img src="/Site-114514-WebSite-HELP/NU7/543667ADFEFAA7DC4ACB71B08138C1BD.png" 
+                         alt="NU-7 SOF特战A连徽章" 
+                         class="unit-badge"
+                         onerror="this.style.display='none'; 
+                                  document.getElementById('image-fallback2').style.display='flex';">
+                    
+                    <div id="image-fallback2" class="image-fallback" style="display: none;">
+                        <i class="fas fa-user-secret"></i>
+                        <p>
+                            NU-7 SOF特战A连徽章<br>
+                            <small>特种作战先锋部队 - 图片加载失败</small>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- A连介绍卡片 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">A连简介</h2>
+                        <div class="card-subtitle">NU-7 Special Operations Force Alpha Company</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>
+                        <span class="highlight">NU-7 SOF特战A连</span>是NU-7下属的一个特种作战分队，虽然不具备主力部队的全面实力，但在特定作战环境中表现出色。该连队是Site-114514服务器社区的原创设定，并非基金会官方设定。
+                    </p>
+                    <p>
+                        A连的主要任务是在主力部队到达之前，作为先锋力量清空场地、建立安全区。当站点遭到敌方小规模渗透时，A连将代替主力前往设施处理威胁，避免削弱站点的防守力量，防止发生更大规模的收容失效。
+                    </p>
+                </div>
+            </section>
+
+            <!-- A连装备特点 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">A连装备特点</h2>
+                        <div class="card-subtitle">Specialized Equipment for Urban Warfare</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="equipment-grid">
+                        <div class="equipment-card">
+                            <div class="equipment-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h4>特种步兵单位</h4>
+                            <p>精锐步兵组成，训练有素，反应迅速</p>
+                        </div>
+                        
+                        <div class="equipment-card">
+                            <div class="equipment-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>对人作战特化</h4>
+                            <p>装备针对人类目标优化的武器系统</p>
+                        </div>
+                        
+                        <div class="equipment-card">
+                            <div class="equipment-icon">
+                                <i class="fas fa-road"></i>
+                            </div>
+                            <h4>巷道区域作战</h4>
+                            <p>专精于建筑内部和狭窄空间的作战</p>
+                        </div>
+                        
+                        <div class="equipment-card">
+                            <div class="equipment-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h4>薄弱的反装甲力量</h4>
+                            <p>缺乏重型反装甲武器，不适合对抗机械化单位</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 游戏集成 -->
+            <section class="game-integration">
+                <h2 class="integration-title">游戏内表现</h2>
+                <p style="text-align: center; color: #ccc; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    在Site-114514服务器中，NU-7 "Hammer Down"及其A连提供独特的游戏体验
+                </p>
+                
+                <div class="game-feature-grid">
+                    <div class="game-feature-card">
+                        <div class="game-feature-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <h4>刷新条件限制</h4>
+                        <p>仅在特定事件或高难度条件下才会出现的强力单位</p>
+                    </div>
+                    
+                    <div class="game-feature-card">
+                        <div class="game-feature-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4>主要支援单位</h4>
+                        <p>作为强大的支援力量，在关键时刻扭转战局</p>
+                    </div>
+                    
+                    <div class="game-feature-card">
+                        <div class="game-feature-icon">
+                            <i class="fas fa-fist-raised"></i>
+                        </div>
+                        <h4>强大实力</h4>
+                        <p>拥有远超常规单位的火力和生存能力</p>
+                    </div>
+                    
+                    <div class="game-feature-card">
+                        <div class="game-feature-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h4>O4指挥官召唤</h4>
+                        <p>A连主要为O4指挥官召唤，作为精英先锋部队</p>
+                    </div>
+                    
+                    <div class="game-feature-card">
+                        <div class="game-feature-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <h4>对人作战强力</h4>
+                        <p>A连在对人作战方面表现尤为出色</p>
+                    </div>
+                    
+                    <div class="game-feature-card">
+                        <div class="game-feature-icon">
+                            <i class="fas fa-fire-alt"></i>
+                        </div>
+                        <h4>重火力</h4>
+                        <p>配备服务器内顶级的武器和装备</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 标签 -->
+            <div class="tag-container">
+                <span class="tag">武装机动特遣队</span>
+                <span class="tag blue">营级规模</span>
+                <span class="tag">重火力单位</span>
+                <span class="tag">Site级响应</span>
+                <span class="tag green">特种作战</span>
+                <span class="tag">Site-114514专属</span>
+            </div>
+        </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" class="footer-link">返回主维基</a>
+                    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="footer-link">返回顶部</a>
+                    <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" target="_blank" class="footer-link">Site-114514维基</a>
+                </div>
+                <div class="copyright">
+                    © 2025-2026 Site-114514服务器社区<br>
+                    NU-7 "Hammer Down"资料 - 保密等级：Level 3<br>
+                    *NU-7 SOF特战A连为Site-114514社区原创设定
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 图片加载失败处理
+        document.addEventListener('DOMContentLoaded', function() {
+            const imgs = document.querySelectorAll('.unit-badge');
+            imgs.forEach(img => {
+                if (img && img.complete && img.naturalHeight === 0) {
+                    // 如果图片加载失败
+                    img.style.display = 'none';
+                    const fallbackId = img.alt.includes('A连') ? 'image-fallback2' : 'image-fallback';
+                    document.getElementById(fallbackId).style.display = 'flex';
+                }
+            });
+            
+            // 平滑滚动动画
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // 卡片悬停效果增强
+            const cards = document.querySelectorAll('.content-card, .unit-card, .equipment-card, .game-feature-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+            
+            // 锤子图标动画
+            const hammerIcon = document.querySelector('.logo-icon');
+            if (hammerIcon) {
+                hammerIcon.addEventListener('mouseenter', function() {
+                    this.style.animation = 'hammer-pulse 0.5s infinite';
+                });
+                hammerIcon.addEventListener('mouseleave', function() {
+                    this.style.animation = 'hammer-pulse 3s infinite';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
