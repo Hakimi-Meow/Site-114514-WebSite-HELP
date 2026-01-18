@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -326,6 +325,84 @@
         line-height: 1.7;
     }
     
+    /* 子单位展示区域 */
+    .subunit-section {
+        margin-top: 50px;
+        position: relative;
+    }
+    
+    .subunit-header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #c41e3a;
+    }
+    
+    .subunit-title {
+        font-size: 2.2rem;
+        color: #c41e3a;
+        margin-bottom: 10px;
+    }
+    
+    .subunit-subtitle {
+        color: #8a9bba;
+        font-size: 1.1rem;
+    }
+    
+    .subunit-card {
+        background: linear-gradient(135deg, rgba(30, 35, 46, 0.95), rgba(24, 28, 38, 0.95));
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 30px;
+        border: 1px solid #c41e3a;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .subunit-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+    
+    .subunit-header-small {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(196, 30, 58, 0.3);
+    }
+    
+    .subunit-icon {
+        font-size: 1.8rem;
+        color: #c41e3a;
+        background: rgba(196, 30, 58, 0.1);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .subunit-card-title {
+        font-size: 1.5rem;
+        color: #fff;
+        margin: 0;
+    }
+    
+    .subunit-image-container {
+        max-width: 400px;
+        margin: 20px auto;
+    }
+    
+    .subunit-image {
+        width: 100%;
+        border-radius: 10px;
+        border: 3px solid #c41e3a;
+        box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+    }
+    
     /* 装备特点部分 */
     .equipment-section {
         margin-top: 40px;
@@ -473,6 +550,11 @@
         color: #99ff99;
     }
     
+    .tag.yellow {
+        background: linear-gradient(135deg, #3a3a1a, #454512);
+        color: #ffff99;
+    }
+    
     /* 分隔线样式 */
     .divider {
         height: 3px;
@@ -547,6 +629,14 @@
         
         .card-title {
             font-size: 1.5rem;
+        }
+        
+        .subunit-card {
+            padding: 20px;
+        }
+        
+        .subunit-title {
+            font-size: 1.8rem;
         }
         
         .unit-grid, .equipment-grid, .game-feature-grid {
@@ -752,148 +842,186 @@
                 </div>
             </section>
 
-            <!-- 装备特点 -->
-            <section class="content-card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <div>
-                        <h2 class="card-title">装备特点</h2>
-                        <div class="card-subtitle">Advanced Military Equipment</div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <p>NU-7装备有基金会常规军事力量中最先进的武器系统：</p>
-                    
-                    <div class="equipment-grid">
-                        <div class="equipment-card">
-                            <div class="equipment-icon">
-                                <i class="fas fa-gun"></i>
-                            </div>
-                            <h4>重火力单位</h4>
-                            <p>配备重型机枪、榴弹发射器、反坦克导弹等重武器</p>
-                        </div>
-                        
-                        <div class="equipment-card">
-                            <div class="equipment-icon">
-                                <i class="fas fa-tank"></i>
-                            </div>
-                            <h4>装甲单位</h4>
-                            <p>拥有轻型装甲车、主战坦克等机械化装备</p>
-                        </div>
-                        
-                        <div class="equipment-card">
-                            <div class="equipment-icon">
-                                <i class="fas fa-helicopter"></i>
-                            </div>
-                            <h4>空中单位</h4>
-                            <p>武装直升机、运输直升机提供立体作战能力</p>
-                        </div>
-                        
-                        <div class="equipment-card">
-                            <div class="equipment-icon">
-                                <i class="fas fa-mountain"></i>
-                            </div>
-                            <h4>开阔地作战</h4>
-                            <p>擅长在开阔场地执行大规模军事行动</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <hr class="divider">
 
-            <!-- NU-7 SOF特战A连 -->
-            <section class="hero-section">
-                <h1 class="hero-title">NU-7 SOF特战A连</h1>
-                <p class="hero-subtitle">
-                    NU-7下属的特种作战分队，作为主力到达前的先锋力量，<br>
-                    擅长对人作战和巷道区域作战，应对小规模威胁。
-                </p>
-                
-                <!-- 图片显示区域 -->
-                <div class="image-display">
-                    <img src="/Site-114514-WebSite-HELP/NU7/543667ADFEFAA7DC4ACB71B08138C1BD.png" 
-                         alt="NU-7 SOF特战A连徽章" 
-                         class="unit-badge"
-                         onerror="this.style.display='none'; 
-                                  document.getElementById('image-fallback2').style.display='flex';">
+            <!-- 临时危险处理小组 -->
+            <section class="subunit-section">
+                <div class="subunit-header">
+                    <h2 class="subunit-title">临时危险处理小组</h2>
+                    <p class="subunit-subtitle">Site-114514 内部快速反应部队</p>
+                </div>
+
+                <!-- 临时危险处理小组介绍 -->
+                <div class="subunit-card">
+                    <div class="subunit-header-small">
+                        <div class="subunit-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div>
+                            <h3 class="subunit-card-title">临时危险处理小组</h3>
+                            <p class="card-subtitle">Temporary Hazard Response Team</p>
+                        </div>
+                    </div>
                     
-                    <div id="image-fallback2" class="image-fallback" style="display: none;">
-                        <i class="fas fa-user-secret"></i>
+                    <div class="subunit-image-container">
+                        <img src="/Site-114514-WebSite-HELP/NU7/42AC6D575606B5C1D7B429E5EC31BDA7.png" 
+                             alt="临时危险处理小组徽章" 
+                             class="subunit-image"
+                             onerror="this.style.display='none';">
+                    </div>
+                    
+                    <div class="card-content">
                         <p>
-                            NU-7 SOF特战A连徽章<br>
-                            <small>特种作战先锋部队 - 图片加载失败</small>
+                            <span class="highlight">临时危险处理小组</span>是从NU-7、E-11等特遣队中抽取的部分人员组成的驻扎于设施内部的快速反应部队。该小组通常由设施内部安全主管指挥，但实际调动权力并不在安全主管，而是由驻扎在设施的危险处理小组最高指挥者负责调动。
                         </p>
+                        <p>
+                            作为设施内部的快速反应力量，临时危险处理小组能够在第一时间应对突发安全事件，为主力部队的到达争取时间。该小组主要分为以下三个专业部队：
+                        </p>
+                        
+                        <div class="unit-grid" style="margin-top: 20px;">
+                            <div class="unit-card" style="border-top-color: #ff6b6b;">
+                                <h4><i class="fas fa-fire"></i> 临时危险处理小组</h4>
+                                <p>通用危险响应单位，处理常规安全威胁和突发事件</p>
+                            </div>
+                            
+                            <div class="unit-card" style="border-top-color: #99ff99;">
+                                <h4><i class="fas fa-biohazard"></i> 临时生化危险处理小组</h4>
+                                <p>专门处理生化威胁和污染事件的特殊单位</p>
+                            </div>
+                            
+                            <div class="unit-card" style="border-top-color: #4a9eff;">
+                                <h4><i class="fas fa-shield-alt"></i> 临时内部安全处理小组</h4>
+                                <p>负责设施内部安全检查和人员身份验证</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- A连介绍卡片 -->
-            <section class="content-card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-info-circle"></i>
+                <!-- NU-7 SOF特战A连 -->
+                <div class="subunit-card">
+                    <div class="subunit-header-small">
+                        <div class="subunit-icon">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <div>
+                            <h3 class="subunit-card-title">NU-7 SOF特战A连</h3>
+                            <p class="card-subtitle">Special Operations Force Alpha Company</p>
+                        </div>
                     </div>
-                    <div>
-                        <h2 class="card-title">A连简介</h2>
-                        <div class="card-subtitle">NU-7 Special Operations Force Alpha Company</div>
+                    
+                    <div class="subunit-image-container">
+                        <img src="/Site-114514-WebSite-HELP/NU7/543667ADFEFAA7DC4ACB71B08138C1BD.png" 
+                             alt="NU-7 SOF特战A连徽章" 
+                             class="subunit-image"
+                             onerror="this.style.display='none';">
+                    </div>
+                    
+                    <div class="card-content">
+                        <p>
+                            <span class="highlight">NU-7 SOF特战A连</span>是NU-7下属的一个特种作战分队，虽然不具备主力部队的全面实力，但在特定作战环境中表现出色。
+                        </p>
+                        <p>
+                            A连的主要任务是在主力部队到达之前，作为先锋力量清空场地、建立安全区。当站点遭到敌方小规模渗透时，A连将代替主力前往设施处理威胁，避免削弱站点的防守力量，防止发生更大规模的收容失效。
+                        </p>
+                        
+                        <div style="margin-top: 20px;">
+                            <h4 style="color: #ff6b6b; margin-bottom: 15px;">装备特点：</h4>
+                            <div class="equipment-grid">
+                                <div class="equipment-card">
+                                    <div class="equipment-icon">
+                                        <i class="fas fa-user-graduate"></i>
+                                    </div>
+                                    <h4>特种步兵单位</h4>
+                                    <p>精锐步兵组成，训练有素，反应迅速</p>
+                                </div>
+                                
+                                <div class="equipment-card">
+                                    <div class="equipment-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <h4>对人作战特化</h4>
+                                    <p>装备针对人类目标优化的武器系统</p>
+                                </div>
+                                
+                                <div class="equipment-card">
+                                    <div class="equipment-icon">
+                                        <i class="fas fa-road"></i>
+                                    </div>
+                                    <h4>巷道区域作战</h4>
+                                    <p>专精于建筑内部和狭窄空间的作战</p>
+                                </div>
+                                
+                                <div class="equipment-card">
+                                    <div class="equipment-icon">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <h4>薄弱的反装甲力量</h4>
+                                    <p>缺乏重型反装甲武器，不适合对抗机械化单位</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card-content">
-                    <p>
-                        <span class="highlight">NU-7 SOF特战A连</span>是NU-7下属的一个特种作战分队，虽然不具备主力部队的全面实力，但在特定作战环境中表现出色。
-                    </p>
-                    <p>
-                        A连的主要任务是在主力部队到达之前，作为先锋力量清空场地、建立安全区。当站点遭到敌方小规模渗透时，A连将代替主力前往设施处理威胁，避免削弱站点的防守力量，防止发生更大规模的收容失效。
-                    </p>
-                </div>
-            </section>
 
-            <!-- A连装备特点 -->
-            <section class="content-card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-tools"></i>
+                <!-- NU-7枪骑兵快速反应小组 -->
+                <div class="subunit-card">
+                    <div class="subunit-header-small">
+                        <div class="subunit-icon">
+                            <i class="fas fa-horse-head"></i>
+                        </div>
+                        <div>
+                            <h3 class="subunit-card-title">NU-7枪骑兵快速反应小组</h3>
+                            <p class="card-subtitle">Lancer Rapid Response Team</p>
+                        </div>
                     </div>
-                    <div>
-                        <h2 class="card-title">A连装备特点</h2>
-                        <div class="card-subtitle">Specialized Equipment for Urban Warfare</div>
+                    
+                    <div class="subunit-image-container">
+                        <img src="/Site-114514-WebSite-HELP/NU7/2B1CF8F9A3EC29152EBC7C7D72F775AD.png" 
+                             alt="NU-7枪骑兵快速反应小组徽章" 
+                             class="subunit-image"
+                             onerror="this.style.display='none';">
                     </div>
-                </div>
-                <div class="card-content">
-                    <div class="equipment-grid">
-                        <div class="equipment-card">
-                            <div class="equipment-icon">
-                                <i class="fas fa-user-graduate"></i>
-                            </div>
-                            <h4>特种步兵单位</h4>
-                            <p>精锐步兵组成，训练有素，反应迅速</p>
-                        </div>
+                    
+                    <div class="card-content">
+                        <p>
+                            <span class="highlight">NU-7枪骑兵快速反应小组</span>是一支驻扎在Site-114514周围的快速反应小组，通常由安全主管指挥。作为设施外围的第一道防线，该小组专门应对中小型收容失效及未知单位入侵事件。
+                        </p>
+                        <p>
+                            枪骑兵小组的主要职责是快速响应和初步控制，当小组评估威胁超出自身处理能力时，会立即召唤驻扎在设施附近的NU-7 "Hammer Down"主力部队来完成收容失效控制或抵御未知单位入侵。
+                        </p>
                         
-                        <div class="equipment-card">
-                            <div class="equipment-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h4>对人作战特化</h4>
-                            <p>装备针对人类目标优化的武器系统</p>
-                        </div>
-                        
-                        <div class="equipment-card">
-                            <div class="equipment-icon">
-                                <i class="fas fa-road"></i>
-                            </div>
-                            <h4>巷道区域作战</h4>
-                            <p>专精于建筑内部和狭窄空间的作战</p>
-                        </div>
-                        
-                        <div class="equipment-card">
-                            <div class="equipment-icon">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <h4>薄弱的反装甲力量</h4>
-                            <p>缺乏重型反装甲武器，不适合对抗机械化单位</p>
+                        <div style="margin-top: 20px;">
+                            <h4 style="color: #ff6b6b; margin-bottom: 15px;">行动特点：</h4>
+                            <ul class="info-list">
+                                <li>
+                                    <div class="list-icon"><i class="fas fa-bolt"></i></div>
+                                    <div class="list-content">
+                                        <strong>快速部署</strong>
+                                        驻扎在设施周围，能够在5分钟内到达现场
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-icon"><i class="fas fa-balance-scale"></i></div>
+                                    <div class="list-content">
+                                        <strong>威胁评估</strong>
+                                        具备专业威胁评估能力，准确判断是否需要主力支援
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-icon"><i class="fas fa-walkie-talkie"></i></div>
+                                    <div class="list-content">
+                                        <strong>通讯协调</strong>
+                                        与设施内部安全部队和外部主力部队保持实时通讯
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-icon"><i class="fas fa-ambulance"></i></div>
+                                    <div class="list-content">
+                                        <strong>紧急医疗</strong>
+                                        配备基础医疗设备，提供紧急医疗支持
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -903,7 +1031,7 @@
             <section class="game-integration">
                 <h2 class="integration-title">游戏内表现</h2>
                 <p style="text-align: center; color: #ccc; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                    在Site-114514服务器中，NU-7 "Hammer Down"及其A连提供独特的游戏体验
+                    在Site-114514服务器中，NU-7 "Hammer Down"及其下属单位提供独特的游戏体验
                 </p>
                 
                 <div class="game-feature-grid">
@@ -964,7 +1092,8 @@
                 <span class="tag">重火力单位</span>
                 <span class="tag">Site级响应</span>
                 <span class="tag green">特种作战</span>
-                <span class="tag">Site-114514专属</span>
+                <span class="tag yellow">快速反应</span>
+                <span class="tag">Site-114514</span>
             </div>
         </main>
     </div>
@@ -981,22 +1110,27 @@
                 <div class="copyright">
                     © 2025-2026 Site-114514服务器社区<br>
                     NU-7 "Hammer Down"资料 - 保密等级：Level 3<br>
+                    <br>
+                    
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // 图片加载失败处理
+        // 页面加载完成后执行
         document.addEventListener('DOMContentLoaded', function() {
-            const imgs = document.querySelectorAll('.unit-badge');
-            imgs.forEach(img => {
+            // 图片加载失败处理
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
                 if (img && img.complete && img.naturalHeight === 0) {
-                    // 如果图片加载失败
-                    img.style.display = 'none';
-                    const fallbackId = img.alt.includes('A连') ? 'image-fallback2' : 'image-fallback';
-                    document.getElementById(fallbackId).style.display = 'flex';
+                    console.log(`图片加载失败: ${img.alt}`);
                 }
+                
+                // 添加图片错误监听
+                img.addEventListener('error', function() {
+                    console.log(`图片加载失败: ${this.alt}`);
+                });
             });
             
             // 平滑滚动动画
@@ -1017,7 +1151,7 @@
             });
             
             // 卡片悬停效果增强
-            const cards = document.querySelectorAll('.content-card, .unit-card, .equipment-card, .game-feature-card');
+            const cards = document.querySelectorAll('.content-card, .unit-card, .equipment-card, .game-feature-card, .subunit-card');
             cards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
                     this.style.zIndex = '10';
@@ -1037,6 +1171,17 @@
                     this.style.animation = 'hammer-pulse 3s infinite';
                 });
             }
+            
+            // 添加单位卡片点击效果
+            const unitCards = document.querySelectorAll('.unit-card');
+            unitCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
         });
     </script>
 </body>
