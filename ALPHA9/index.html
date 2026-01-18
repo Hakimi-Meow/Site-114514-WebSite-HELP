@@ -15,14 +15,14 @@
     }
     
     body {
-        background-color: #0a141e;
-        color: #e6f2ff;
+        background-color: #0f0a1a;
+        color: #e6e6ff;
         line-height: 1.6;
         min-height: 100vh;
         background-image: 
-            radial-gradient(circle at 15% 25%, rgba(0, 100, 200, 0.1) 0%, transparent 25%),
-            radial-gradient(circle at 85% 75%, rgba(100, 0, 200, 0.08) 0%, transparent 25%),
-            linear-gradient(135deg, #070f17 0%, #0a141e 50%, #050a12 100%);
+            radial-gradient(circle at 15% 25%, rgba(100, 70, 200, 0.1) 0%, transparent 25%),
+            radial-gradient(circle at 85% 75%, rgba(150, 100, 255, 0.08) 0%, transparent 25%),
+            linear-gradient(135deg, #0c0714 0%, #0f0a1a 50%, #090512 100%);
     }
     
     .container {
@@ -33,8 +33,8 @@
     
     /* 头部样式 */
     .page-header {
-        background-color: #070f17;
-        border-bottom: 3px solid #4a9eff;
+        background-color: #0c0714;
+        border-bottom: 3px solid #8a2be2;
         padding: 20px 0;
         position: sticky;
         top: 0;
@@ -58,43 +58,43 @@
     
     .logo-icon {
         font-size: 2.5rem;
-        color: #4a9eff;
+        color: #8a2be2;
         animation: hope-pulse 3s infinite;
     }
     
     @keyframes hope-pulse {
         0% { 
             transform: scale(1); 
-            color: #4a9eff;
-            text-shadow: 0 0 5px rgba(74, 158, 255, 0.5);
+            color: #8a2be2;
+            text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
         }
         50% { 
             transform: scale(1.05);
-            color: #66b3ff;
-            text-shadow: 0 0 10px rgba(102, 179, 255, 0.7);
+            color: #9370db;
+            text-shadow: 0 0 10px rgba(147, 112, 219, 0.7);
         }
         100% { 
             transform: scale(1);
-            color: #4a9eff;
-            text-shadow: 0 0 5px rgba(74, 158, 255, 0.5);
+            color: #8a2be2;
+            text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
         }
     }
     
     .logo-text {
         font-size: 1.8rem;
         font-weight: bold;
-        color: #4a9eff;
+        color: #8a2be2;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
     
     .logo-subtext {
-        color: #99ccff;
+        color: #b19cd9;
         font-size: 0.9rem;
         margin-top: 2px;
     }
     
     .back-button {
-        background: linear-gradient(135deg, #4a9eff, #1a75ff);
+        background: linear-gradient(135deg, #8a2be2, #6a0dad);
         color: #fff;
         padding: 10px 20px;
         border-radius: 25px;
@@ -104,19 +104,19 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        box-shadow: 0 4px 15px rgba(74, 158, 255, 0.4);
+        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
     }
     
     .back-button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(74, 158, 255, 0.6);
-        background: linear-gradient(135deg, #66b3ff, #3385ff);
+        box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+        background: linear-gradient(135deg, #9370db, #7b3dbd);
     }
     
     /* 哲学横幅 */
     .philosophy-banner {
-        background: linear-gradient(135deg, rgba(74, 158, 255, 0.1), rgba(26, 117, 255, 0.05));
-        border: 2px solid #ff9900;
+        background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(106, 13, 173, 0.05));
+        border: 2px solid #ff6bcb;
         border-radius: 10px;
         padding: 20px;
         margin: 20px 0;
@@ -132,11 +132,11 @@
         left: 0;
         right: 0;
         height: 2px;
-        background: linear-gradient(90deg, #4a9eff, #ff9900, #4a9eff);
+        background: linear-gradient(90deg, #8a2be2, #ff6bcb, #8a2be2);
     }
     
     .philosophy-text {
-        color: #ffcc66;
+        color: #ff6bcb;
         font-size: 1.2rem;
         font-style: italic;
         font-weight: bold;
@@ -162,10 +162,10 @@
     
     .hero-title {
         font-size: 3rem;
-        color: #4a9eff;
+        color: #8a2be2;
         margin-bottom: 5px;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-        background: linear-gradient(90deg, #1a75ff, #4a9eff, #1a75ff);
+        background: linear-gradient(90deg, #6a0dad, #8a2be2, #6a0dad);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -173,7 +173,7 @@
     
     .hero-subtitle {
         font-size: 1.3rem;
-        color: #99ccff;
+        color: #b19cd9;
         margin-bottom: 30px;
         max-width: 800px;
         margin-left: auto;
@@ -184,7 +184,7 @@
     /* 双面标语 */
     .duality-quote {
         font-size: 1.5rem;
-        color: #ff9900;
+        color: #ff6bcb;
         margin-bottom: 10px;
         font-style: italic;
         text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -196,15 +196,15 @@
     }
     
     .duality-quote .hope {
-        color: #4a9eff;
+        color: #8a2be2;
     }
     
     .duality-quote .disaster {
-        color: #ff6666;
+        color: #ff6b6b;
     }
     
     .duality-quote .separator {
-        color: #cccccc;
+        color: #ccccff;
         font-size: 1.2rem;
     }
     
@@ -218,54 +218,54 @@
     .unit-badge {
         width: 100%;
         border-radius: 15px;
-        border: 4px solid #4a9eff;
+        border: 4px solid #8a2be2;
         box-shadow: 
-            0 10px 40px rgba(74, 158, 255, 0.3),
-            inset 0 0 20px rgba(102, 179, 255, 0.1);
+            0 10px 40px rgba(138, 43, 226, 0.3),
+            inset 0 0 20px rgba(147, 112, 219, 0.1);
         transition: transform 0.3s ease;
-        filter: drop-shadow(0 0 5px rgba(74, 158, 255, 0.5));
+        filter: drop-shadow(0 0 5px rgba(138, 43, 226, 0.5));
     }
     
     .unit-badge:hover {
         transform: scale(1.02);
-        filter: drop-shadow(0 0 10px rgba(74, 158, 255, 0.7));
+        filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.7));
     }
     
     .image-fallback {
         width: 100%;
         height: 300px;
-        background: linear-gradient(135deg, #0f1a29, #15243a);
+        background: linear-gradient(135deg, #1a1029, #21183a);
         border-radius: 15px;
-        border: 4px solid #4a9eff;
+        border: 4px solid #8a2be2;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 40px;
         text-align: center;
-        box-shadow: 0 10px 40px rgba(74, 158, 255, 0.3);
+        box-shadow: 0 10px 40px rgba(138, 43, 226, 0.3);
     }
     
     .image-fallback i {
         font-size: 5rem;
-        color: #4a9eff;
+        color: #8a2be2;
         margin-bottom: 20px;
         opacity: 0.8;
     }
     
     .image-fallback p {
-        color: #99ccff;
+        color: #b19cd9;
         font-size: 1.1rem;
         line-height: 1.6;
     }
     
     /* 内容卡片样式 */
     .content-card {
-        background: linear-gradient(135deg, rgba(20, 30, 45, 0.95), rgba(15, 23, 35, 0.95));
+        background: linear-gradient(135deg, rgba(26, 20, 45, 0.95), rgba(20, 15, 35, 0.95));
         border-radius: 15px;
         padding: 30px;
         margin-bottom: 30px;
-        border-left: 5px solid #4a9eff;
+        border-left: 5px solid #8a2be2;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
         transition: transform 0.3s ease;
         position: relative;
@@ -274,7 +274,7 @@
     
     .content-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(74, 158, 255, 0.1);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(138, 43, 226, 0.1);
     }
     
     .card-header {
@@ -286,8 +286,8 @@
     
     .card-icon {
         font-size: 2rem;
-        color: #4a9eff;
-        background: rgba(74, 158, 255, 0.1);
+        color: #8a2be2;
+        background: rgba(138, 43, 226, 0.1);
         width: 60px;
         height: 60px;
         border-radius: 50%;
@@ -298,18 +298,18 @@
     
     .card-title {
         font-size: 1.8rem;
-        color: #66b3ff;
+        color: #9370db;
         margin: 0;
     }
     
     .card-subtitle {
-        color: #99ccff;
+        color: #b19cd9;
         font-size: 1rem;
         margin-top: 5px;
     }
     
     .card-content {
-        color: #e6f2ff;
+        color: #e6e6ff;
         font-size: 1.1rem;
         line-height: 1.8;
     }
@@ -319,15 +319,15 @@
     }
     
     .highlight {
-        color: #66b3ff;
+        color: #9370db;
         font-weight: bold;
-        text-shadow: 0 0 5px rgba(102, 179, 255, 0.3);
+        text-shadow: 0 0 5px rgba(147, 112, 219, 0.3);
     }
     
     .danger {
-        color: #ff6666;
+        color: #ff6b6b;
         font-weight: bold;
-        background: rgba(255, 102, 102, 0.1);
+        background: rgba(255, 107, 107, 0.1);
         padding: 2px 6px;
         border-radius: 3px;
     }
@@ -335,47 +335,47 @@
     /* 邮件文档样式 */
     .email-document {
         background: rgba(0, 0, 0, 0.3);
-        border: 1px solid #4a9eff;
+        border: 1px solid #8a2be2;
         border-radius: 8px;
         padding: 20px;
         margin: 25px 0;
         font-family: 'Courier New', monospace;
         font-size: 0.95rem;
         line-height: 1.6;
-        color: #cccccc;
+        color: #ccccff;
         position: relative;
         overflow: hidden;
     }
     
     .email-header {
-        color: #4a9eff;
-        border-bottom: 1px solid #4a9eff;
+        color: #8a2be2;
+        border-bottom: 1px solid #8a2be2;
         padding-bottom: 10px;
         margin-bottom: 15px;
         font-weight: bold;
     }
     
     .email-from {
-        color: #ff9900;
+        color: #ff6bcb;
     }
     
     .email-to {
-        color: #66ff66;
+        color: #6bff6b;
     }
     
     .email-subject {
-        color: #ffcc66;
+        color: #ffcc6b;
     }
     
     .email-content {
         margin-top: 15px;
         padding-left: 10px;
-        border-left: 2px solid #4a9eff;
+        border-left: 2px solid #8a2be2;
     }
     
     .data-deleted {
-        color: #ff6666;
-        background: rgba(255, 102, 102, 0.1);
+        color: #ff6b6b;
+        background: rgba(255, 107, 107, 0.1);
         padding: 3px;
         border-radius: 3px;
         font-style: italic;
@@ -390,10 +390,10 @@
     }
     
     .anomaly-card {
-        background: rgba(74, 158, 255, 0.05);
+        background: rgba(138, 43, 226, 0.05);
         border-radius: 10px;
         padding: 20px;
-        border-top: 3px solid #1a75ff;
+        border-top: 3px solid #6a0dad;
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
@@ -406,17 +406,17 @@
         left: 0;
         width: 5px;
         height: 100%;
-        background: #1a75ff;
+        background: #6a0dad;
     }
     
     .anomaly-card:hover {
-        background: rgba(74, 158, 255, 0.08);
+        background: rgba(138, 43, 226, 0.08);
         transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(74, 158, 255, 0.2);
+        box-shadow: 0 8px 20px rgba(138, 43, 226, 0.2);
     }
     
     .anomaly-card h4 {
-        color: #1a75ff;
+        color: #6a0dad;
         margin-bottom: 10px;
         font-size: 1.2rem;
         display: flex;
@@ -425,7 +425,7 @@
     }
     
     .anomaly-card p {
-        color: #cce0ff;
+        color: #d9ccff;
         font-size: 0.95rem;
         line-height: 1.7;
     }
@@ -437,7 +437,7 @@
     
     .timeline-title {
         text-align: center;
-        color: #4a9eff;
+        color: #8a2be2;
         margin-bottom: 30px;
         font-size: 2rem;
     }
@@ -455,7 +455,7 @@
         top: 0;
         bottom: 0;
         width: 3px;
-        background: linear-gradient(to bottom, #4a9eff, #1a75ff, #4a9eff);
+        background: linear-gradient(to bottom, #8a2be2, #6a0dad, #8a2be2);
     }
     
     .timeline-item {
@@ -471,33 +471,33 @@
         top: 5px;
         width: 15px;
         height: 15px;
-        background: #4a9eff;
+        background: #8a2be2;
         border-radius: 50%;
-        border: 3px solid #0a141e;
-        box-shadow: 0 0 0 3px #4a9eff;
+        border: 3px solid #0f0a1a;
+        box-shadow: 0 0 0 3px #8a2be2;
     }
     
     .timeline-date {
-        color: #66b3ff;
+        color: #9370db;
         font-weight: bold;
         margin-bottom: 5px;
         font-size: 1.1rem;
     }
     
     .timeline-content {
-        color: #cccccc;
-        background: rgba(74, 158, 255, 0.05);
+        color: #ccccff;
+        background: rgba(138, 43, 226, 0.05);
         padding: 15px;
         border-radius: 8px;
-        border-left: 3px solid #4a9eff;
+        border-left: 3px solid #8a2be2;
     }
     
     /* ART小组信息 */
     .art-section {
         background: linear-gradient(135deg, 
-            rgba(74, 158, 255, 0.1), 
-            rgba(26, 117, 255, 0.1));
-        border: 2px solid #4a9eff;
+            rgba(138, 43, 226, 0.1), 
+            rgba(106, 13, 173, 0.1));
+        border: 2px solid #8a2be2;
         border-radius: 15px;
         padding: 40px;
         margin-top: 40px;
@@ -512,19 +512,19 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(90deg, #4a9eff, #66b3ff);
+        background: linear-gradient(90deg, #8a2be2, #9370db);
     }
     
     .art-title {
         text-align: center;
-        color: #66b3ff;
+        color: #9370db;
         margin-bottom: 30px;
         font-size: 2rem;
     }
     
     .art-content {
         text-align: center;
-        color: #99ccff;
+        color: #b19cd9;
         max-width: 800px;
         margin: 0 auto 30px;
         line-height: 1.8;
@@ -540,8 +540,8 @@
     }
     
     .tag {
-        background: linear-gradient(135deg, #1a2a3a, #0d1a2a);
-        color: #66b3ff;
+        background: linear-gradient(135deg, #2a1a3a, #1a0d2a);
+        color: #9370db;
         padding: 10px 20px;
         border-radius: 25px;
         font-size: 0.9rem;
@@ -551,29 +551,34 @@
     
     .tag:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(102, 179, 255, 0.3);
-        background: linear-gradient(135deg, #223344, #112233);
+        box-shadow: 0 5px 15px rgba(147, 112, 219, 0.3);
+        background: linear-gradient(135deg, #332244, #221133);
     }
     
     .tag.red {
-        background: linear-gradient(135deg, #3a1a1a, #2a0d0d);
-        color: #ff6666;
+        background: linear-gradient(135deg, #3a1a2a, #2a0d1a);
+        color: #ff6b6b;
     }
     
     .tag.green {
-        background: linear-gradient(135deg, #1a3a1a, #0d2a0d);
-        color: #66ff66;
+        background: linear-gradient(135deg, #1a3a2a, #0d2a1a);
+        color: #6bff6b;
     }
     
-    .tag.purple {
-        background: linear-gradient(135deg, #2a1a3a, #1a0d2a);
-        color: #cc99ff;
+    .tag.pink {
+        background: linear-gradient(135deg, #3a1a3a, #2a0d2a);
+        color: #ff6bcb;
+    }
+    
+    .tag.blue {
+        background: linear-gradient(135deg, #1a2a3a, #0d1a2a);
+        color: #6bcbff;
     }
     
     /* 页脚 */
     .page-footer {
-        background-color: #070f17;
-        border-top: 1px solid #1a2a3a;
+        background-color: #0c0714;
+        border-top: 1px solid #2a1a3a;
         padding: 40px 0;
         margin-top: 60px;
     }
@@ -593,22 +598,22 @@
     }
     
     .footer-link {
-        color: #66b3ff;
+        color: #9370db;
         text-decoration: none;
         font-size: 0.9rem;
         transition: color 0.3s ease;
     }
     
     .footer-link:hover {
-        color: #4a9eff;
+        color: #8a2be2;
         text-decoration: underline;
     }
     
     .copyright {
-        color: #6688aa;
+        color: #8a7baa;
         font-size: 0.9rem;
         padding-top: 20px;
-        border-top: 1px solid #1a2a3a;
+        border-top: 1px solid #2a1a3a;
         margin-top: 20px;
     }
     
@@ -986,7 +991,7 @@
                         
                         <div class="anomaly-card">
                             <h4><i class="fas fa-robot"></i> SCP-1360 "安德森"</h4>
-                            <p">具有高度智能和学习能力的机器人实体，提供技术支持和战术分析</p>
+                            <p>具有高度智能和学习能力的机器人实体，提供技术支持和战术分析</p>
                         </div>
                     </div>
                     
@@ -1005,22 +1010,22 @@
                 </p>
                 
                 <div class="anomaly-grid">
-                    <div class="anomaly-card" style="border-top-color: #ff9900;">
+                    <div class="anomaly-card" style="border-top-color: #ff6bcb;">
                         <h4><i class="fas fa-bolt"></i> 快速部署能力</h4>
                         <p>能够在接到警报后15分钟内完成部署，响应速度远超常规单位</p>
                     </div>
                     
-                    <div class="anomaly-card" style="border-top-color: #ff9900;">
+                    <div class="anomaly-card" style="border-top-color: #ff6bcb;">
                         <h4><i class="fas fa-crosshairs"></i> 精准行动</h4>
                         <p>专注于高价值目标的精准打击，最小化附带损害</p>
                     </div>
                     
-                    <div class="anomaly-card" style="border-top-color: #ff9900;">
+                    <div class="anomaly-card" style="border-top-color: #ff6bcb;">
                         <h4><i class="fas fa-handshake"></i> 异常协作</h4>
                         <p>擅长协调不同人形异常的能力，发挥协同作战效果</p>
                     </div>
                     
-                    <div class="anomaly-card" style="border-top-color: #ff9900;">
+                    <div class="anomaly-card" style="border-top-color: #ff6bcb;">
                         <h4><i class="fas fa-shield-alt"></i> 危机处理</h4>
                         <p>专门处理突发性异常事件和收容失效危机</p>
                     </div>
@@ -1044,30 +1049,30 @@
                     </p>
                     
                     <div class="anomaly-grid">
-                        <div class="anomaly-card" style="border-top-color: #66ff66;">
+                        <div class="anomaly-card" style="border-top-color: #6bff6b;">
                             <h4><i class="fas fa-hope"></i> 作为希望</h4>
                             <p>面对常规手段无法应对的异常威胁时，Alpha-9是基金会最后的防线</p>
                         </div>
                         
-                        <div class="anomaly-card" style="border-top-color: #ff6666;">
+                        <div class="anomaly-card" style="border-top-color: #ff6b6b;">
                             <h4><i class="fas fa-skull-crossbones"></i> 作为天灾</h4>
                             <p>人形异常本身即是收容对象，其失控可能导致灾难性后果</p>
                         </div>
                         
-                        <div class="anomaly-card" style="border-top-color: #ff9900;">
+                        <div class="anomaly-card" style="border-top-color: #ffcc6b;">
                             <h4><i class="fas fa-scale-balanced"></i> 平衡之道</h4>
                             <p>在利用异常力量与控制异常风险之间寻找微妙的平衡</p>
                         </div>
                         
-                        <div class="anomaly-card" style="border-top-color: #cc66ff;">
+                        <div class="anomaly-card" style="border-top-color: #ff6bcb;">
                             <h4><i class="fas fa-eye"></i> 必要之恶</h4>
                             <p>为了更大的善，有时必须接受和使用有限的"恶"</p>
                         </div>
                     </div>
                     
-                    <div style="margin-top: 25px; padding: 20px; background: rgba(74, 158, 255, 0.1); border-radius: 10px; border-left: 4px solid #ff9900;">
-                        <h4 style="color: #ff9900; margin-bottom: 10px;"><i class="fas fa-quote-left"></i> 哲学思考</h4>
-                        <p style="color: #ffcc99; font-style: italic; line-height: 1.7;">
+                    <div style="margin-top: 25px; padding: 20px; background: rgba(138, 43, 226, 0.1); border-radius: 10px; border-left: 4px solid #ff6bcb;">
+                        <h4 style="color: #ff6bcb; margin-bottom: 10px;"><i class="fas fa-quote-left"></i> 哲学思考</h4>
+                        <p style="color: #ffccff; font-style: italic; line-height: 1.7;">
                             "当我们将怪物编入军队，我们便不再是单纯的守护者。<br>
                             我们创造了新的平衡，也承担了新的风险。<br>
                             Alpha-9提醒我们：在最黑暗的时刻，<br>
@@ -1081,10 +1086,10 @@
             <div class="tag-container">
                 <span class="tag">基金会特遣队</span>
                 <span class="tag.red">人形异常</span>
-                <span class="tag.green">最后的希望</span>
-                <span class="tag.purple">Omega-7继承者</span>
+                <span class="tag.pink">最后的希望</span>
+                <span class="tag.blue">Omega-7继承者</span>
                 <span class="tag">重生计划</span>
-                <span class="tag">ART快速反应</span>
+                <span class="tag.green">ART快速反应</span>
                 <span class="tag">Alpha-9单位</span>
             </div>
         </main>
@@ -1166,12 +1171,12 @@
                     
                     if (hopeElement && disasterElement) {
                         // 交替强调效果
-                        hopeElement.style.textShadow = '0 0 10px rgba(74, 158, 255, 0.7)';
-                        disasterElement.style.textShadow = '0 0 5px rgba(255, 102, 102, 0.5)';
+                        hopeElement.style.textShadow = '0 0 10px rgba(138, 43, 226, 0.7)';
+                        disasterElement.style.textShadow = '0 0 5px rgba(255, 107, 107, 0.5)';
                         
                         setTimeout(() => {
-                            hopeElement.style.textShadow = '0 0 5px rgba(74, 158, 255, 0.5)';
-                            disasterElement.style.textShadow = '0 0 10px rgba(255, 102, 102, 0.7)';
+                            hopeElement.style.textShadow = '0 0 5px rgba(138, 43, 226, 0.5)';
+                            disasterElement.style.textShadow = '0 0 10px rgba(255, 107, 107, 0.7)';
                         }, 1000);
                     }
                 }, 2000);
@@ -1208,7 +1213,7 @@
             if (philosophyBanner) {
                 setInterval(() => {
                     philosophyBanner.style.borderColor = 
-                        Math.random() > 0.5 ? '#ff9900' : '#ffcc00';
+                        Math.random() > 0.5 ? '#ff6bcb' : '#ff99ff';
                 }, 2000);
             }
             
