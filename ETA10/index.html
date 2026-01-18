@@ -15,14 +15,14 @@
     }
     
     body {
-        background-color: #0f0f1a;
-        color: #f0f0ff;
+        background-color: #1a1a1a;
+        color: #cccccc;
         line-height: 1.6;
         min-height: 100vh;
         background-image: 
-            radial-gradient(circle at 10% 20%, rgba(75, 0, 130, 0.15) 0%, transparent 20%),
-            radial-gradient(circle at 90% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 20%),
-            linear-gradient(135deg, #070710 0%, #0f0f1a 50%, #05050a 100%);
+            radial-gradient(circle at 15% 25%, rgba(100, 100, 100, 0.1) 0%, transparent 25%),
+            radial-gradient(circle at 85% 75%, rgba(150, 150, 150, 0.08) 0%, transparent 25%),
+            linear-gradient(135deg, #141414 0%, #1a1a1a 50%, #101010 100%);
     }
     
     .container {
@@ -33,13 +33,13 @@
     
     /* 头部样式 */
     .page-header {
-        background-color: #070710;
-        border-bottom: 3px solid #8a2be2;
+        background-color: #141414;
+        border-bottom: 3px solid #808080;
         padding: 20px 0;
         position: sticky;
         top: 0;
         z-index: 1000;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
     }
     
     .header-content {
@@ -57,78 +57,45 @@
     }
     
     .logo-icon {
-        font-size: 2.8rem;
-        color: #8a2be2;
-        animation: eye-pulse 4s infinite;
-        position: relative;
+        font-size: 2.5rem;
+        color: #b3b3b3;
+        animation: eye-pulse 3s infinite;
     }
     
     @keyframes eye-pulse {
         0% { 
             transform: scale(1); 
-            color: #8a2be2;
-            text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
-        }
-        25% { 
-            transform: scale(1.05);
-            color: #9370db;
-            text-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+            color: #b3b3b3;
+            opacity: 0.7;
         }
         50% { 
-            transform: scale(1);
-            color: #8a2be2;
-            text-shadow: 0 0 15px rgba(138, 43, 226, 0.9);
-        }
-        75% { 
-            transform: scale(1.03);
-            color: #ba55d3;
-            text-shadow: 0 0 12px rgba(138, 43, 226, 0.8);
+            transform: scale(1.05);
+            color: #ffffff;
+            opacity: 1;
         }
         100% { 
             transform: scale(1);
-            color: #8a2be2;
-            text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+            color: #b3b3b3;
+            opacity: 0.7;
         }
-    }
-    
-    /* 闭眼效果 */
-    .logo-icon::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, 
-            transparent 0%, 
-            rgba(0, 0, 0, 0.7) 30%, 
-            rgba(0, 0, 0, 0.7) 70%, 
-            transparent 100%);
-        animation: blink 8s infinite;
-        z-index: 1;
-    }
-    
-    @keyframes blink {
-        0%, 90%, 100% { opacity: 0; }
-        95% { opacity: 1; }
     }
     
     .logo-text {
         font-size: 1.8rem;
         font-weight: bold;
-        color: #8a2be2;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+        color: #cccccc;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
     
     .logo-subtext {
-        color: #9370db;
+        color: #999999;
         font-size: 0.9rem;
         margin-top: 2px;
     }
     
     .back-button {
-        background: linear-gradient(135deg, #8a2be2, #4b0082);
-        color: #f0f0ff;
+        background: linear-gradient(135deg, #666666, #4d4d4d);
+        color: #ffffff;
         padding: 10px 20px;
         border-radius: 25px;
         text-decoration: none;
@@ -137,84 +104,50 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+        box-shadow: 0 4px 15px rgba(102, 102, 102, 0.4);
     }
     
     .back-button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
-        background: linear-gradient(135deg, #9370db, #5d0082);
+        box-shadow: 0 6px 20px rgba(102, 102, 102, 0.6);
+        background: linear-gradient(135deg, #808080, #666666);
     }
     
-    /* 机密横幅 */
-    .classified-banner {
-        background: linear-gradient(135deg, #1a0f2a, #0f0f1a);
-        border: 2px solid #8a2be2;
+    /* 认知危害警告横幅 */
+    .cognitohazard-banner {
+        background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+        border: 2px solid #ff9900;
         border-radius: 10px;
-        padding: 20px;
+        padding: 15px 20px;
         margin: 20px 0;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+        animation: hazard-pulse 2s infinite alternate;
     }
     
-    .classified-banner::before {
-        content: '视觉威胁协议';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
-        font-size: 4rem;
-        color: rgba(138, 43, 226, 0.1);
-        font-weight: bold;
-        letter-spacing: 10px;
-        z-index: 0;
+    @keyframes hazard-pulse {
+        from { 
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+            border-color: #ff9900;
+        }
+        to { 
+            box-shadow: 0 4px 20px rgba(255, 153, 0, 0.5);
+            border-color: #ffcc00;
+        }
     }
     
-    .classified-content {
-        position: relative;
-        z-index: 1;
+    .cognitohazard-icon {
+        font-size: 1.8rem;
+        color: #ff9900;
+        min-width: 40px;
     }
     
-    .classified-icon {
-        font-size: 2rem;
-        color: #8a2be2;
-        margin-bottom: 15px;
-    }
-    
-    .classified-text {
-        color: #ba55d3;
-        font-size: 1.1rem;
-        line-height: 1.6;
-        font-weight: bold;
-    }
-    
-    /* 引用框 */
-    .quote-box {
-        background: linear-gradient(135deg, rgba(138, 43, 226, 0.05), rgba(75, 0, 130, 0.05));
-        border-left: 4px solid #8a2be2;
-        padding: 25px;
-        margin: 30px 0;
-        font-style: italic;
-        position: relative;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-    
-    .quote-text {
-        color: #d8bfd8;
-        font-size: 1.2rem;
-        line-height: 1.8;
-        text-align: center;
-        font-family: 'Georgia', serif;
-    }
-    
-    .quote-author {
-        color: #9370db;
-        text-align: right;
-        margin-top: 15px;
-        font-style: normal;
-        font-size: 0.9rem;
+    .cognitohazard-text {
+        color: #ffcc99;
+        font-size: 1rem;
+        line-height: 1.5;
     }
     
     /* 主要内容区 */
@@ -230,144 +163,70 @@
     
     .hero-title {
         font-size: 3rem;
-        color: #8a2be2;
+        color: #cccccc;
         margin-bottom: 10px;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-        background: linear-gradient(90deg, #4b0082, #8a2be2, #4b0082);
+        background: linear-gradient(90deg, #999999, #cccccc, #999999);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        position: relative;
     }
     
     .hero-subtitle {
         font-size: 1.3rem;
-        color: #9370db;
+        color: #999999;
         margin-bottom: 30px;
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
         line-height: 1.8;
-        font-weight: 300;
     }
     
-    /* 图片显示区域 */
-    .image-display {
-        max-width: 400px;
-        margin: 0 auto 40px;
+    /* 琥珀摘要框 */
+    .amber-summary {
+        background: linear-gradient(135deg, rgba(255, 204, 0, 0.1), rgba(204, 153, 0, 0.05));
+        border: 2px solid #ffcc00;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 30px 0;
         position: relative;
+        overflow: hidden;
     }
     
-    .unit-badge {
-        width: 100%;
-        border-radius: 15px;
-        border: 4px solid #8a2be2;
-        box-shadow: 
-            0 10px 40px rgba(138, 43, 226, 0.3),
-            inset 0 0 20px rgba(147, 112, 219, 0.1);
-        transition: transform 0.3s ease;
-        filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.5));
-        animation: badge-glow 6s infinite;
+    .amber-summary::before {
+        content: 'AMBER 摘要';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        background: #1a1a1a;
+        color: #ffcc00;
+        padding: 0 10px;
+        font-size: 0.9rem;
+        font-weight: bold;
     }
     
-    @keyframes badge-glow {
-        0%, 100% { 
-            box-shadow: 
-                0 10px 40px rgba(138, 43, 226, 0.3),
-                inset 0 0 20px rgba(147, 112, 219, 0.1),
-                0 0 15px rgba(138, 43, 226, 0.4);
-        }
-        50% { 
-            box-shadow: 
-                0 10px 40px rgba(138, 43, 226, 0.5),
-                inset 0 0 25px rgba(147, 112, 219, 0.2),
-                0 0 25px rgba(138, 43, 226, 0.6);
-        }
-    }
-    
-    .unit-badge:hover {
-        transform: scale(1.02);
-        filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.7));
-    }
-    
-    .image-fallback {
-        width: 100%;
-        height: 300px;
-        background: linear-gradient(135deg, #1a0f2a, #221533);
-        border-radius: 15px;
-        border: 4px solid #8a2be2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 40px;
-        text-align: center;
-        box-shadow: 0 10px 40px rgba(138, 43, 226, 0.3);
-    }
-    
-    .image-fallback i {
-        font-size: 5rem;
-        color: #8a2be2;
-        margin-bottom: 20px;
-        opacity: 0.8;
-    }
-    
-    .image-fallback p {
-        color: #9370db;
+    .amber-content {
+        color: #ffcc99;
         font-size: 1.1rem;
         line-height: 1.6;
     }
     
     /* 内容卡片样式 */
     .content-card {
-        background: linear-gradient(135deg, rgba(34, 15, 50, 0.95), rgba(26, 10, 40, 0.95));
+        background: linear-gradient(135deg, rgba(42, 42, 42, 0.95), rgba(34, 34, 34, 0.95));
         border-radius: 15px;
         padding: 30px;
         margin-bottom: 30px;
-        border-left: 5px solid #8a2be2;
+        border-left: 5px solid #808080;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
         transition: transform 0.3s ease;
         position: relative;
         overflow: hidden;
     }
     
-    .content-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #8a2be2, transparent);
-    }
-    
     .content-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(138, 43, 226, 0.1);
-    }
-    
-    /* 视觉保护层 */
-    .visual-protection {
-        position: relative;
-    }
-    
-    .visual-protection::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 10px,
-            rgba(138, 43, 226, 0.03) 10px,
-            rgba(138, 43, 226, 0.03) 20px
-        );
-        pointer-events: none;
-        z-index: 1;
-        opacity: 0.5;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(128, 128, 128, 0.1);
     }
     
     .card-header {
@@ -375,49 +234,36 @@
         align-items: center;
         gap: 15px;
         margin-bottom: 25px;
-        padding-bottom: 15px;
-        border-bottom: 1px solid rgba(138, 43, 226, 0.3);
-        position: relative;
-        z-index: 2;
     }
     
     .card-icon {
         font-size: 2rem;
-        color: #8a2be2;
-        background: rgba(138, 43, 226, 0.1);
+        color: #b3b3b3;
+        background: rgba(179, 179, 179, 0.1);
         width: 60px;
         height: 60px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
-        z-index: 2;
     }
     
     .card-title {
         font-size: 1.8rem;
-        color: #9370db;
+        color: #d9d9d9;
         margin: 0;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        position: relative;
-        z-index: 2;
     }
     
     .card-subtitle {
-        color: #ba55d3;
+        color: #999999;
         font-size: 1rem;
         margin-top: 5px;
-        position: relative;
-        z-index: 2;
     }
     
     .card-content {
-        color: #f0f0ff;
+        color: #e6e6e6;
         font-size: 1.1rem;
         line-height: 1.8;
-        position: relative;
-        z-index: 2;
     }
     
     .card-content p {
@@ -425,17 +271,17 @@
     }
     
     .highlight {
-        color: #9370db;
+        color: #ffcc00;
         font-weight: bold;
-        text-shadow: 0 0 5px rgba(147, 112, 219, 0.3);
+        text-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
     }
     
-    .classified {
-        color: #ba55d3;
-        background: rgba(138, 43, 226, 0.1);
+    .warning {
+        color: #ff9900;
+        font-weight: bold;
+        background: rgba(255, 153, 0, 0.1);
         padding: 2px 6px;
         border-radius: 3px;
-        font-family: monospace;
     }
     
     /* 信息列表 */
@@ -446,12 +292,10 @@
     
     .info-list li {
         padding: 15px 0;
-        border-bottom: 1px solid #2a1b3a;
+        border-bottom: 1px solid #4d4d4d;
         display: flex;
         align-items: flex-start;
         gap: 15px;
-        position: relative;
-        z-index: 2;
     }
     
     .info-list li:last-child {
@@ -459,107 +303,202 @@
     }
     
     .list-icon {
-        color: #8a2be2;
+        color: #b3b3b3;
         font-size: 1.2rem;
         min-width: 25px;
         margin-top: 2px;
-        position: relative;
-        z-index: 2;
     }
     
     .list-content strong {
-        color: #9370db;
+        color: #d9d9d9;
         display: block;
         margin-bottom: 5px;
         font-size: 1.1rem;
-        position: relative;
-        z-index: 2;
     }
     
-    /* 特性网格 */
-    .feature-grid {
+    /* 危害类型网格 */
+    .hazard-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 20px;
         margin-top: 25px;
-        position: relative;
-        z-index: 2;
     }
     
-    .feature-card {
-        background: rgba(138, 43, 226, 0.05);
+    .hazard-card {
+        background: rgba(128, 128, 128, 0.05);
         border-radius: 10px;
         padding: 20px;
-        border-top: 3px solid #4b0082;
+        border-top: 3px solid #666666;
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
     }
     
-    .feature-card::before {
+    .hazard-card::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         width: 5px;
         height: 100%;
-        background: #4b0082;
+        background: #666666;
     }
     
-    .feature-card:hover {
-        background: rgba(138, 43, 226, 0.08);
+    .hazard-card:hover {
+        background: rgba(128, 128, 128, 0.08);
         transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(138, 43, 226, 0.2);
+        box-shadow: 0 8px 20px rgba(128, 128, 128, 0.2);
     }
     
-    .feature-card h4 {
-        color: #4b0082;
+    .hazard-card h4 {
+        color: #666666;
         margin-bottom: 10px;
         font-size: 1.2rem;
         display: flex;
         align-items: center;
         gap: 10px;
-        position: relative;
-        z-index: 2;
     }
     
-    .feature-card p {
-        color: #d8bfd8;
+    .hazard-card p {
+        color: #cccccc;
         font-size: 0.95rem;
         line-height: 1.7;
-        position: relative;
-        z-index: 2;
     }
     
-    /* 视觉保护效果 */
-    .eye-protection {
+    /* O4指令部信息 */
+    .o4-directive {
+        background: linear-gradient(135deg, 
+            rgba(128, 128, 128, 0.1), 
+            rgba(102, 102, 102, 0.1));
+        border: 2px solid #808080;
+        border-radius: 15px;
+        padding: 40px;
+        margin: 40px 0;
         position: relative;
         overflow: hidden;
     }
     
-    .eye-protection::before {
-        content: '👁️';
+    .o4-directive::before {
+        content: '';
         position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #808080, #b3b3b3);
+    }
+    
+    .o4-title {
+        text-align: center;
+        color: #b3b3b3;
+        margin-bottom: 30px;
+        font-size: 2rem;
+    }
+    
+    /* LRC代码示例 */
+    .lrc-example {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid #808080;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 25px 0;
+        font-family: 'Courier New', monospace;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #cccccc;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .lrc-example::before {
+        content: 'LRC代码示例';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        background: #1a1a1a;
+        color: #808080;
+        padding: 0 10px;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+    
+    .lrc-code {
+        color: #ffcc00;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    /* 特别指导框 */
+    .special-guide {
+        background: linear-gradient(135deg, rgba(255, 153, 0, 0.1), rgba(204, 102, 0, 0.05));
+        border: 2px solid #ff9900;
+        border-radius: 10px;
+        padding: 25px;
+        margin: 30px 0;
+    }
+    
+    .special-guide h4 {
+        color: #ff9900;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    /* 能力展示部分 */
+    .ability-section {
+        margin-top: 40px;
+    }
+    
+    .ability-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+    }
+    
+    .ability-card {
+        background: rgba(102, 102, 102, 0.05);
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid rgba(153, 153, 153, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .ability-card:hover {
+        transform: translateY(-5px);
+        border-color: #b3b3b3;
+        box-shadow: 0 8px 20px rgba(179, 179, 179, 0.2);
+    }
+    
+    .ability-icon {
         font-size: 3rem;
-        opacity: 0.1;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(0deg);
-        animation: eye-rotate 20s linear infinite;
-        z-index: 1;
+        color: #b3b3b3;
+        margin-bottom: 15px;
     }
     
-    @keyframes eye-rotate {
-        0% { transform: translate(-50%, -50%) rotate(0deg); }
-        100% { transform: translate(-50%, -50%) rotate(360deg); }
+    .ability-card h4 {
+        color: #d9d9d9;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
     }
     
-    /* 安全协议部分 */
-    .clearance-section {
+    .ability-card p {
+        color: #b3b3b3;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    /* 相关MTF对比 */
+    .related-mtf {
         background: linear-gradient(135deg, 
-            rgba(138, 43, 226, 0.1), 
-            rgba(75, 0, 130, 0.1));
-        border: 2px solid #8a2be2;
+            rgba(128, 128, 128, 0.1), 
+            rgba(102, 102, 102, 0.1));
+        border: 2px solid #808080;
         border-radius: 15px;
         padding: 40px;
         margin-top: 40px;
@@ -567,151 +506,61 @@
         overflow: hidden;
     }
     
-    .clearance-section::before {
+    .related-mtf::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(90deg, #8a2be2, #4b0082);
+        background: linear-gradient(90deg, #808080, #b3b3b3);
     }
     
-    .clearance-title {
+    .related-title {
         text-align: center;
-        color: #9370db;
+        color: #b3b3b3;
         margin-bottom: 30px;
         font-size: 2rem;
-        position: relative;
-        z-index: 2;
     }
     
-    .clearance-grid {
+    .mtf-comparison {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 25px;
-        position: relative;
-        z-index: 2;
+        margin-top: 20px;
     }
     
-    .clearance-card {
-        background: rgba(0, 0, 0, 0.4);
+    .mtf-card {
+        background: rgba(0, 0, 0, 0.3);
         padding: 25px;
         border-radius: 10px;
         text-align: center;
-        border: 1px solid rgba(138, 43, 226, 0.2);
+        border: 1px solid rgba(153, 153, 153, 0.2);
         transition: all 0.3s ease;
-        position: relative;
-        z-index: 2;
     }
     
-    .clearance-card:hover {
+    .mtf-card:hover {
         transform: translateY(-5px);
-        border-color: #9370db;
-        background: rgba(0, 0, 0, 0.5);
+        border-color: #b3b3b3;
+        background: rgba(0, 0, 0, 0.4);
     }
     
-    .clearance-icon {
+    .mtf-icon {
         font-size: 2.5rem;
-        color: #9370db;
+        color: #b3b3b3;
         margin-bottom: 15px;
-        position: relative;
-        z-index: 2;
     }
     
-    .clearance-card h4 {
-        color: #8a2be2;
+    .mtf-card h4 {
+        color: #d9d9d9;
         margin-bottom: 10px;
         font-size: 1.2rem;
-        position: relative;
-        z-index: 2;
     }
     
-    .clearance-card p {
-        color: #ba55d3;
+    .mtf-card p {
+        color: #b3b3b3;
         font-size: 0.9rem;
         line-height: 1.6;
-        position: relative;
-        z-index: 2;
-    }
-    
-    /* 访问记录器 */
-    .access-recorder {
-        background: linear-gradient(135deg, #1a0f2a, #0f0f1a);
-        border: 1px solid #8a2be2;
-        border-radius: 8px;
-        padding: 15px;
-        margin: 30px 0;
-        font-family: 'Courier New', monospace;
-        color: #9370db;
-        font-size: 0.9rem;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .access-recorder::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, #8a2be2, transparent, #8a2be2);
-        animation: scan 2s linear infinite;
-    }
-    
-    @keyframes scan {
-        0% { left: -100%; }
-        100% { left: 100%; }
-    }
-    
-    .access-line {
-        margin-bottom: 5px;
-        padding-left: 10px;
-        border-left: 2px solid #8a2be2;
-        position: relative;
-        z-index: 2;
-    }
-    
-    /* 警告框 */
-    .warning-box {
-        background: linear-gradient(135deg, rgba(255, 69, 0, 0.1), rgba(178, 34, 34, 0.1));
-        border: 2px solid #ff4500;
-        border-radius: 10px;
-        padding: 25px;
-        margin: 25px 0;
-        position: relative;
-        z-index: 2;
-    }
-    
-    .warning-box::before {
-        content: '⚠️';
-        position: absolute;
-        top: -15px;
-        left: 20px;
-        font-size: 1.5rem;
-        background: #0f0f1a;
-        padding: 0 10px;
-        z-index: 3;
-    }
-    
-    .warning-title {
-        color: #ff4500;
-        margin-bottom: 15px;
-        font-size: 1.3rem;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        position: relative;
-        z-index: 2;
-    }
-    
-    .warning-content {
-        color: #ff7f50;
-        line-height: 1.7;
-        position: relative;
-        z-index: 2;
     }
     
     /* 标签容器 */
@@ -721,68 +570,51 @@
         gap: 10px;
         margin-top: 30px;
         justify-content: center;
-        position: relative;
-        z-index: 2;
     }
     
     .tag {
-        background: linear-gradient(135deg, #2a1b3a, #1a0f2a);
-        color: #9370db;
+        background: linear-gradient(135deg, #333333, #222222);
+        color: #cccccc;
         padding: 10px 20px;
         border-radius: 25px;
         font-size: 0.9rem;
         font-weight: bold;
         transition: all 0.3s ease;
-        border: 1px solid rgba(138, 43, 226, 0.3);
-        position: relative;
-        z-index: 2;
     }
     
     .tag:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(147, 112, 219, 0.3);
-        background: linear-gradient(135deg, #3a2b4a, #2a1b3a);
-        border-color: #8a2be2;
+        box-shadow: 0 5px 15px rgba(204, 204, 204, 0.3);
+        background: linear-gradient(135deg, #444444, #333333);
     }
     
-    .tag.purple {
-        background: linear-gradient(135deg, #4b0082, #2a0048);
-        color: #ba55d3;
-        border-color: #4b0082;
+    .tag.amber {
+        background: linear-gradient(135deg, #332200, #221100);
+        color: #ffcc66;
     }
     
-    .tag.blind {
-        background: linear-gradient(135deg, #333, #222);
-        color: #ccc;
-        border-color: #666;
+    .tag.red {
+        background: linear-gradient(135deg, #331a1a, #220d0d);
+        color: #ff6666;
+    }
+    
+    .tag.blue {
+        background: linear-gradient(135deg, #1a1a33, #0d0d22);
+        color: #6666ff;
     }
     
     /* 页脚 */
     .page-footer {
-        background-color: #070710;
-        border-top: 1px solid #2a1b3a;
+        background-color: #141414;
+        border-top: 1px solid #333333;
         padding: 40px 0;
         margin-top: 60px;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .page-footer::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #8a2be2, transparent);
     }
     
     .footer-content {
         text-align: center;
         max-width: 800px;
         margin: 0 auto;
-        position: relative;
-        z-index: 1;
     }
     
     .footer-links {
@@ -794,22 +626,22 @@
     }
     
     .footer-link {
-        color: #9370db;
+        color: #b3b3b3;
         text-decoration: none;
         font-size: 0.9rem;
         transition: color 0.3s ease;
     }
     
     .footer-link:hover {
-        color: #8a2be2;
+        color: #ffffff;
         text-decoration: underline;
     }
     
     .copyright {
-        color: #6a5acd;
+        color: #666666;
         font-size: 0.9rem;
         padding-top: 20px;
-        border-top: 1px solid #2a1b3a;
+        border-top: 1px solid #333333;
         margin-top: 20px;
     }
     
@@ -827,37 +659,23 @@
             font-size: 1.1rem;
         }
         
-        .image-display {
-            max-width: 100%;
+        .cognitohazard-banner {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
         }
         
-        .content-card {
-            padding: 20px;
-        }
-        
-        .card-title {
-            font-size: 1.5rem;
-        }
-        
-        .classified-banner::before {
-            font-size: 2.5rem;
-        }
-        
-        .feature-grid, .clearance-grid {
+        .hazard-grid, .ability-grid, .mtf-comparison {
             grid-template-columns: 1fr;
         }
         
-        .clearance-section {
+        .o4-directive, .related-mtf {
             padding: 25px;
         }
         
         .header-content {
             flex-direction: column;
             text-align: center;
-        }
-        
-        .quote-text {
-            font-size: 1.1rem;
         }
     }
     
@@ -879,35 +697,10 @@
             gap: 15px;
         }
         
-        .feature-card, .clearance-card {
+        .hazard-card, .ability-card, .mtf-card {
             padding: 15px;
         }
-        
-        .classified-banner::before {
-            font-size: 1.8rem;
-            letter-spacing: 5px;
-        }
     }
-    
-    /* 视觉模糊效果 */
-    .visual-blur {
-        position: relative;
-    }
-    
-    .visual-blur::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
-        pointer-events: none;
-        z-index: 1;
-        opacity: 0.3;
-    }
-        
     </style>
 </head>
 <body>
@@ -921,7 +714,7 @@
                     </div>
                     <div>
                         <div class="logo-text">ETA-10 "非礼勿视"</div>
-                        <div class="logo-subtext">视觉型异常收容部队 | Site-114514 维基</div>
+                        <div class="logo-subtext">基金会视觉认知危害特遣队 | Site-114514 维基</div>
                     </div>
                 </div>
                 <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" class="back-button">
@@ -932,17 +725,14 @@
         </div>
     </header>
 
-    <!-- 机密横幅 -->
+    <!-- 认知危害警告横幅 -->
     <div class="container">
-        <div class="classified-banner">
-            <div class="classified-content">
-                <div class="classified-icon">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="classified-text">
-                    警告：以下信息涉及<span class="highlight">视觉型异常</span>收容协议。<br>
-                    未经授权观看可能造成永久性<span class="highlight">视觉损伤</span>或认知危害。
-                </div>
+        <div class="cognitohazard-banner">
+            <div class="cognitohazard-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="cognitohazard-text">
+                <strong>认知危害警告：</strong>以下信息涉及视觉认知危机。在缺乏适当防护的情况下，请勿直接观察相关内容。
             </div>
         </div>
     </div>
@@ -950,416 +740,288 @@
     <!-- 主要内容 -->
     <div class="container">
         <main class="main-content">
-            <!-- 引用框 -->
-            <div class="quote-box">
-                <div class="quote-text">
-                    "所见未必为实，所视或致疯狂。我们是视觉的最后防线，是眼睛的保护者..."
-                </div>
-                <div class="quote-author">
-                    — ETA-10 "非礼勿视" 行动格言
-                </div>
-            </div>
-
             <!-- 英雄部分 -->
             <section class="hero-section">
                 <h1 class="hero-title">ETA-10 "非礼勿视"</h1>
                 <p class="hero-subtitle">
-                    基金会视觉型异常收容的专家部队，专门处理威胁视觉感知的危险异常，<br>
-                    其成员接受特殊训练和改造，能够在致命视觉危害环境中执行任务。
+                    基金会专门应对视觉认知危机的机动特遣队，<br>
+                    负责调查、获取和收容视觉模因媒介及其他需要间接观察的异常项目。
                 </p>
-                
-                <!-- 图片显示区域 -->
-                <div class="image-display">
-                    <img src="/Site-114514-WebSite-HELP/ETA10/5518220F0B1DA0B9939AA87B3EE78A49.png" 
-                         alt="ETA-10 '非礼勿视' 徽章" 
-                         class="unit-badge"
-                         onerror="this.style.display='none'; 
-                                  document.getElementById('image-fallback').style.display='flex';">
-                    
-                    <div id="image-fallback" class="image-fallback" style="display: none;">
-                        <i class="fas fa-eye-slash"></i>
-                        <p>
-                            ETA-10 "非礼勿视" 徽章<br>
-                            <small>视觉保护中 - 图片可能对视网膜造成危害</small>
-                        </p>
-                    </div>
-                </div>
             </section>
 
-            <!-- 访问记录器 -->
-            <div class="access-recorder">
-                <div class="access-line">[VISUAL PROTECTION SYSTEM] 视网膜保护协议激活...</div>
-                <div class="access-line">[OPTICAL FILTER] 视觉过滤器运行中 - 等级：Theta</div>
-                <div class="access-line">[WARNING] 检测到潜在的视觉危害内容</div>
-                <div class="access-line">[TIMESTAMP] ██/██/████ ██:██:██ - 视觉安全计时器启动</div>
-                <div class="access-line">[ADVISORY] 建议每30分钟休息眼睛，避免长时间观看</div>
-            </div>
-
-            <!-- 紧急警告框 -->
-            <div class="warning-box">
-                <div class="warning-title">
-                    <i class="fas fa-exclamation-triangle"></i> 视觉安全紧急协议
-                </div>
-                <div class="warning-content">
-                    <p>
-                        <span class="highlight">当ETA-10在设施中部署时，必须严格遵守以下视觉安全协议：</span>
-                    </p>
-                    <ul style="margin-top: 15px; padding-left: 20px; color: #ff7f50;">
-                        <li>立即佩戴提供的视觉防护装备（护目镜等级不低于Theta级）</li>
-                        <li>避免直视任何异常视觉现象或ETA-10成员的处理设备</li>
-                        <li>如果出现视觉异常（闪光、模糊、色差），立即闭眼并报告</li>
-                        <li>未经授权不得拍摄或记录ETA-10的收容操作</li>
-                        <li>执行视觉记忆删除前，确保已接受完整的安全简报</li>
-                    </ul>
-                    <p style="margin-top: 15px; font-weight: bold; color: #ff4500;">
-                        <i class="fas fa-skull-crossbones"></i> 违反协议可能导致永久性失明或认知崩溃
-                    </p>
+            <!-- 琥珀摘要 -->
+            <div class="amber-summary">
+                <div class="amber-content">
+                    <strong>代号：琥珀 (AMBER)</strong><br>
+                    摘要：着重于至少一种模因、信息危害或认知危害的威胁，而站点内职员现时在缺乏外来介入的情况下无法镇压。
                 </div>
             </div>
 
             <!-- 介绍卡片 -->
-            <section class="content-card visual-protection">
+            <section class="content-card">
                 <div class="card-header">
                     <div class="card-icon">
                         <i class="fas fa-info-circle"></i>
                     </div>
                     <div>
                         <h2 class="card-title">单位简介</h2>
-                        <div class="card-subtitle">Mobile Task Force ETA-10 "See No Evil"</div>
+                        <div class="card-subtitle">Mobile Task Force Eta-10 "See No Evil"</div>
                     </div>
                 </div>
                 <div class="card-content">
                     <p>
-                        <span class="highlight">ETA-10 "非礼勿视"</span>是基金会专门针对<span class="highlight">视觉型异常</span>收容失效组建的特种部队。该单位名称源自儒家经典，强调对危险视觉信息的回避原则。
+                        <span class="highlight">ETA-10 "非礼勿视"</span>是基金会专门应对视觉认知危害的机动特遣队。这支单位以其独特的名称和高度专业化的任务范围而闻名于基金会内部。
                     </p>
                     <p>
-                        与常规收容部队不同，ETA-10专注于处理那些通过<span class="classified">视觉感知</span>传播的异常效应。这些异常可能包括：直视会导致精神影响的实体、传播认知危害的图像、引发物理变化的视觉现象等。
+                        该单位的名称源自古老的谚语"非礼勿视"，象征着他们应对视觉危害的核心原则：<span class="warning">在必要时，避免直接观察</span>。这支特遣队的成员都经过特殊训练，能够在不对抗视觉认知危害的情况下安全地收容相关异常。
                     </p>
                     <p>
-                        ETA-10成员经过严格的视觉防护训练和特殊的<span class="highlight">视觉系统改造</span>，能够在致命视觉环境中执行收容任务。部分成员甚至接受了手术改造，使其能够在闭眼或视觉受限状态下有效作战。
-                    </p>
-                    <p>
-                        该单位通常部署在发生<span class="highlight">SCP-███、SCP-096、SCP-173</span>等视觉型异常收容失效的场合，或在预见到此类风险时进行预防性部署。
+                        ETA-10专门调查、获取和初次收容显示出<span class="warning">视觉认知危机、视觉模因媒介</span>，或其他需要间接或其他观察方式来确保安全操作的项目或个体。
                     </p>
                 </div>
             </section>
 
-            <!-- 核心特性 -->
-            <section class="content-card eye-protection">
+            <!-- 特别指导 -->
+            <div class="special-guide">
+                <h4><i class="fas fa-exclamation-circle"></i> 特别指导</h4>
+                <div class="card-content">
+                    建议职员冷静地等待安保人员前来护送，或保持不动、避免交谈（或指向该模因媒介），尽可能地闭上眼睛或塞住耳朵。等待安保人员的指引，请勿自行撤离。请勿妨碍被该媒介感染的职员。请勿试图离开站点。
+                </div>
+            </div>
+
+            <!-- 危害类型 -->
+            <section class="content-card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-crosshairs"></i>
+                        <i class="fas fa-skull-crossbones"></i>
                     </div>
                     <div>
-                        <h2 class="card-title">核心特性</h2>
-                        <div class="card-subtitle">Defining Characteristics</div>
+                        <h2 class="card-title">应对的危害类型</h2>
+                        <div class="card-subtitle">Types of Hazards Addressed</div>
                     </div>
                 </div>
                 <div class="card-content">
-                    <p>ETA-10 "非礼勿视"具备以下区别于其他MTF的核心特性：</p>
+                    <p>ETA-10专门应对以下类型的视觉认知危害：</p>
                     
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <h4><i class="fas fa-glasses"></i> 高级视觉防护</h4>
-                            <p>配备基金会最先进的视觉防护装备，可过滤多种认知危害</p>
+                    <div class="hazard-grid">
+                        <div class="hazard-card">
+                            <h4><i class="fas fa-eye"></i> 视觉模因媒介</h4>
+                            <p>通过视觉传播的模因危害，包括图像、符号、特定排列等</p>
                         </div>
                         
-                        <div class="feature-card">
-                            <h4><i class="fas fa-brain"></i> 视觉认知训练</h4>
-                            <p>成员接受特殊训练，能够有选择性地"不看"危险视觉信息</p>
+                        <div class="hazard-card">
+                            <h4><i class="fas fa-brain"></i> 认知危害</h4>
+                            <p>直接损害观察者认知能力的异常视觉现象</p>
                         </div>
                         
-                        <div class="feature-card">
-                            <h4><i class="fas fa-user-md"></i> 视觉系统改造</h4>
-                            <p>部分成员接受手术改造，增强视觉抗性或提供替代感知方式</p>
+                        <div class="hazard-card">
+                            <h4><i class="fas fa-exclamation-triangle"></i> 信息危害</h4>
+                            <p>通过视觉信息传播的危险知识或概念</p>
                         </div>
                         
-                        <div class="feature-card">
-                            <h4><i class="fas fa-shield-alt"></i> 收容专业化</h4>
-                            <p>专门针对视觉型异常的收容协议和装备，效率远超常规部队</p>
+                        <div class="hazard-card">
+                            <h4><i class="fas fa-vr-cardboard"></i> 视觉认知危机</h4>
+                            <p>导致观察者视觉系统或认知功能异常的现象</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 安全协议部分 -->
-            <section class="clearance-section visual-blur">
-                <h2 class="clearance-title">视觉安全等级说明</h2>
-                <p style="text-align: center; color: #ba55d3; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                    ETA-10操作遵循严格的视觉安全分级系统
-                </p>
-                
-                <div class="clearance-grid">
-                    <div class="clearance-card">
-                        <div class="clearance-icon">
-                            <i class="fas fa-eye"></i>
+            <!-- O4指令部信息 -->
+            <section class="o4-directive">
+                <h2 class="o4-title">O4指令部</h2>
+                <div class="card-content">
+                    <p>
+                        最初，作为选定设施中触发灾害警报的应对，封锁命令由O5议会人工下达。而随着基金会的快速发展，任何封锁措施的登记与委任目前由另一个团队负责，其称为O4。
+                    </p>
+                    <p>
+                        O4专门负责基金会内部来自协议站点LRC与警报，以及对此类请求下达合适的相应命令。因此，O4指挥部是一个通讯团队，为整个基金会下达内封锁措施。
+                    </p>
+                    
+                    <div class="lrc-example">
+                        <strong>封锁响应代号 (LRC)</strong><br>
+                        封锁相应代码（LRC）是一种通讯技术，用于灾后报警或在封锁后呼叫支援。一条LRC一般包括对情况的一段极紧凑描述，包括三个数值：站点编号、优先度与级别。一条LRC的内容是短而简单的。
+                        
+                        <div class="lrc-code">
+                            "15/A/Iota-Gamma"
                         </div>
-                        <h4>Alpha级 (安全)</h4>
-                        <p>最低风险，仅需基础护目镜，可直视无长期影响</p>
+                        
+                        例如：要求对15号站点采取立即的合理应对，抗击至少一名广域袭击者与可能存在的模因药物。
                     </div>
                     
-                    <div class="clearance-card">
-                        <div class="clearance-icon">
-                            <i class="fas fa-eye-low-vision"></i>
-                        </div>
-                        <h4>Beta级 (谨慎)</h4>
-                        <p>中等风险，需要Theta级护目镜，避免长时间观看</p>
-                    </div>
-                    
-                    <div class="clearance-card">
-                        <div class="clearance-icon">
-                            <i class="fas fa-blind"></i>
-                        </div>
-                        <h4>Gamma级 (危险)</h4>
-                        <p>高风险，需要闭眼或间接观察设备，直视可能导致永久损伤</p>
-                    </div>
-                    
-                    <div class="clearance-card">
-                        <div class="clearance-icon">
-                            <i class="fas fa-skull"></i>
-                        </div>
-                        <h4>Delta级 (致命)</h4>
-                        <p>最高风险，任何形式的视觉接触都可能导致立即死亡或疯狂</p>
-                    </div>
+                    <p>
+                        并非所有的职员都有权下达LRC请求。在一件SCP物品逃逸、或敌对势力侵犯时，站点主管、负责逃逸威胁的收容组织人、安保团队以及管理层全员，均被特别授权使用特殊的陆上通讯通路，可发布一条LRC代号。
+                    </p>
                 </div>
             </section>
 
-            <!-- 装备与战术 -->
+            <!-- 封锁级别说明 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">封锁级别说明</h2>
+                        <div class="card-subtitle">Containment Level Classification</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>
+                        封锁措施以大量方式执行，而作为一次响应，我们应考虑到更多的东西。将事件分门别类使人们停止恐慌，它能比一场对话传达更明确的信息，也更快速、高效。
+                    </p>
+                    <p style="text-align: right; font-style: italic; color: #999999;">
+                        ——Hayward博士，站点安全管理部门已退休首脑
+                    </p>
+                    
+                    <p>
+                        此分级代表了威胁的来源（注意：并非严重程度——那由优先度价值决定），它们需要来自其他站点的外来MTF队伍进行可能的追踪、清算或重收容。因为通常对其他站点的不熟悉，AMTF/MTF团队需要某种方式来理解该威胁，并在抵达站点前完成估计预测。
+                    </p>
+                    
+                    <p>
+                        <span class="highlight">注：</span>可用多重分级来描述一个来源更复杂的威胁。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 特殊能力 -->
             <section class="content-card">
                 <div class="card-header">
                     <div class="card-icon">
                         <i class="fas fa-tools"></i>
                     </div>
                     <div>
-                        <h2 class="card-title">专用装备</h2>
-                        <div class="card-subtitle">Specialized Equipment</div>
+                        <h2 class="card-title">特殊能力与装备</h2>
+                        <div class="card-subtitle">Specialized Capabilities & Equipment</div>
                     </div>
                 </div>
                 <div class="card-content">
-                    <p>ETA-10配备了专门针对视觉型异常的特制装备：</p>
+                    <p>ETA-10配备专门针对视觉认知危害的装备和技术：</p>
                     
-                    <ul class="info-list">
-                        <li>
-                            <div class="list-icon"><i class="fas fa-glasses"></i></div>
-                            <div class="list-content">
-                                <strong>认知危害过滤护目镜</strong>
-                                可自动检测并模糊危险视觉信息，提供多层光学防护
+                    <div class="ability-grid">
+                        <div class="ability-card">
+                            <div class="ability-icon">
+                                <i class="fas fa-blind"></i>
                             </div>
-                        </li>
-                        <li>
-                            <div class="list-icon"><i class="fas fa-video-slash"></i></div>
-                            <div class="list-content">
-                                <strong>间接观察系统</strong>
-                                通过摄像头和屏幕间接观察目标，避免直接视觉接触
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list-icon"><i class="fas fa-lightbulb"></i></div>
-                            <div class="list-content">
-                                <strong>频闪抑制设备</strong>
-                                可产生特定频率的光脉冲，干扰某些视觉型异常的效应
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list-icon"><i class="fas fa-paint-roller"></i></div>
-                            <div class="list-content">
-                                <strong>快速遮蔽系统</strong>
-                                可迅速部署视觉屏障（雾、幕布、不透明涂层等）
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list-icon"><i class="fas fa-memory"></i></div>
-                            <div class="list-content">
-                                <strong>视觉记忆删除装置</strong>
-                                对受影响人员进行可控的记忆删除，消除视觉危害残留
-                            </div>
-                        </li>
-                    </ul>
-                    
-                    <div class="warning-box" style="margin-top: 25px;">
-                        <div class="warning-title">
-                            <i class="fas fa-exclamation-circle"></i> 装备使用警告
+                            <h4>间接观察系统</h4>
+                            <p>使用反射镜、摄像机等间接观察手段，避免直接目视危害源</p>
                         </div>
-                        <div class="warning-content">
-                            <p>所有ETA-10装备均需专门培训后方可使用：</p>
-                            <ul style="margin-top: 10px; padding-left: 20px;">
-                                <li>不当使用护目镜可能导致防护失效或意外暴露</li>
-                                <li>间接观察系统存在延迟，不适合应对快速移动目标</li>
-                                <li>频闪设备可能引发癫痫患者发作</li>
-                                <li>视觉记忆删除必须由认证人员执行，否则可能导致永久记忆损伤</li>
-                            </ul>
+                        
+                        <div class="ability-card">
+                            <div class="ability-icon">
+                                <i class="fas fa-filter"></i>
+                            </div>
+                            <h4>视觉过滤器</h4>
+                            <p>可过滤特定波长或模式的视觉防护装备</p>
+                        </div>
+                        
+                        <div class="ability-card">
+                            <div class="ability-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h4>远程操作单元</h4>
+                            <p>用于在危险环境中执行任务的遥控机器人系统</p>
+                        </div>
+                        
+                        <div class="ability-card">
+                            <div class="ability-icon">
+                                <i class="fas fa-memory"></i>
+                            </div>
+                            <h4>认知防护</h4>
+                            <p>提供对认知危害和心理影响的防护装备</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 常见应对异常 -->
-            <section class="content-card visual-protection">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-skull-crossbones"></i>
-                    </div>
-                    <div>
-                        <h2 class="card-title">常见应对异常类型</h2>
-                        <div class="card-subtitle">Common Anomaly Types</div>
-                    </div>
+            <!-- 相关MTF -->
+            <section class="related-mtf">
+                <h2 class="related-title">相关登记MTF</h2>
+                <div class="card-content" style="text-align: center; margin-bottom: 30px;">
+                    均专长于控制模因威胁
                 </div>
-                <div class="card-content">
-                    <p>ETA-10专门应对以下类型的视觉异常：</p>
-                    
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <h4><i class="fas fa-eye"></i> 直视触发型</h4>
-                            <p>需要被看到才会激活的异常（如SCP-096、SCP-173）</p>
+                
+                <div class="mtf-comparison">
+                    <div class="mtf-card">
+                        <div class="mtf-icon">
+                            <i class="fas fa-eye-slash"></i>
                         </div>
-                        
-                        <div class="feature-card">
-                            <h4><i class="fas fa-image"></i> 图像传播型</h4>
-                            <p>通过图像、视频传播的认知危害（如SCP-███）</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <h4><i class="fas fa-lightbulb"></i> 光效应型</h4>
-                            <p>通过特定光线或颜色产生异常效应</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <h4><i class="fas fa-ghost"></i> 视觉实体型</h4>
-                            <p>只能在特定视觉条件下被感知的实体</p>
-                        </div>
+                        <h4>MTF-Eta-10 "非礼勿视"</h4>
+                        <p>专门应对视觉认知危害、视觉模因媒介和需要间接观察的异常项目</p>
                     </div>
                     
-                    <p style="margin-top: 20px;">
-                        <span class="highlight">典型案例：</span> ETA-10在Site-19的SCP-173收容失效事件中表现出色，<br>
-                        通过使用<span class="classified">交替眨眼战术</span>和<span class="classified">团队视觉覆盖协议</span>，<br>
-                        在零伤亡情况下成功重新收容了该异常。
-                    </p>
+                    <div class="mtf-card">
+                        <div class="mtf-icon">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                        <h4>MTF-Eta-11 "残忍野兽"</h4>
+                        <p>应对其他类型的模因威胁和非视觉认知危害</p>
+                    </div>
                 </div>
             </section>
 
-            <!-- 训练与选拔 -->
+            <!-- 操作流程 -->
             <section class="content-card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-user-graduate"></i>
+                        <i class="fas fa-tasks"></i>
                     </div>
                     <div>
-                        <h2 class="card-title">训练与选拔</h2>
-                        <div class="card-subtitle">Training & Selection</div>
+                        <h2 class="card-title">标准操作流程</h2>
+                        <div class="card-subtitle">Standard Operating Procedures</div>
                     </div>
                 </div>
                 <div class="card-content">
-                    <p>ETA-10成员的选拔和训练过程极其严格：</p>
+                    <p>当应对视觉认知危害事件时，ETA-10遵循以下流程：</p>
                     
                     <ul class="info-list">
                         <li>
-                            <div class="list-icon"><i class="fas fa-search"></i></div>
+                            <div class="list-icon"><i class="fas fa-satellite-dish"></i></div>
                             <div class="list-content">
-                                <strong>视觉稳定性测试</strong>
-                                候选者必须展示在极端视觉刺激下的心理稳定性
+                                <strong>危害评估阶段</strong>
+                                使用间接手段评估危害类型、传播范围和影响程度
                             </div>
                         </li>
                         <li>
-                            <div class="list-icon"><i class="fas fa-brain"></i></div>
+                            <div class="list-icon"><i class="fas fa-user-shield"></i></div>
                             <div class="list-content">
-                                <strong>认知控制训练</strong>
-                                学习有意识地控制自己的视觉注意力和信息处理
+                                <strong>防护建立阶段</strong>
+                                建立安全观察点，部署防护装备，确保操作人员安全
                             </div>
                         </li>
                         <li>
-                            <div class="list-icon"><i class="fas fa-running"></i></div>
+                            <div class="list-icon"><i class="fas fa-robot"></i></div>
                             <div class="list-content">
-                                <strong>无视觉作战训练</strong>
-                                在完全黑暗或闭眼状态下进行战斗和导航训练
+                                <strong>间接操作阶段</strong>
+                                使用遥控设备或间接观察手段进行收容操作
                             </div>
                         </li>
                         <li>
-                            <div class="list-icon"><i class="fas fa-heartbeat"></i></div>
+                            <div class="list-icon"><i class="fas fa-box"></i></div>
                             <div class="list-content">
-                                <strong>生理适应训练</strong>
-                                逐步暴露于低级别视觉危害，建立生理和心理耐受性
+                                <strong>安全收容阶段</strong>
+                                在不直接观察的情况下将异常项目转移至安全收容单元
                             </div>
                         </li>
                         <li>
-                            <div class="list-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="list-icon"><i class="fas fa-users"></i></div>
                             <div class="list-content">
-                                <strong>团队视觉协调</strong>
-                                训练团队成员间的非视觉沟通和协调作战能力
+                                <strong>人员救助阶段</strong>
+                                救助受影响人员，提供必要的医疗和心理支持
                             </div>
                         </li>
                     </ul>
-                    
-                    <p style="margin-top: 20px; color: #ba55d3; font-size: 0.95rem;">
-                        <i class="fas fa-info-circle"></i> 注：ETA-10的训练淘汰率高达85%，是所有MTF中最高的之一。
-                    </p>
-                </div>
-            </section>
-
-            <!-- 站点关联 -->
-            <section class="content-card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div>
-                        <h2 class="card-title">主要部署站点</h2>
-                        <div class="card-subtitle">Primary Deployment Sites</div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <p>
-                        ETA-10在以下站点设有常驻分队或快速响应单位：
-                    </p>
-                    
-                    <ul class="info-list">
-                        <li>
-                            <div class="list-icon"><i class="fas fa-asterisk"></i></div>
-                            <div class="list-content">
-                                <strong>Site-19</strong>
-                                主要视觉型异常收容设施，ETA-10总部所在地
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list-icon"><i class="fas fa-flask"></i></div>
-                            <div class="list-content">
-                                <strong>Area-14</strong>
-                                视觉异常研究综合设施，设有专门训练中心
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list-icon"><i class="fas fa-database"></i></div>
-                            <div class="list-content">
-                                <strong>Site-██</strong>
-                                高价值视觉异常收容点，24小时ETA-10警戒
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list-icon"><i class="fas fa-eye-slash"></i></div>
-                            <div class="list-content">
-                                <strong>Site-114514</strong>
-                                在发生视觉型异常事件时，ETA-10可能被部署至此
-                                <span style="color: #ff6666; font-size: 0.9rem; display: block; margin-top: 5px;">
-                                    <i class="fas fa-exclamation-triangle"></i> 部署记录：3次成功收容操作
-                                </span>
-                            </div>
-                        </li>
-                    </ul>
-                    
-                    <p style="margin-top: 20px; font-style: italic; color: #9370db;">
-                        *注：ETA-10也维持着一个全球快速响应网络，可在2小时内到达任何基金会设施。
-                    </p>
                 </div>
             </section>
 
             <!-- 标签 -->
             <div class="tag-container">
-                <span class="tag purple">视觉型异常专家</span>
+                <span class="tag">基金会特遣队</span>
+                <span class="tag.amber">视觉认知危害</span>
                 <span class="tag">非礼勿视</span>
-                <span class="tag blind">闭眼作战</span>
-                <span class="tag">认知危害防护</span>
-                <span class="tag purple">视觉安全协议</span>
-                <span class="tag">Site-19驻扎</span>
-                <span class="tag blind">间接观察</span>
+                <span class="tag.red">模因威胁</span>
+                <span class="tag.blue">间接观察</span>
+                <span class="tag">ETA-10单位</span>
             </div>
         </main>
     </div>
@@ -1375,8 +1037,8 @@
                 </div>
                 <div class="copyright">
                     © 2025-2026 Site-114514服务器社区<br>
-                    ETA-10 "非礼勿视"资料 - 安全等级：<span class="classified">视觉危害控制</span><br>
-                    警告：不当观看此文档可能导致<span class="highlight">暂时性或永久性视觉损伤</span>。
+                    ETA-10 "非礼勿视"资料 - 保密等级：Level 3<br>
+                    警告：视觉认知危害为极度危险事件，发现迹象立即报告并避免直接观察
                 </div>
             </div>
         </div>
@@ -1385,13 +1047,6 @@
     <script>
         // 页面加载完成后执行
         document.addEventListener('DOMContentLoaded', function() {
-            // 图片加载失败处理
-            const img = document.querySelector('.unit-badge');
-            if (img && img.complete && img.naturalHeight === 0) {
-                img.style.display = 'none';
-                document.getElementById('image-fallback').style.display = 'flex';
-            }
-            
             // 平滑滚动动画
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
@@ -1410,7 +1065,7 @@
             });
             
             // 卡片悬停效果增强
-            const cards = document.querySelectorAll('.content-card, .feature-card, .clearance-card');
+            const cards = document.querySelectorAll('.content-card, .hazard-card, .ability-card, .mtf-card');
             cards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
                     this.style.zIndex = '10';
@@ -1424,82 +1079,50 @@
             const eyeIcon = document.querySelector('.logo-icon');
             if (eyeIcon) {
                 eyeIcon.addEventListener('mouseenter', function() {
-                    this.style.animation = 'eye-pulse 0.5s infinite';
-                    this.style.transform = 'scale(1.1)';
+                    this.style.animation = 'eye-pulse 0.8s infinite';
                 });
                 eyeIcon.addEventListener('mouseleave', function() {
-                    this.style.animation = 'eye-pulse 4s infinite';
-                    this.style.transform = 'scale(1)';
+                    this.style.animation = 'eye-pulse 3s infinite';
                 });
             }
             
-            // 机密横幅效果
-            const classifiedBanner = document.querySelector('.classified-banner');
-            if (classifiedBanner) {
-                // 添加闪烁效果
+            // 认知危害横幅闪烁效果
+            const hazardBanner = document.querySelector('.cognitohazard-banner');
+            if (hazardBanner) {
                 setInterval(() => {
-                    classifiedBanner.style.boxShadow = 
-                        Math.random() > 0.5 
-                            ? '0 4px 15px rgba(138, 43, 226, 0.3)' 
-                            : '0 4px 15px rgba(138, 43, 226, 0.6)';
+                    hazardBanner.style.borderColor = 
+                        Math.random() > 0.5 ? '#ff9900' : '#ffcc00';
                 }, 1500);
-                
-                // 添加轻微抖动效果
-                classifiedBanner.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateX(-2px)';
-                });
-                classifiedBanner.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateX(0)';
-                });
             }
             
-            // 访问记录器动画
-            const accessRecorder = document.querySelector('.access-recorder');
-            if (accessRecorder) {
-                // 模拟终端输入效果
-                const lines = accessRecorder.querySelectorAll('.access-line');
-                lines.forEach((line, index) => {
-                    line.style.opacity = '0';
-                    line.style.transform = 'translateY(10px)';
-                    
-                    setTimeout(() => {
-                        line.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                        line.style.opacity = '1';
-                        line.style.transform = 'translateY(0)';
-                    }, index * 300);
-                });
-                
-                // 添加打字机效果
-                setTimeout(() => {
-                    const newLine = document.createElement('div');
-                    newLine.className = 'access-line';
-                    newLine.textContent = '[VISUAL SAFETY] ETA-10档案加载完成 - 视网膜保护协议激活';
-                    newLine.style.opacity = '0';
-                    newLine.style.transform = 'translateY(10px)';
-                    
-                    accessRecorder.appendChild(newLine);
-                    
-                    setTimeout(() => {
-                        newLine.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                        newLine.style.opacity = '1';
-                        newLine.style.transform = 'translateY(0)';
-                    }, 600);
-                }, 2000);
-                
-                // 模拟视觉闪烁效果
+            // 琥珀摘要闪烁效果
+            const amberSummary = document.querySelector('.amber-summary');
+            if (amberSummary) {
                 setInterval(() => {
-                    const randomLine = lines[Math.floor(Math.random() * lines.length)];
-                    if (randomLine) {
-                        const originalColor = randomLine.style.color;
-                        randomLine.style.color = '#ff4500';
-                        randomLine.style.fontWeight = 'bold';
-                        
-                        setTimeout(() => {
-                            randomLine.style.color = originalColor;
-                            randomLine.style.fontWeight = '';
-                        }, 500);
-                    }
-                }, 7000);
+                    amberSummary.style.borderColor = 
+                        Math.random() > 0.5 ? '#ffcc00' : '#ffdd44';
+                }, 2000);
+            }
+            
+            // LRC代码闪烁效果
+            const lrcCode = document.querySelector('.lrc-code');
+            if (lrcCode) {
+                setInterval(() => {
+                    lrcCode.style.color = Math.random() > 0.5 ? '#ffcc00' : '#ffff66';
+                }, 1500);
+            }
+            
+            // 特别指导框动画
+            const specialGuide = document.querySelector('.special-guide');
+            if (specialGuide) {
+                specialGuide.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 8px 25px rgba(255, 153, 0, 0.3)';
+                });
+                specialGuide.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '';
+                });
             }
             
             // 标签点击效果
@@ -1513,124 +1136,17 @@
                 });
             });
             
-            // 视觉危害文字闪烁效果
-            const classifiedTexts = document.querySelectorAll('.classified, .highlight');
-            classifiedTexts.forEach(text => {
+            // 模拟视觉危害效果（轻微）
+            const heroTitle = document.querySelector('.hero-title');
+            if (heroTitle) {
                 setInterval(() => {
-                    if (Math.random() > 0.8) {
-                        text.style.opacity = Math.random() > 0.5 ? '0.6' : '1';
-                        text.style.textShadow = Math.random() > 0.5 
-                            ? '0 0 5px rgba(147, 112, 219, 0.3)' 
-                            : '0 0 10px rgba(147, 112, 219, 0.6)';
-                    }
-                }, 2500);
-            });
-            
-            // 紫色主题脉冲效果
-            setInterval(() => {
-                const randomPurple = Math.floor(Math.random() * 100) + 155;
-                const randomShadow = `0 2px 10px rgba(${randomPurple - 100}, 0, ${randomPurple}, 0.3)`;
-                
-                const titles = document.querySelectorAll('.card-title, .hero-title');
-                titles.forEach(title => {
-                    const originalShadow = title.style.textShadow;
-                    title.style.textShadow = randomShadow;
+                    const currentShadow = heroTitle.style.textShadow;
+                    heroTitle.style.textShadow = '0 2px 10px rgba(0, 0, 0, 0.9), 0 0 5px rgba(255, 255, 255, 0.1)';
                     
                     setTimeout(() => {
-                        title.style.textShadow = originalShadow;
-                    }, 400);
-                });
-            }, 5000);
-            
-            // 模拟视觉疲劳效果
-            const visualElements = document.querySelectorAll('.visual-protection, .visual-blur');
-            visualElements.forEach(element => {
-                setInterval(() => {
-                    if (Math.random() > 0.7) {
-                        element.style.filter = 'blur(1px)';
-                        setTimeout(() => {
-                            element.style.filter = '';
-                        }, 1000);
-                    }
-                }, 8000);
-            });
-            
-            // 页面离开时的视觉安全警告
-            window.addEventListener('beforeunload', function(e) {
-                // 模拟视觉模糊效果
-                document.body.style.opacity = '0.8';
-                document.body.style.filter = 'blur(2px)';
-                document.body.style.transition = 'opacity 0.5s, filter 0.5s';
-                
-                console.log('用户离开ETA-10档案页面 - 视觉安全协议维持中');
-            });
-            
-            // 视觉休息提醒
-            let viewTime = 0;
-            const viewTimer = setInterval(() => {
-                viewTime++;
-                if (viewTime === 5 * 60) { // 5分钟
-                    console.log('视觉安全提醒：建议休息眼睛');
-                    // 可以添加一个视觉休息提示框
-                    const restAlert = document.createElement('div');
-                    restAlert.style.cssText = `
-                        position: fixed;
-                        top: 20px;
-                        right: 20px;
-                        background: rgba(138, 43, 226, 0.9);
-                        color: white;
-                        padding: 15px;
-                        border-radius: 10px;
-                        z-index: 9999;
-                        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-                        animation: fadeIn 0.5s;
-                    `;
-                    restAlert.innerHTML = `
-                        <strong><i class="fas fa-eye"></i> 视觉安全提醒</strong><br>
-                        您已连续观看5分钟，建议休息眼睛30秒。
-                    `;
-                    document.body.appendChild(restAlert);
-                    
-                    setTimeout(() => {
-                        restAlert.style.animation = 'fadeOut 0.5s';
-                        setTimeout(() => restAlert.remove(), 500);
-                    }, 5000);
-                }
-            }, 1000);
-            
-            // 添加CSS动画
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes fadeIn {
-                    from { opacity: 0; transform: translateY(-20px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                @keyframes fadeOut {
-                    from { opacity: 1; transform: translateY(0); }
-                    to { opacity: 0; transform: translateY(-20px); }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            // 页面加载时的特殊效果
-            setTimeout(() => {
-                const mainContent = document.querySelector('.main-content');
-                if (mainContent) {
-                    mainContent.style.opacity = '0';
-                    mainContent.style.transition = 'opacity 1.5s ease';
-                    mainContent.style.opacity = '1';
-                }
-            }, 500);
-        });
-        
-        // 页面可见性变化时的效果
-        document.addEventListener('visibilitychange', function() {
-            if (document.hidden) {
-                // 页面被隐藏时的效果
-                console.log('ETA-10档案页面被隐藏 - 视觉安全协议维持中');
-            } else {
-                // 页面重新可见时的效果
-                console.log('ETA-10档案页面重新可见 - 视觉安全检查完成');
+                        heroTitle.style.textShadow = currentShadow;
+                    }, 300);
+                }, 5000);
             }
         });
     </script>
