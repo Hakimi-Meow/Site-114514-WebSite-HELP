@@ -1,1 +1,1133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>德尔塔强袭小组 - Site-114514 维基</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', 'Linux Libertine', 'Georgia', 'Times', serif;
+    }
+    
+    body {
+        background-color: #0d160d;
+        color: #d4ffd4;
+        line-height: 1.6;
+        min-height: 100vh;
+        background-image: 
+            radial-gradient(circle at 10% 20%, rgba(0, 100, 0, 0.15) 0%, transparent 20%),
+            radial-gradient(circle at 90% 80%, rgba(50, 150, 50, 0.1) 0%, transparent 20%),
+            linear-gradient(135deg, #0a120a 0%, #0d160d 50%, #091109 100%);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    /* 头部样式 */
+    .page-header {
+        background-color: #0a120a;
+        border-bottom: 3px solid #32cd32;
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .logo-icon {
+        font-size: 2.5rem;
+        color: #32cd32;
+        animation: chaos-pulse 2.5s infinite;
+    }
+    
+    @keyframes chaos-pulse {
+        0% { 
+            transform: rotate(0deg) scale(1); 
+            color: #32cd32;
+        }
+        33% { 
+            transform: rotate(10deg) scale(1.1);
+            color: #7cfc00;
+        }
+        66% { 
+            transform: rotate(-10deg) scale(1.1);
+            color: #228b22;
+        }
+        100% { 
+            transform: rotate(0deg) scale(1);
+            color: #32cd32;
+        }
+    }
+    
+    .logo-text {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #32cd32;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    
+    .logo-subtext {
+        color: #98fb98;
+        font-size: 0.9rem;
+        margin-top: 2px;
+    }
+    
+    .back-button {
+        background: linear-gradient(135deg, #32cd32, #228b22);
+        color: #0a120a;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 15px rgba(50, 205, 50, 0.4);
+    }
+    
+    .back-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(50, 205, 50, 0.6);
+        background: linear-gradient(135deg, #7cfc00, #32cd32);
+    }
+    
+    /* 警告横幅 */
+    .warning-banner {
+        background: linear-gradient(135deg, #223322, #112211);
+        border: 2px solid #ff4444;
+        border-radius: 10px;
+        padding: 15px 20px;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+    }
+    
+    .warning-icon {
+        font-size: 1.8rem;
+        color: #ff4444;
+        min-width: 40px;
+    }
+    
+    .warning-text {
+        color: #ff9999;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    /* 主要内容区 */
+    .main-content {
+        margin-top: 30px;
+    }
+    
+    .hero-section {
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+        color: #7cfc00;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        background: linear-gradient(90deg, #32cd32, #7cfc00, #32cd32);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: title-glow 3s infinite alternate;
+    }
+    
+    @keyframes title-glow {
+        from { text-shadow: 0 2px 10px rgba(50, 205, 50, 0.3); }
+        to { text-shadow: 0 2px 15px rgba(50, 205, 50, 0.5), 0 0 25px rgba(124, 252, 0, 0.2); }
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+        color: #98fb98;
+        margin-bottom: 30px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.8;
+    }
+    
+    /* 图片显示区域 */
+    .image-display {
+        max-width: 500px;
+        margin: 0 auto 40px;
+        position: relative;
+    }
+    
+    .unit-badge {
+        width: 100%;
+        border-radius: 15px;
+        border: 4px solid #32cd32;
+        box-shadow: 
+            0 10px 40px rgba(50, 205, 50, 0.3),
+            inset 0 0 20px rgba(124, 252, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .unit-badge:hover {
+        transform: scale(1.02);
+    }
+    
+    .image-fallback {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, #1a261a, #223322);
+        border-radius: 15px;
+        border: 4px solid #32cd32;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(50, 205, 50, 0.3);
+    }
+    
+    .image-fallback i {
+        font-size: 5rem;
+        color: #32cd32;
+        margin-bottom: 20px;
+        opacity: 0.8;
+    }
+    
+    .image-fallback p {
+        color: #98fb98;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    /* 内容卡片样式 */
+    .content-card {
+        background: linear-gradient(135deg, rgba(26, 38, 26, 0.95), rgba(17, 26, 17, 0.95));
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-left: 5px solid #32cd32;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease;
+    }
+    
+    .content-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(50, 205, 50, 0.1);
+    }
+    
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .card-icon {
+        font-size: 2rem;
+        color: #32cd32;
+        background: rgba(50, 205, 50, 0.1);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card-title {
+        font-size: 1.8rem;
+        color: #7cfc00;
+        margin: 0;
+    }
+    
+    .card-subtitle {
+        color: #98fb98;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+    
+    .card-content {
+        color: #d4ffd4;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+    
+    .card-content p {
+        margin-bottom: 15px;
+    }
+    
+    .highlight {
+        color: #7cfc00;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(124, 252, 0, 0.3);
+    }
+    
+    .danger {
+        color: #ff4444;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(255, 68, 68, 0.3);
+    }
+    
+    /* 信息列表 */
+    .info-list {
+        list-style: none;
+        margin: 20px 0;
+    }
+    
+    .info-list li {
+        padding: 15px 0;
+        border-bottom: 1px solid #2e4a2e;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .info-list li:last-child {
+        border-bottom: none;
+    }
+    
+    .list-icon {
+        color: #32cd32;
+        font-size: 1.2rem;
+        min-width: 25px;
+        margin-top: 2px;
+    }
+    
+    .list-content strong {
+        color: #7cfc00;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+    }
+    
+    /* 能力网格 */
+    .capability-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 25px;
+    }
+    
+    .capability-card {
+        background: rgba(124, 252, 0, 0.05);
+        border-radius: 10px;
+        padding: 20px;
+        border-top: 3px solid #228b22;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .capability-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: #228b22;
+    }
+    
+    .capability-card:hover {
+        background: rgba(124, 252, 0, 0.08);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(50, 205, 50, 0.2);
+    }
+    
+    .capability-card h4 {
+        color: #228b22;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .capability-card p {
+        color: #c4ffc4;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    
+    /* 装备特点部分 */
+    .equipment-section {
+        margin-top: 40px;
+    }
+    
+    .equipment-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+    }
+    
+    .equipment-card {
+        background: rgba(124, 252, 0, 0.05);
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid rgba(50, 205, 50, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .equipment-card:hover {
+        transform: translateY(-5px);
+        border-color: #32cd32;
+        box-shadow: 0 8px 20px rgba(50, 205, 50, 0.2);
+    }
+    
+    .equipment-icon {
+        font-size: 3rem;
+        color: #32cd32;
+        margin-bottom: 15px;
+    }
+    
+    .equipment-card h4 {
+        color: #7cfc00;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    
+    .equipment-card p {
+        color: #b8ffb8;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    /* 战术目标部分 */
+    .tactical-objectives {
+        background: linear-gradient(135deg, 
+            rgba(50, 205, 50, 0.1), 
+            rgba(34, 139, 34, 0.1));
+        border: 2px solid #32cd32;
+        border-radius: 15px;
+        padding: 40px;
+        margin-top: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .tactical-objectives::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #32cd32, #7cfc00);
+    }
+    
+    .objectives-title {
+        text-align: center;
+        color: #7cfc00;
+        margin-bottom: 30px;
+        font-size: 2rem;
+    }
+    
+    .objective-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    
+    .objective-card {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid rgba(124, 252, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .objective-card:hover {
+        transform: translateY(-5px);
+        border-color: #7cfc00;
+        background: rgba(0, 0, 0, 0.4);
+    }
+    
+    .objective-icon {
+        font-size: 2.5rem;
+        color: #7cfc00;
+        margin-bottom: 15px;
+    }
+    
+    .objective-card h4 {
+        color: #32cd32;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    
+    .objective-card p {
+        color: #c4ffc4;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    /* 威胁等级指示器 */
+    .threat-level {
+        background: linear-gradient(135deg, #332222, #441111);
+        border: 2px solid #ff4444;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 30px 0;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .threat-icon {
+        font-size: 2.5rem;
+        color: #ff4444;
+        min-width: 60px;
+        animation: threat-pulse 2s infinite;
+    }
+    
+    @keyframes threat-pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+    
+    .threat-content h3 {
+        color: #ff9999;
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+    }
+    
+    .threat-content p {
+        color: #ffcccc;
+        font-size: 1rem;
+    }
+    
+    /* 标签容器 */
+    .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+    
+    .tag {
+        background: linear-gradient(135deg, #223322, #112211);
+        color: #7cfc00;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    
+    .tag:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(124, 252, 0, 0.3);
+        background: linear-gradient(135deg, #2a442a, #1a2a1a);
+    }
+    
+    .tag.red {
+        background: linear-gradient(135deg, #332222, #221111);
+        color: #ff6666;
+    }
+    
+    .tag.black {
+        background: linear-gradient(135deg, #222222, #111111);
+        color: #cccccc;
+    }
+    
+    .tag.purple {
+        background: linear-gradient(135deg, #332244, #221133);
+        color: #cc99ff;
+    }
+    
+    /* 页脚 */
+    .page-footer {
+        background-color: #0a120a;
+        border-top: 1px solid #223322;
+        padding: 40px 0;
+        margin-top: 60px;
+    }
+    
+    .footer-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .footer-link {
+        color: #7cfc00;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-link:hover {
+        color: #32cd32;
+        text-decoration: underline;
+    }
+    
+    .copyright {
+        color: #669966;
+        font-size: 0.9rem;
+        padding-top: 20px;
+        border-top: 1px solid #223322;
+        margin-top: 20px;
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .container {
+            padding: 15px;
+        }
+        
+        .hero-title {
+            font-size: 2.2rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+        }
+        
+        .image-display {
+            max-width: 100%;
+        }
+        
+        .content-card {
+            padding: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+        }
+        
+        .warning-banner {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+        
+        .threat-level {
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+        }
+        
+        .capability-grid, .equipment-grid, .objective-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .tactical-objectives {
+            padding: 25px;
+        }
+        
+        .header-content {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 1.8rem;
+        }
+        
+        .logo-text {
+            font-size: 1.4rem;
+        }
+        
+        .tag-container {
+            justify-content: flex-start;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .capability-card, .equipment-card, .objective-card {
+            padding: 15px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-skull-crossbones"></i>
+                    </div>
+                    <div>
+                        <div class="logo-text">德尔塔强袭小组</div>
+                        <div class="logo-subtext">混沌分裂者精英部队 | Site-114514 维基</div>
+                    </div>
+                </div>
+                <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    返回主维基
+                </a>
+            </div>
+        </div>
+    </header>
 
+    <!-- 警告横幅 -->
+    <div class="container">
+        <div class="warning-banner">
+            <div class="warning-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="warning-text">
+                <strong>警告：</strong>以下信息涉及敌对组织"混沌分裂者"的军事单位。访问权限仅限于授权人员。未经授权的访问将受到纪律处分。
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <main class="main-content">
+            <!-- 英雄部分 -->
+            <section class="hero-section">
+                <h1 class="hero-title">德尔塔强袭小组</h1>
+                <p class="hero-subtitle">
+                    混沌分裂者D███指挥部直接指挥的精英突袭部队，<br>
+                    专门执行高风险网络入侵和设施控制任务。
+                </p>
+                
+                <!-- 图片显示区域 -->
+                <div class="image-display">
+                    <img src="/Site-114514-WebSite-HELP/DELTA/D9498D467730D7037F2E64B1C82F07BF.png" 
+                         alt="德尔塔强袭小组徽章" 
+                         class="unit-badge"
+                         onerror="this.style.display='none'; 
+                                  document.getElementById('image-fallback').style.display='flex';">
+                    
+                    <div id="image-fallback" class="image-fallback" style="display: none;">
+                        <i class="fas fa-skull-crossbones"></i>
+                        <p>
+                            德尔塔强袭小组徽章<br>
+                            <small>混沌分裂者精英部队的象征 - 图片加载失败</small>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 威胁等级指示器 -->
+            <div class="threat-level">
+                <div class="threat-icon">
+                    <i class="fas fa-radiation"></i>
+                </div>
+                <div class="threat-content">
+                    <h3>威胁等级：极端</h3>
+                    <p>该单位被评定为最高威胁级别，具备强大的网络攻击能力和地面作战实力。</p>
+                </div>
+            </div>
+
+            <!-- 介绍卡片 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">单位简介</h2>
+                        <div class="card-subtitle">Chaos Insurgency Delta Assault Team</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>
+                        <span class="highlight">德尔塔强袭小组</span>是由混沌分裂者D███指挥部直接指挥的一支精英突袭部队。该单位成立于20██年，专门执行高风险、高价值的军事和网络作战任务。
+                    </p>
+                    <p>
+                        作为混沌分裂者最具战斗力的单位之一，德尔塔强袭小组以其卓越的<span class="danger">网络入侵能力</span>和强大的<span class="danger">地面作战实力</span>而闻名。该小组的核心任务是黑入目标设施的服务器系统，为混沌分裂者实现对设施的全面控制铺平道路。
+                    </p>
+                    <p>
+                        与混沌分裂者其他部队不同，德尔塔强袭小组接受过特殊的网络战训练，成员既是优秀的士兵，也是熟练的黑客。这使得他们能够在激烈的战斗环境中同时执行物理攻击和网络渗透任务。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 主要能力 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">主要能力</h2>
+                        <div class="card-subtitle">Core Capabilities</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>德尔塔强袭小组具备多方面的作战能力，使其成为混沌分裂者最危险的特种部队之一：</p>
+                    
+                    <div class="capability-grid">
+                        <div class="capability-card">
+                            <h4><i class="fas fa-desktop"></i> 高级网络战</h4>
+                            <p>专业的网络入侵和服务器控制能力，能够在战斗环境中执行黑客攻击</p>
+                        </div>
+                        
+                        <div class="capability-card">
+                            <h4><i class="fas fa-tank"></i> 装甲突击</h4>
+                            <p>配备重型装甲车辆，具备强大的突破和火力压制能力</p>
+                        </div>
+                        
+                        <div class="capability-card">
+                            <h4><i class="fas fa-user-ninja"></i> 特种作战</h4>
+                            <p>成员均为特种部队出身，擅长突袭、渗透和人质解救任务</p>
+                        </div>
+                        
+                        <div class="capability-card">
+                            <h4><i class="fas fa-satellite-dish"></i> 电子战</h4>
+                            <p>先进的电子干扰和通讯截获能力，能够瘫痪敌方指挥系统</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 装备特点 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">装备特点</h2>
+                        <div class="card-subtitle">Advanced Military & Cyber Equipment</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>德尔塔强袭小组装备有混沌分裂者最先进的军事和网络战装备：</p>
+                    
+                    <div class="equipment-grid">
+                        <div class="equipment-card">
+                            <div class="equipment-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h4>便携式黑客套件</h4>
+                            <p>专用网络入侵设备，能够快速破解设施安全系统</p>
+                        </div>
+                        
+                        <div class="equipment-card">
+                            <div class="equipment-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>重型动力装甲</h4>
+                            <p>增强型作战装甲，提供卓越的防护和火力支持</p>
+                        </div>
+                        
+                        <div class="equipment-card">
+                            <div class="equipment-icon">
+                                <i class="fas fa-satellite"></i>
+                            </div>
+                            <h4>战场网络系统</h4>
+                            <p>实时数据共享和战术协调系统，提升团队作战效率</p>
+                        </div>
+                        
+                        <div class="equipment-card">
+                            <div class="equipment-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h4>电磁脉冲武器</h4>
+                            <p>非致命性电子战武器，用于瘫痪敌方电子设备</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 战术目标 -->
+            <section class="tactical-objectives">
+                <h2 class="objectives-title">主要战术目标</h2>
+                <p style="text-align: center; color: #98fb98; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    德尔塔强袭小组执行的典型任务类型和战术目标
+                </p>
+                
+                <div class="objective-grid">
+                    <div class="objective-card">
+                        <div class="objective-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h4>服务器入侵</h4>
+                        <p>渗透目标设施服务器系统，获取控制权限</p>
+                    </div>
+                    
+                    <div class="objective-card">
+                        <div class="objective-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>数据窃取</h4>
+                        <p>窃取SCP相关数据和研究成果</p>
+                    </div>
+                    
+                    <div class="objective-card">
+                        <div class="objective-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h4>设施控制</h4>
+                        <p>占领关键设施区域，为后续部队建立据点</p>
+                    </div>
+                    
+                    <div class="objective-card">
+                        <div class="objective-icon">
+                            <i class="fas fa-user-slash"></i>
+                        </div>
+                        <h4>人员清除</h4>
+                        <p>清除关键岗位人员，削弱设施防御能力</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 作战流程 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">典型作战流程</h2>
+                        <div class="card-subtitle">Standard Operating Procedure</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>德尔塔强袭小组执行任务时遵循标准化的作战流程：</p>
+                    
+                    <ul class="info-list">
+                        <li>
+                            <div class="list-icon"><i class="fas fa-search"></i></div>
+                            <div class="list-content">
+                                <strong>侦察阶段</strong>
+                                通过情报网络和无人机侦察目标设施的安全漏洞
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="list-content">
+                                <strong>突袭阶段</strong>
+                                利用装甲优势快速突破外围防线，建立安全区域
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-code"></i></div>
+                            <div class="list-content">
+                                <strong>网络入侵</strong>
+                                在作战掩护下，技术专家开始服务器入侵操作
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-upload"></i></div>
+                            <div class="list-content">
+                                <strong>控制巩固</strong>
+                                获取系统权限后，植入后门程序，确保长期控制
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="fas fa-retreat"></i></div>
+                            <div class="list-content">
+                                <strong>撤离阶段</strong>
+                                完成任务后，有序撤离并将控制权移交给后续部队
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 应对策略 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">基金会应对策略</h2>
+                        <div class="card-subtitle">Foundation Countermeasures</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>针对德尔塔强袭小组的威胁，基金会已制定专门的应对策略：</p>
+                    
+                    <div class="capability-grid">
+                        <div class="capability-card" style="border-top-color: #4a9eff;">
+                            <h4><i class="fas fa-network-wired"></i> 网络隔离</h4>
+                            <p>关键服务器采用物理隔离，阻止外部网络入侵</p>
+                        </div>
+                        
+                        <div class="capability-card" style="border-top-color: #ff6b6b;">
+                            <h4><i class="fas fa-user-shield"></i> 快速反应部队</h4>
+                            <p>部署快速反应部队，在早期阶段拦截突袭小组</p>
+                        </div>
+                        
+                        <div class="capability-card" style="border-top-color: #ffcc00;">
+                            <h4><i class="fas fa-lock"></i> 加密通信</h4>
+                            <p>使用量子加密通信，防止电子战干扰和窃听</p>
+                        </div>
+                        
+                        <div class="capability-card" style="border-top-color: #9966ff;">
+                            <h4><i class="fas fa-bug"></i> 反入侵系统</h4>
+                            <p>部署高级反入侵系统，检测和阻止黑客活动</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 标签 -->
+            <div class="tag-container">
+                <span class="tag">混沌分裂者</span>
+                <span class="tag red">极端威胁</span>
+                <span class="tag">精英突袭部队</span>
+                <span class="tag.black">网络战专家</span>
+                <span class="tag">D███指挥部</span>
+                <span class="tag.purple">服务器入侵</span>
+                <span class="tag">重型装甲</span>
+            </div>
+        </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" class="footer-link">返回主维基</a>
+                    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="footer-link">返回顶部</a>
+                    <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" target="_blank" class="footer-link">Site-114514维基</a>
+                </div>
+                <div class="copyright">
+                    © 2025-2026 Site-114514服务器社区<br>
+                    德尔塔强袭小组资料 - 保密等级：Level 4<br>
+                    警告：本页面包含敌对组织敏感信息，访问已记录
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 图片加载失败处理
+            const img = document.querySelector('.unit-badge');
+            if (img && img.complete && img.naturalHeight === 0) {
+                img.style.display = 'none';
+                document.getElementById('image-fallback').style.display = 'flex';
+            }
+            
+            // 平滑滚动动画
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // 卡片悬停效果增强
+            const cards = document.querySelectorAll('.content-card, .capability-card, .equipment-card, .objective-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+            
+            // 混沌图标动画增强
+            const chaosIcon = document.querySelector('.logo-icon');
+            if (chaosIcon) {
+                chaosIcon.addEventListener('mouseenter', function() {
+                    this.style.animation = 'chaos-pulse 0.8s infinite';
+                });
+                chaosIcon.addEventListener('mouseleave', function() {
+                    this.style.animation = 'chaos-pulse 2.5s infinite';
+                });
+            }
+            
+            // 威胁图标动画
+            const threatIcon = document.querySelector('.threat-icon');
+            if (threatIcon) {
+                threatIcon.addEventListener('mouseenter', function() {
+                    this.style.animation = 'threat-pulse 0.5s infinite';
+                });
+                threatIcon.addEventListener('mouseleave', function() {
+                    this.style.animation = 'threat-pulse 2s infinite';
+                });
+            }
+            
+            // 标题辉光效果
+            const title = document.querySelector('.hero-title');
+            if (title) {
+                setInterval(() => {
+                    const intensity = Math.random() * 0.5 + 0.5;
+                    title.style.textShadow = 
+                        `0 2px 10px rgba(50, 205, 50, ${0.2 + intensity * 0.3}), 
+                         0 0 25px rgba(124, 252, 0, ${0.1 + intensity * 0.2})`;
+                }, 2000);
+            }
+            
+            // 警告横幅闪烁效果
+            const warningBanner = document.querySelector('.warning-banner');
+            if (warningBanner) {
+                setInterval(() => {
+                    warningBanner.style.boxShadow = 
+                        Math.random() > 0.5 
+                            ? '0 4px 15px rgba(255, 68, 68, 0.3)' 
+                            : '0 4px 15px rgba(255, 68, 68, 0.6)';
+                }, 1000);
+            }
+            
+            // 标签点击效果
+            const tags = document.querySelectorAll('.tag');
+            tags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
