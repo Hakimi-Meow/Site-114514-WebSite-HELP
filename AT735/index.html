@@ -1,1 +1,1410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT735 "火花塞" - Site-114514 维基</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', 'Linux Libertine', 'Georgia', 'Times', serif;
+    }
+    
+    body {
+        background-color: #0a0c14;
+        color: #e6e6ff;
+        line-height: 1.6;
+        min-height: 100vh;
+        background-image: 
+            radial-gradient(circle at 10% 20%, rgba(200, 50, 50, 0.1) 0%, transparent 25%),
+            radial-gradient(circle at 90% 80%, rgba(255, 100, 100, 0.08) 0%, transparent 25%),
+            linear-gradient(135deg, #07090c 0%, #0a0c14 50%, #050709 100%);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    /* 头部样式 */
+    .page-header {
+        background-color: #0c0a10;
+        border-bottom: 3px solid #cc3333;
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .logo-icon {
+        font-size: 2.5rem;
+        color: #cc3333;
+        animation: spark-pulse 3s infinite;
+    }
+    
+    @keyframes spark-pulse {
+        0% { 
+            transform: scale(1); 
+            color: #cc3333;
+            text-shadow: 0 0 5px rgba(204, 51, 51, 0.5);
+        }
+        50% { 
+            transform: scale(1.05);
+            color: #ff5555;
+            text-shadow: 0 0 10px rgba(255, 85, 85, 0.7);
+        }
+        100% { 
+            transform: scale(1);
+            color: #cc3333;
+            text-shadow: 0 0 5px rgba(204, 51, 51, 0.5);
+        }
+    }
+    
+    .logo-text {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #cc3333;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    
+    .logo-subtext {
+        color: #ff9999;
+        font-size: 0.9rem;
+        margin-top: 2px;
+    }
+    
+    .back-button {
+        background: linear-gradient(135deg, #cc3333, #aa2222);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 15px rgba(204, 51, 51, 0.4);
+    }
+    
+    .back-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(204, 51, 51, 0.6);
+        background: linear-gradient(135deg, #ff5555, #cc3333);
+    }
+    
+    /* GOC横幅 */
+    .goc-banner {
+        background: linear-gradient(135deg, rgba(204, 51, 51, 0.1), rgba(170, 34, 34, 0.05));
+        border: 2px solid #ff5555;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 20px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .goc-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #cc3333, #ff5555, #cc3333);
+    }
+    
+    .goc-text {
+        color: #ff9999;
+        font-size: 1rem;
+        font-weight: bold;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* 警告横幅 */
+    .warning-banner {
+        background: linear-gradient(135deg, rgba(255, 100, 0, 0.1), rgba(200, 80, 0, 0.05));
+        border: 2px solid #ff9900;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 20px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .warning-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #ff9900, #ffcc00, #ff9900);
+    }
+    
+    .warning-text {
+        color: #ffcc00;
+        font-size: 0.95rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        text-align: center;
+    }
+    
+    /* 主要内容区 */
+    .main-content {
+        margin-top: 30px;
+    }
+    
+    .hero-section {
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .hero-title-container {
+        position: relative;
+        margin-bottom: 15px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+        color: #cc3333;
+        margin-bottom: 5px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        background: linear-gradient(90deg, #aa2222, #cc3333, #aa2222);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+        color: #ff9999;
+        margin-bottom: 15px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.8;
+    }
+    
+    /* 名称演变显示 */
+    .evolution-display {
+        font-size: 1.5rem;
+        color: #ffcc00;
+        margin-bottom: 10px;
+        font-style: italic;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .evolution-display .old {
+        color: #ff9999;
+        font-weight: bold;
+        text-decoration: line-through;
+    }
+    
+    .evolution-display .new {
+        color: #cc3333;
+        font-weight: bold;
+    }
+    
+    .evolution-display .separator {
+        color: #ccccff;
+        font-size: 1.2rem;
+    }
+    
+    /* 图片显示区域 */
+    .image-display {
+        max-width: 500px;
+        margin: 0 auto 40px;
+        position: relative;
+    }
+    
+    .unit-badge {
+        width: 100%;
+        border-radius: 15px;
+        border: 4px solid #cc3333;
+        box-shadow: 
+            0 10px 40px rgba(204, 51, 51, 0.3),
+            inset 0 0 20px rgba(255, 85, 85, 0.1);
+        transition: transform 0.3s ease;
+        filter: drop-shadow(0 0 5px rgba(204, 51, 51, 0.5));
+    }
+    
+    .unit-badge:hover {
+        transform: scale(1.02);
+        filter: drop-shadow(0 0 10px rgba(204, 51, 51, 0.7));
+    }
+    
+    .image-fallback {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, #1a1010, #2a1818);
+        border-radius: 15px;
+        border: 4px solid #cc3333;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(204, 51, 51, 0.3);
+    }
+    
+    .image-fallback i {
+        font-size: 5rem;
+        color: #cc3333;
+        margin-bottom: 20px;
+        opacity: 0.8;
+    }
+    
+    .image-fallback p {
+        color: #ff9999;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    /* 内容卡片样式 */
+    .content-card {
+        background: linear-gradient(135deg, rgba(26, 20, 20, 0.95), rgba(20, 15, 15, 0.95));
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-left: 5px solid #cc3333;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+        transition: transform 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .content-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(204, 51, 51, 0.1);
+    }
+    
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .card-icon {
+        font-size: 2rem;
+        color: #cc3333;
+        background: rgba(204, 51, 51, 0.1);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card-title {
+        font-size: 1.8rem;
+        color: #ff5555;
+        margin: 0;
+    }
+    
+    .card-subtitle {
+        color: #ff9999;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+    
+    .card-content {
+        color: #e6e6ff;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+    
+    .card-content p {
+        margin-bottom: 15px;
+    }
+    
+    .highlight {
+        color: #ff5555;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(255, 85, 85, 0.3);
+    }
+    
+    .warning {
+        color: #ff9900;
+        font-weight: bold;
+        background: rgba(255, 153, 0, 0.1);
+        padding: 2px 6px;
+        border-radius: 3px;
+    }
+    
+    .classified {
+        color: #ffcc6b;
+        background: rgba(255, 204, 107, 0.1);
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: 'Courier New', monospace;
+    }
+    
+    .redacted {
+        color: #ff6666;
+        background: rgba(255, 102, 102, 0.2);
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: 'Courier New', monospace;
+    }
+    
+    /* 数据库对话样式 */
+    .database-dialogue {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid #cc3333;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 25px 0;
+        font-family: 'Courier New', monospace;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #ccccff;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .dialogue-header {
+        color: #cc3333;
+        border-bottom: 1px solid #cc3333;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    
+    .unknown-speaker {
+        color: #ff9999;
+        margin-bottom: 10px;
+    }
+    
+    .unknown-speaker::before {
+        content: '■■■■■：';
+        color: #ff5555;
+        font-weight: bold;
+    }
+    
+    .unknown-speaker2 {
+        color: #ccccff;
+        margin-bottom: 10px;
+    }
+    
+    .unknown-speaker2::before {
+        content: '■■■■：';
+        color: #ffcc00;
+        font-weight: bold;
+    }
+    
+    .stolen-data {
+        color: #ff6666;
+        background: rgba(255, 102, 102, 0.1);
+        padding: 3px;
+        border-radius: 3px;
+        font-style: italic;
+        border: 1px dashed #ff6666;
+    }
+    
+    /* 成员网格 */
+    .members-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 25px;
+    }
+    
+    .member-card {
+        background: rgba(204, 51, 51, 0.05);
+        border-radius: 10px;
+        padding: 20px;
+        border-top: 3px solid #aa2222;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .member-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: #aa2222;
+    }
+    
+    .member-card:hover {
+        background: rgba(204, 51, 51, 0.08);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(204, 51, 51, 0.2);
+    }
+    
+    .member-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .member-icon {
+        font-size: 1.5rem;
+        color: #cc3333;
+        background: rgba(204, 51, 51, 0.1);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .member-name {
+        color: #ff5555;
+        margin-bottom: 5px;
+        font-size: 1.3rem;
+    }
+    
+    .member-codename {
+        color: #ff9999;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+    
+    .member-nickname {
+        color: #ffcc00;
+        font-size: 0.85rem;
+        font-style: italic;
+        margin-top: 3px;
+    }
+    
+    .member-info {
+        color: #d9ccff;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 10px;
+    }
+    
+    .member-info-item {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .member-info-label {
+        color: #ff9999;
+        font-weight: bold;
+        min-width: 80px;
+    }
+    
+    .member-info-value {
+        color: #ccccff;
+    }
+    
+    /* 能力展示区 */
+    .capabilities-section {
+        background: linear-gradient(135deg, 
+            rgba(204, 51, 51, 0.1), 
+            rgba(170, 34, 34, 0.1));
+        border: 2px solid #cc3333;
+        border-radius: 15px;
+        padding: 40px;
+        margin-top: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .capabilities-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #cc3333, #ff5555);
+    }
+    
+    .capabilities-title {
+        text-align: center;
+        color: #ff5555;
+        margin-bottom: 30px;
+        font-size: 2rem;
+    }
+    
+    .capabilities-content {
+        text-align: center;
+        color: #ff9999;
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.8;
+    }
+    
+    /* 标签容器 */
+    .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+    
+    .tag {
+        background: linear-gradient(135deg, #2a1818, #1a1010);
+        color: #ff5555;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    
+    .tag:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 85, 85, 0.3);
+        background: linear-gradient(135deg, #3a2828, #2a1818);
+    }
+    
+    .tag.red {
+        background: linear-gradient(135deg, #3a1a1a, #2a0d0d);
+        color: #ff6666;
+    }
+    
+    .tag.orange {
+        background: linear-gradient(135deg, #3a2a1a, #2a1a0d);
+        color: #ffcc6b;
+    }
+    
+    .tag.yellow {
+        background: linear-gradient(135deg, #3a3a1a, #2a2a0d);
+        color: #ffff6b;
+    }
+    
+    .tag.purple {
+        background: linear-gradient(135deg, #2a1a3a, #1a0d2a);
+        color: #ff6bcb;
+    }
+    
+    /* 页脚 */
+    .page-footer {
+        background-color: #0c0a10;
+        border-top: 1px solid #2a1818;
+        padding: 40px 0;
+        margin-top: 60px;
+    }
+    
+    .footer-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .footer-link {
+        color: #ff5555;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-link:hover {
+        color: #cc3333;
+        text-decoration: underline;
+    }
+    
+    .copyright {
+        color: #aa8888;
+        font-size: 0.9rem;
+        padding-top: 20px;
+        border-top: 1px solid #2a1818;
+        margin-top: 20px;
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .container {
+            padding: 15px;
+        }
+        
+        .hero-title {
+            font-size: 2.2rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+        }
+        
+        .evolution-display {
+            font-size: 1.2rem;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .image-display {
+            max-width: 100%;
+        }
+        
+        .content-card {
+            padding: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+        }
+        
+        .goc-banner, .warning-banner {
+            padding: 15px;
+        }
+        
+        .members-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .capabilities-section {
+            padding: 25px;
+        }
+        
+        .header-content {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 1.8rem;
+        }
+        
+        .logo-text {
+            font-size: 1.4rem;
+        }
+        
+        .tag-container {
+            justify-content: flex-start;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .member-card {
+            padding: 15px;
+        }
+        
+        .member-header {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+        
+        .member-info-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+        }
+        
+        .member-info-label {
+            min-width: auto;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div>
+                        <div class="logo-text">AT735 "火花塞"</div>
+                        <div class="logo-subtext">GOC评估小组 | Site-114514 维基</div>
+                    </div>
+                </div>
+                <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    返回主维基
+                </a>
+            </div>
+        </div>
+    </header>
 
+    <!-- GOC横幅 -->
+    <div class="container">
+        <div class="goc-banner">
+            <div class="goc-text">
+                文件内容由GOC提供 - 数据泄露警告
+            </div>
+        </div>
+        
+        <div class="warning-banner">
+            <div class="warning-text">
+                <i class="fas fa-exclamation-triangle"></i> 警告：此档案部分内容已被联邦探员窃取，情报部正在积极收集或推算数据
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <main class="main-content">
+            <!-- 英雄部分 -->
+            <section class="hero-section">
+                <div class="hero-title-container">
+                    <h1 class="hero-title">AT735 "火花塞"</h1>
+                    <div class="evolution-display">
+                        <span class="old">雷霆之杖</span>
+                        <span class="separator">→</span>
+                        <span class="new">火花塞</span>
+                    </div>
+                </div>
+                <p class="hero-subtitle">
+                    一个驻扎在蒙大拿州诺克森市的四人评估小组。<br>
+                    最初因徽章美工质量低下被戏称为"火花塞"，两年后正式改名。
+                </p>
+                
+                <!-- 图片显示区域 -->
+                <div class="image-display">
+                    <img src="/Site-114514-WebSite-HELP/AT735/181CBD149365898EAD2C66FC0F88AFAF.png" 
+                         alt="AT735 '火花塞' 徽章" 
+                         class="unit-badge"
+                         onerror="this.style.display='none'; 
+                                  document.getElementById('image-fallback').style.display='flex';">
+                    
+                    <div id="image-fallback" class="image-fallback" style="display: none;">
+                        <i class="fas fa-bolt"></i>
+                        <p>
+                            AT735 "火花塞" 徽章<br>
+                            <small>椭圆纹章，鲜红田野中的银手套与权杖 - 图片加载失败</small>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 泄露的对话 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">泄露的数据库对话片段</h2>
+                        <div class="card-subtitle">Stolen GOC Database Conversation Fragment</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="database-dialogue">
+                        <div class="dialogue-header">GOC内部通讯记录 - 片段编号：███████</div>
+                        
+                        <div class="unknown-speaker">你想知道信息吗？</div>
+                        
+                        <div class="unknown-speaker2">为什么不想？</div>
+                        
+                        <div class="unknown-speaker">好吧，就是职务之外的事儿别泄露</div>
+                        
+                        <div class="stolen-data" style="margin-top: 20px;">
+                            以上为GOC中的一段数据库简介&lt;档案中未被删除部分&gt;<br>
+                            随后被该死的联邦探员窃取数据，情报部正在积极收集或推算
+                        </div>
+                        
+                        <div class="unknown-speaker2" style="margin-top: 20px;">还想要更多</div>
+                        
+                        <div class="unknown-speaker">我觉得……我可能会有一些事…………</div>
+                    </div>
+                    
+                    <div style="margin-top: 25px; padding: 15px; background: rgba(204, 51, 51, 0.05); border-radius: 8px; border: 1px dashed #ff5555;">
+                        <p style="color: #ff9999; font-size: 0.95rem; text-align: center;">
+                            <i class="fas fa-exclamation-circle"></i> 此对话片段为联邦探员窃取的GOC内部通讯记录，完整上下文已被加密或销毁。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 小组简介 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">评估小组简介</h2>
+                        <div class="card-subtitle">Assessment Team AT735 "Sparkplug" Overview</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>
+                        <span class="highlight">AT735 "火花塞"</span>是一个驻扎在蒙大拿州诺克森市的四人评估小组。该小组最初成立时命名为"735号评估小组-雷霆之杖(lightning mace)"，但由于其最初的"雷霆之杖"徽章美工质量低下，常被戏谑地称为"火花塞小组"。
+                    </p>
+                    
+                    <div style="margin: 20px 0; padding: 15px; background: rgba(255, 153, 0, 0.1); border-left: 4px solid #ff9900; border-radius: 5px;">
+                        <h4 style="color: #ffcc00; margin-bottom: 10px;"><i class="fas fa-history"></i> 名称演变历史</h4>
+                        <p style="color: #ffcc99;">
+                            <strong>201█年</strong>: 成立为"735号评估小组-雷霆之杖"<br>
+                            <strong>201█年</strong>: 因徽章设计粗糙被戏称为"火花塞"<br>
+                            <strong>201█年</strong>: 正式更名为"火花塞"，更新徽章设计
+                        </p>
+                    </div>
+                    
+                    <p>
+                        徽章描述: 椭圆形。图案为：鲜红色田野中的两道闪电间，一只银手套握着权杖，边框为黑。小队番号"735"标注于徽章底部。
+                    </p>
+                    
+                    <p>
+                        作为GOC的评估小组，AT735专门负责对异常现象、实体或物品进行现场评估，确定其威胁等级、收容难度和处置方案。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 小组成员 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">评估小组成员档案</h2>
+                        <div class="card-subtitle">AT735 Team Members Personnel Files</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>AT735 "火花塞"由以下四名专业评估人员组成：</p>
+                    
+                    <div class="members-grid">
+                        <!-- "Bullfrog" 组长 -->
+                        <div class="member-card">
+                            <div class="member-header">
+                                <div class="member-icon">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                                <div>
+                                    <div class="member-name">"Bullfrog"</div>
+                                    <div class="member-codename">组长 | 编号: 43856518/735</div>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <div class="member-info-item">
+                                    <span class="member-info-label">真名:</span>
+                                    <span class="member-info-value">Jeremiah Carter</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">国籍:</span>
+                                    <span class="member-info-value">美国</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">性别:</span>
+                                    <span class="member-info-value">男</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">出生:</span>
+                                    <span class="member-info-value redacted">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">传记:</span>
+                                    <span class="member-info-value">前美军突击队军官，于第一次执行任务后即受委任。服役12年后调往第一特种兵团（三角洲兵团）。退伍后进入物理部门。</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">简历:</span>
+                                    <span class="member-info-value redacted">██████████</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- "Fartboy" / "Skunkboy" -->
+                        <div class="member-card">
+                            <div class="member-header">
+                                <div class="member-icon">
+                                    <i class="fas fa-crosshairs"></i>
+                                </div>
+                                <div>
+                                    <div class="member-name">"Fartboy" / "Skunkboy"</div>
+                                    <div class="member-codename">编号: 43852165/735</div>
+                                    <div class="member-nickname">双重代号特工</div>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <div class="member-info-item">
+                                    <span class="member-info-label">真名:</span>
+                                    <span class="member-info-value redacted">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">国籍:</span>
+                                    <span class="member-info-value">美国</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">性别:</span>
+                                    <span class="member-info-value">男性</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">出生:</span>
+                                    <span class="member-info-value redacted">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">传记:</span>
+                                    <span class="member-info-value">前美国海军陆战队员。于<span class="redacted">████</span>年完成侦察狙击手培训。在该服役期结束后进入物理部门。</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">简历:</span>
+                                    <span class="member-info-value redacted">██████████</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- "Kitten" -->
+                        <div class="member-card">
+                            <div class="member-header">
+                                <div class="member-icon">
+                                    <i class="fas fa-user-secret"></i>
+                                </div>
+                                <div>
+                                    <div class="member-name">"Kitten"</div>
+                                    <div class="member-codename">编号: 43857764/735</div>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <div class="member-info-item">
+                                    <span class="member-info-label">真名:</span>
+                                    <span class="member-info-value">Tabitha St. Matthews</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">国籍:</span>
+                                    <span class="member-info-value redacted">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">性别:</span>
+                                    <span class="member-info-value">女</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">出生:</span>
+                                    <span class="member-info-value redacted">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">传记:</span>
+                                    <span class="member-info-value redacted">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">简历:</span>
+                                    <span class="member-info-value redacted">██████████</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- "Spider" -->
+                        <div class="member-card">
+                            <div class="member-header">
+                                <div class="member-icon">
+                                    <i class="fas fa-magic"></i>
+                                </div>
+                                <div>
+                                    <div class="member-name">"Spider"</div>
+                                    <div class="member-codename">编号: 43861212/735</div>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <div class="member-info-item">
+                                    <span class="member-info-label">真名:</span>
+                                    <span class="member-info-value redacted">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">国籍:</span>
+                                    <span class="member-info-value redacted">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">性别:</span>
+                                    <span class="member-info-value">女</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">出生:</span>
+                                    <span class="member-info-value redacted">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">传记:</span>
+                                    <span class="member-info-value">于<span class="redacted">████</span>年进入ICSUT，<span class="redacted">████</span>年完成初级奇术法阵精通性培训，<span class="redacted">████</span>年进入物理部门，<span class="redacted">████</span>年加入"735号评估小组-火花塞"。</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">简历:</span>
+                                    <span class="member-info-value redacted">██████████</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 25px; padding: 20px; background: rgba(204, 51, 51, 0.1); border-radius: 10px; border-left: 4px solid #ff9900;">
+                        <h4 style="color: #ffcc00; margin-bottom: 10px;"><i class="fas fa-exclamation-triangle"></i> 档案完整性警告</h4>
+                        <p style="color: #ffcc99; line-height: 1.7;">
+                            由于联邦探员的数据窃取行为，AT735成员档案存在部分信息缺失或被涂黑。<br>
+                            GOC情报部正在积极恢复和推算被窃数据，当前显示的信息可能不完整。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 能力展示区 -->
+            <section class="capabilities-section">
+                <h2 class="capabilities-title">评估能力与专业领域</h2>
+                <p class="capabilities-content">
+                    AT735 "火花塞"作为GOC的专业评估小组，<br>
+                    具备对异常现象进行全面评估和分析的能力，为后续行动提供关键决策支持。
+                </p>
+                
+                <div class="members-grid">
+                    <div class="member-card" style="border-top-color: #ff9900;">
+                        <div class="member-header">
+                            <div class="member-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div>
+                                <div class="member-name">威胁评估</div>
+                                <div class="member-codename">异常风险分析</div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <p>快速准确评估异常实体的威胁等级，分析其潜在危害范围、影响程度和紧急处理优先级。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card" style="border-top-color: #ff9900;">
+                        <div class="member-header">
+                            <div class="member-icon">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <div>
+                                <div class="member-name">现场分析</div>
+                                <div class="member-codename">异常特性研究</div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <p>在异常事件现场进行实地调查，收集数据样本，分析异常现象的物理特性和行为模式。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card" style="border-top-color: #ff9900;">
+                        <div class="member-header">
+                            <div class="member-icon">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <div>
+                                <div class="member-name">奇术评估</div>
+                                <div class="member-codename">超自然现象分析</div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <p>凭借成员"Spider"的奇术专长，对涉及超自然、魔法或异常能量的现象进行专业评估。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card" style="border-top-color: #ff9900;">
+                        <div class="member-header">
+                            <div class="member-icon">
+                                <i class="fas fa-file-medical-alt"></i>
+                            </div>
+                            <div>
+                                <div class="member-name">处置建议</div>
+                                <div class="member-codename">行动方案制定</div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <p>基于评估结果，为GOC行动小组提供具体的处置建议，包括收容、无效化或进一步研究方案。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 数据泄露事件 -->
+            <section class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-skull-crossbones"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">数据安全事件记录</h2>
+                        <div class="card-subtitle">GOC Data Security Breach Incident Report</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="database-dialogue">
+                        <div class="dialogue-header">GOC内部安全警报 - 事件编号：SEC-2024-735-01</div>
+                        
+                        <div style="color: #ff6666; margin-bottom: 15px; font-weight: bold;">
+                            <i class="fas fa-exclamation-triangle"></i> 严重数据泄露事件
+                        </div>
+                        
+                        <div style="color: #ccccff; margin-bottom: 10px;">
+                            <strong>受影响单位：</strong>AT735 "火花塞"评估小组
+                        </div>
+                        
+                        <div style="color: #ccccff; margin-bottom: 10px;">
+                            <strong>泄露时间：</strong>2024年██月██日 ██:██
+                        </div>
+                        
+                        <div style="color: #ccccff; margin-bottom: 10px;">
+                            <strong>泄露内容：</strong>成员档案、内部通讯记录、任务简报
+                        </div>
+                        
+                        <div style="color: #ccccff; margin-bottom: 10px;">
+                            <strong>责任方：</strong>联邦调查局异常现象调查部 (FBI-APID)
+                        </div>
+                        
+                        <div style="color: #ccccff; margin-bottom: 15px;">
+                            <strong>当前状态：</strong>情报部正在积极收集或推算被窃数据
+                        </div>
+                        
+                        <div style="color: #ff9999; padding: 10px; background: rgba(255, 102, 102, 0.1); border-radius: 5px; border: 1px solid #ff6666;">
+                            <strong>行动建议：</strong><br>
+                            1. 立即更换AT735所有成员的通信协议和识别代码<br>
+                            2. 加强蒙大拿州诺克森市周边安全警戒<br>
+                            3. 对可能暴露的联络点和安全屋进行转移<br>
+                            4. 准备应对联邦机构的针对性行动
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 25px; padding: 15px; background: rgba(255, 153, 0, 0.05); border-radius: 8px; border: 1px dashed #ff9900;">
+                        <p style="color: #ffcc99; font-size: 0.95rem; text-align: center;">
+                            <i class="fas fa-user-shield"></i> GOC情报部提醒：此页面显示的信息可能已被联邦机构掌握，请勿用于行动规划。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 标签 -->
+            <div class="tag-container">
+                <span class="tag">GOC评估小组</span>
+                <span class="tag red">AT735</span>
+                <span class="tag orange">火花塞</span>
+                <span class="tag yellow">雷霆之杖</span>
+                <span class="tag">数据泄露</span>
+                <span class="tag purple">蒙大拿州</span>
+                <span class="tag">四人小组</span>
+            </div>
+        </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" class="footer-link">返回主维基</a>
+                    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="footer-link">返回顶部</a>
+                    <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" target="_blank" class="footer-link">Site-114514维基</a>
+                </div>
+                <div class="copyright">
+                    © 2025-2026 Site-114514服务器社区<br>
+                    AT735 "火花塞"资料 - GOC机密等级：Level 3 (已降级)<br>
+                    警告：此档案部分内容已被联邦机构窃取，请谨慎使用相关信息
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 图片加载失败处理
+            const img = document.querySelector('.unit-badge');
+            if (img && img.complete && img.naturalHeight === 0) {
+                img.style.display = 'none';
+                document.getElementById('image-fallback').style.display = 'flex';
+            }
+            
+            // 平滑滚动动画
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // 卡片悬停效果增强
+            const cards = document.querySelectorAll('.content-card, .member-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+            
+            // 闪电图标动画增强
+            const boltIcon = document.querySelector('.logo-icon');
+            if (boltIcon) {
+                boltIcon.addEventListener('mouseenter', function() {
+                    this.style.animation = 'spark-pulse 0.5s infinite';
+                });
+                boltIcon.addEventListener('mouseleave', function() {
+                    this.style.animation = 'spark-pulse 3s infinite';
+                });
+            }
+            
+            // 名称演变动画
+            const evolutionDisplay = document.querySelector('.evolution-display');
+            if (evolutionDisplay) {
+                setInterval(() => {
+                    const oldElement = evolutionDisplay.querySelector('.old');
+                    const newElement = evolutionDisplay.querySelector('.new');
+                    
+                    if (oldElement && newElement) {
+                        // 交替强调效果
+                        oldElement.style.textShadow = '0 0 10px rgba(255, 153, 153, 0.7)';
+                        newElement.style.textShadow = '0 0 5px rgba(204, 51, 51, 0.5)';
+                        
+                        setTimeout(() => {
+                            oldElement.style.textShadow = '0 0 5px rgba(255, 153, 153, 0.5)';
+                            newElement.style.textShadow = '0 0 10px rgba(204, 51, 51, 0.7)';
+                        }, 1000);
+                    }
+                }, 2000);
+            }
+            
+            // 数据库对话动画
+            const dialogues = document.querySelectorAll('.database-dialogue');
+            dialogues.forEach((dialogue, index) => {
+                dialogue.style.opacity = '0';
+                dialogue.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    dialogue.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    dialogue.style.opacity = '1';
+                    dialogue.style.transform = 'translateY(0)';
+                }, 300 + index * 200);
+            });
+            
+            // 成员卡片动画
+            const memberCards = document.querySelectorAll('.member-card');
+            memberCards.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 500 + index * 100);
+            });
+            
+            // GOC横幅闪烁效果
+            const gocBanner = document.querySelector('.goc-banner');
+            if (gocBanner) {
+                setInterval(() => {
+                    gocBanner.style.borderColor = 
+                        Math.random() > 0.5 ? '#ff5555' : '#ff8888';
+                }, 2000);
+            }
+            
+            // 警告横幅闪烁
+            const warningBanner = document.querySelector('.warning-banner');
+            if (warningBanner) {
+                setInterval(() => {
+                    warningBanner.style.borderColor = 
+                        Math.random() > 0.5 ? '#ff9900' : '#ffcc00';
+                }, 1500);
+            }
+            
+            // 标签点击效果
+            const tags = document.querySelectorAll('.tag');
+            tags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // 模拟泄露数据效果
+            const redactedTexts = document.querySelectorAll('.redacted');
+            redactedTexts.forEach((text, index) => {
+                // 随机闪烁效果，模拟数据恢复尝试
+                setInterval(() => {
+                    if (Math.random() > 0.7) {
+                        const originalText = text.textContent;
+                        const tempText = originalText.replace(/█/g, 
+                            Math.random() > 0.5 ? String.fromCharCode(65 + Math.floor(Math.random() * 26)) : 
+                            Math.floor(Math.random() * 10)
+                        );
+                        
+                        text.textContent = tempText;
+                        text.style.color = '#6bff6b';
+                        
+                        setTimeout(() => {
+                            text.textContent = originalText;
+                            text.style.color = '';
+                        }, 100);
+                    }
+                }, 3000 + index * 500);
+            });
+            
+            // 泄露对话打字机效果
+            const dialogueLines = document.querySelectorAll('.unknown-speaker, .unknown-speaker2');
+            dialogueLines.forEach((line, index) => {
+                line.style.opacity = '0';
+                
+                setTimeout(() => {
+                    line.style.transition = 'opacity 0.8s ease';
+                    line.style.opacity = '1';
+                    
+                    // 打字机效果
+                    if (index === 0) {
+                        const originalText = line.textContent;
+                        line.textContent = '';
+                        
+                        let i = 0;
+                        const typeWriter = () => {
+                            if (i < originalText.length) {
+                                line.textContent += originalText.charAt(i);
+                                i++;
+                                setTimeout(typeWriter, 80);
+                            }
+                        };
+                        
+                        setTimeout(typeWriter, 500);
+                    }
+                }, 500 + index * 500);
+            });
+        });
+    </script>
+</body>
+</html>
