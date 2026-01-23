@@ -20,9 +20,9 @@
         line-height: 1.6;
         min-height: 100vh;
         background-image: 
-            radial-gradient(circle at 15% 25%, rgba(0, 70, 200, 0.1) 0%, transparent 25%),
-            radial-gradient(circle at 85% 75%, rgba(70, 130, 255, 0.08) 0%, transparent 25%),
-            linear-gradient(135deg, #070c14 0%, #0a0f1a 50%, #050912 100%);
+            radial-gradient(circle at 10% 20%, rgba(30, 70, 200, 0.1) 0%, transparent 25%),
+            radial-gradient(circle at 90% 80%, rgba(30, 100, 255, 0.08) 0%, transparent 25%),
+            linear-gradient(135deg, #070914 0%, #0a0f1a 50%, #050812 100%);
     }
     
     .container {
@@ -33,8 +33,8 @@
     
     /* 头部样式 */
     .page-header {
-        background-color: #070c14;
-        border-bottom: 3px solid #0055cc;
+        background-color: #0c0e1c;
+        border-bottom: 3px solid #2a5cff;
         padding: 20px 0;
         position: sticky;
         top: 0;
@@ -58,43 +58,43 @@
     
     .logo-icon {
         font-size: 2.5rem;
-        color: #0055cc;
+        color: #2a5cff;
         animation: goc-pulse 3s infinite;
     }
     
     @keyframes goc-pulse {
         0% { 
             transform: scale(1); 
-            color: #0055cc;
-            text-shadow: 0 0 5px rgba(0, 85, 204, 0.5);
+            color: #2a5cff;
+            text-shadow: 0 0 5px rgba(42, 92, 255, 0.5);
         }
         50% { 
             transform: scale(1.05);
-            color: #3377dd;
-            text-shadow: 0 0 10px rgba(51, 119, 221, 0.7);
+            color: #4a7cff;
+            text-shadow: 0 0 10px rgba(74, 124, 255, 0.7);
         }
         100% { 
             transform: scale(1);
-            color: #0055cc;
-            text-shadow: 0 0 5px rgba(0, 85, 204, 0.5);
+            color: #2a5cff;
+            text-shadow: 0 0 5px rgba(42, 92, 255, 0.5);
         }
     }
     
     .logo-text {
         font-size: 1.8rem;
         font-weight: bold;
-        color: #0055cc;
+        color: #2a5cff;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
     
     .logo-subtext {
-        color: #9cb3d9;
+        color: #9cb0ff;
         font-size: 0.9rem;
         margin-top: 2px;
     }
     
     .back-button {
-        background: linear-gradient(135deg, #0055cc, #003399);
+        background: linear-gradient(135deg, #2a5cff, #1a4ccf);
         color: #fff;
         padding: 10px 20px;
         border-radius: 25px;
@@ -104,19 +104,19 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        box-shadow: 0 4px 15px rgba(0, 85, 204, 0.4);
+        box-shadow: 0 4px 15px rgba(42, 92, 255, 0.4);
     }
     
     .back-button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 85, 204, 0.6);
-        background: linear-gradient(135deg, #3377dd, #0044aa);
+        box-shadow: 0 6px 20px rgba(42, 92, 255, 0.6);
+        background: linear-gradient(135deg, #4a7cff, #2a5cff);
     }
     
     /* GOC横幅 */
     .goc-banner {
-        background: linear-gradient(135deg, rgba(0, 85, 204, 0.1), rgba(0, 51, 153, 0.05));
-        border: 2px solid #33aaff;
+        background: linear-gradient(135deg, rgba(42, 92, 255, 0.1), rgba(26, 76, 207, 0.05));
+        border: 2px solid #4a7cff;
         border-radius: 10px;
         padding: 15px;
         margin: 20px 0;
@@ -132,12 +132,12 @@
         left: 0;
         right: 0;
         height: 2px;
-        background: linear-gradient(90deg, #0055cc, #33aaff, #0055cc);
+        background: linear-gradient(90deg, #2a5cff, #4a7cff, #2a5cff);
     }
     
     .goc-text {
-        color: #33aaff;
-        font-size: 0.95rem;
+        color: #9cb0ff;
+        font-size: 1rem;
         font-weight: bold;
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
@@ -160,10 +160,10 @@
     
     .hero-title {
         font-size: 3rem;
-        color: #0055cc;
+        color: #2a5cff;
         margin-bottom: 5px;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-        background: linear-gradient(90deg, #003399, #0055cc, #003399);
+        background: linear-gradient(90deg, #1a4ccf, #2a5cff, #1a4ccf);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -171,18 +171,18 @@
     
     .hero-subtitle {
         font-size: 1.3rem;
-        color: #9cb3d9;
-        margin-bottom: 30px;
+        color: #9cb0ff;
+        margin-bottom: 15px;
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
         line-height: 1.8;
     }
     
-    /* 小队格言 */
-    .motto-quote {
+    /* 格言显示 */
+    .motto-display {
         font-size: 1.5rem;
-        color: #33aaff;
+        color: #ff6b35;
         margin-bottom: 10px;
         font-style: italic;
         text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -193,17 +193,17 @@
         flex-wrap: wrap;
     }
     
-    .motto-quote .break {
-        color: #ff6b6b;
+    .motto-display .break {
+        color: #2a5cff;
         font-weight: bold;
     }
     
-    .motto-quote .them {
-        color: #33aaff;
+    .motto-display .down {
+        color: #ff6b35;
         font-weight: bold;
     }
     
-    .motto-quote .separator {
+    .motto-display .separator {
         color: #ccccff;
         font-size: 1.2rem;
     }
@@ -218,17 +218,17 @@
     .unit-badge {
         width: 100%;
         border-radius: 15px;
-        border: 4px solid #0055cc;
+        border: 4px solid #2a5cff;
         box-shadow: 
-            0 10px 40px rgba(0, 85, 204, 0.3),
-            inset 0 0 20px rgba(51, 119, 221, 0.1);
+            0 10px 40px rgba(42, 92, 255, 0.3),
+            inset 0 0 20px rgba(74, 124, 255, 0.1);
         transition: transform 0.3s ease;
-        filter: drop-shadow(0 0 5px rgba(0, 85, 204, 0.5));
+        filter: drop-shadow(0 0 5px rgba(42, 92, 255, 0.5));
     }
     
     .unit-badge:hover {
         transform: scale(1.02);
-        filter: drop-shadow(0 0 10px rgba(0, 85, 204, 0.7));
+        filter: drop-shadow(0 0 10px rgba(42, 92, 255, 0.7));
     }
     
     .image-fallback {
@@ -236,25 +236,25 @@
         height: 300px;
         background: linear-gradient(135deg, #101a29, #18203a);
         border-radius: 15px;
-        border: 4px solid #0055cc;
+        border: 4px solid #2a5cff;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 40px;
         text-align: center;
-        box-shadow: 0 10px 40px rgba(0, 85, 204, 0.3);
+        box-shadow: 0 10px 40px rgba(42, 92, 255, 0.3);
     }
     
     .image-fallback i {
         font-size: 5rem;
-        color: #0055cc;
+        color: #2a5cff;
         margin-bottom: 20px;
         opacity: 0.8;
     }
     
     .image-fallback p {
-        color: #9cb3d9;
+        color: #9cb0ff;
         font-size: 1.1rem;
         line-height: 1.6;
     }
@@ -265,7 +265,7 @@
         border-radius: 15px;
         padding: 30px;
         margin-bottom: 30px;
-        border-left: 5px solid #0055cc;
+        border-left: 5px solid #2a5cff;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
         transition: transform 0.3s ease;
         position: relative;
@@ -274,7 +274,7 @@
     
     .content-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 85, 204, 0.1);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(42, 92, 255, 0.1);
     }
     
     .card-header {
@@ -286,8 +286,8 @@
     
     .card-icon {
         font-size: 2rem;
-        color: #0055cc;
-        background: rgba(0, 85, 204, 0.1);
+        color: #2a5cff;
+        background: rgba(42, 92, 255, 0.1);
         width: 60px;
         height: 60px;
         border-radius: 50%;
@@ -298,12 +298,12 @@
     
     .card-title {
         font-size: 1.8rem;
-        color: #3377dd;
+        color: #4a7cff;
         margin: 0;
     }
     
     .card-subtitle {
-        color: #9cb3d9;
+        color: #9cb0ff;
         font-size: 1rem;
         margin-top: 5px;
     }
@@ -319,55 +319,72 @@
     }
     
     .highlight {
-        color: #3377dd;
+        color: #4a7cff;
         font-weight: bold;
-        text-shadow: 0 0 5px rgba(51, 119, 221, 0.3);
+        text-shadow: 0 0 5px rgba(74, 124, 255, 0.3);
     }
     
-    .danger {
-        color: #ff6b6b;
+    .warning {
+        color: #ff6b35;
         font-weight: bold;
-        background: rgba(255, 107, 107, 0.1);
+        background: rgba(255, 107, 53, 0.1);
         padding: 2px 6px;
         border-radius: 3px;
     }
     
-    .goc-blue {
-        color: #33aaff;
-        font-weight: bold;
+    .classified {
+        color: #ffcc6b;
+        background: rgba(255, 204, 107, 0.1);
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: 'Courier New', monospace;
     }
     
-    /* 纹章描述样式 */
-    .emblem-description {
+    /* 数据库对话样式 */
+    .database-dialogue {
         background: rgba(0, 0, 0, 0.3);
-        border: 1px solid #0055cc;
+        border: 1px solid #2a5cff;
         border-radius: 8px;
         padding: 20px;
         margin: 25px 0;
-        font-size: 1rem;
+        font-family: 'Courier New', monospace;
+        font-size: 0.95rem;
         line-height: 1.6;
         color: #ccccff;
         position: relative;
         overflow: hidden;
     }
     
-    .emblem-header {
-        color: #0055cc;
-        border-bottom: 1px solid #0055cc;
+    .dialogue-header {
+        color: #2a5cff;
+        border-bottom: 1px solid #2a5cff;
         padding-bottom: 10px;
         margin-bottom: 15px;
         font-weight: bold;
-        font-size: 1.2rem;
     }
     
-    .emblem-details {
-        margin-top: 15px;
+    .aic-text {
+        color: #6bcbff;
+        margin-bottom: 10px;
+    }
+    
+    .user-input {
+        color: #ffcc6b;
+        margin-bottom: 10px;
         padding-left: 10px;
-        border-left: 2px solid #33aaff;
+        border-left: 2px solid #ffcc6b;
+    }
+    
+    .classified-data {
+        color: #ff6b6b;
+        background: rgba(255, 107, 107, 0.1);
+        padding: 3px;
+        border-radius: 3px;
+        font-style: italic;
     }
     
     /* 成员网格 */
-    .member-grid {
+    .members-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
@@ -375,10 +392,10 @@
     }
     
     .member-card {
-        background: rgba(0, 85, 204, 0.05);
+        background: rgba(42, 92, 255, 0.05);
         border-radius: 10px;
         padding: 20px;
-        border-top: 3px solid #003399;
+        border-top: 3px solid #1a4ccf;
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
@@ -391,13 +408,13 @@
         left: 0;
         width: 5px;
         height: 100%;
-        background: #003399;
+        background: #1a4ccf;
     }
     
     .member-card:hover {
-        background: rgba(0, 85, 204, 0.08);
+        background: rgba(42, 92, 255, 0.08);
         transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 85, 204, 0.2);
+        box-shadow: 0 8px 20px rgba(42, 92, 255, 0.2);
     }
     
     .member-header {
@@ -405,97 +422,62 @@
         align-items: center;
         gap: 15px;
         margin-bottom: 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgba(51, 119, 221, 0.3);
+    }
+    
+    .member-icon {
+        font-size: 1.5rem;
+        color: #2a5cff;
+        background: rgba(42, 92, 255, 0.1);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .member-name {
+        color: #4a7cff;
+        margin-bottom: 5px;
+        font-size: 1.3rem;
     }
     
     .member-codename {
-        color: #0055cc;
-        font-size: 1.3rem;
+        color: #9cb0ff;
+        font-size: 0.9rem;
         font-weight: bold;
     }
     
-    .member-number {
-        color: #9cb3d9;
-        font-size: 0.85rem;
-        background: rgba(0, 0, 0, 0.3);
-        padding: 3px 8px;
-        border-radius: 10px;
-    }
-    
-    .member-details {
-        color: #d9e6ff;
+    .member-info {
+        color: #d9ccff;
         font-size: 0.95rem;
         line-height: 1.7;
+        margin-bottom: 10px;
     }
     
-    .member-details div {
+    .member-info-item {
         margin-bottom: 8px;
         display: flex;
+        align-items: center;
+        gap: 8px;
     }
     
-    .detail-label {
-        color: #33aaff;
-        min-width: 100px;
+    .member-info-label {
+        color: #9cb0ff;
         font-weight: bold;
+        min-width: 80px;
     }
     
-    .detail-value {
-        color: #e6e6ff;
-        flex: 1;
-    }
-    
-    .classified {
-        color: #ff6b6b;
-        background: rgba(255, 107, 107, 0.1);
-        padding: 2px 6px;
-        border-radius: 3px;
-        font-style: italic;
-    }
-    
-    /* 任务记录样式 */
-    .mission-record {
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid #33aaff;
-        border-radius: 8px;
-        padding: 20px;
-        margin: 25px 0;
-        font-family: 'Courier New', monospace;
-        font-size: 0.95rem;
-        line-height: 1.6;
+    .member-info-value {
         color: #ccccff;
-        position: relative;
-        overflow: hidden;
     }
     
-    .mission-header {
-        color: #33aaff;
-        border-bottom: 1px solid #33aaff;
-        padding-bottom: 10px;
-        margin-bottom: 15px;
-        font-weight: bold;
-    }
-    
-    .mission-content {
-        margin-top: 15px;
-        padding-left: 10px;
-        border-left: 2px solid #0055cc;
-    }
-    
-    .redacted {
-        color: #ff6b6b;
-        background: rgba(255, 107, 107, 0.1);
-        padding: 3px;
-        border-radius: 3px;
-        font-style: italic;
-    }
-    
-    /* 技能与专长部分 */
-    .skills-section {
+    /* 能力展示区 */
+    .capabilities-section {
         background: linear-gradient(135deg, 
-            rgba(0, 85, 204, 0.1), 
-            rgba(0, 51, 153, 0.1));
-        border: 2px solid #0055cc;
+            rgba(42, 92, 255, 0.1), 
+            rgba(26, 76, 207, 0.1));
+        border: 2px solid #2a5cff;
         border-radius: 15px;
         padding: 40px;
         margin-top: 40px;
@@ -503,26 +485,26 @@
         overflow: hidden;
     }
     
-    .skills-section::before {
+    .capabilities-section::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(90deg, #0055cc, #33aaff);
+        background: linear-gradient(90deg, #2a5cff, #4a7cff);
     }
     
-    .skills-title {
+    .capabilities-title {
         text-align: center;
-        color: #3377dd;
+        color: #4a7cff;
         margin-bottom: 30px;
         font-size: 2rem;
     }
     
-    .skills-content {
+    .capabilities-content {
         text-align: center;
-        color: #9cb3d9;
+        color: #9cb0ff;
         max-width: 800px;
         margin: 0 auto 30px;
         line-height: 1.8;
@@ -539,7 +521,7 @@
     
     .tag {
         background: linear-gradient(135deg, #1a2a3a, #0d1a2a);
-        color: #3377dd;
+        color: #4a7cff;
         padding: 10px 20px;
         border-radius: 25px;
         font-size: 0.9rem;
@@ -549,8 +531,8 @@
     
     .tag:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(51, 119, 221, 0.3);
-        background: linear-gradient(135deg, #223344, #112233);
+        box-shadow: 0 5px 15px rgba(74, 124, 255, 0.3);
+        background: linear-gradient(135deg, #2a3a4a, #1a2a3a);
     }
     
     .tag.red {
@@ -563,46 +545,19 @@
         color: #6bff6b;
     }
     
-    .tag.gold {
-        background: linear-gradient(135deg, #3a3a1a, #2a2a0d);
+    .tag.orange {
+        background: linear-gradient(135deg, #3a2a1a, #2a1a0d);
         color: #ffcc6b;
     }
     
-    .tag.silver {
-        background: linear-gradient(135deg, #3a3a3a, #2a2a2a);
-        color: #cccccc;
-    }
-    
-    /* 状态指示器 */
-    .status-indicator {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 15px;
-        background: rgba(0, 255, 0, 0.1);
-        border-radius: 20px;
-        color: #6bff6b;
-        font-weight: bold;
-        margin-left: 10px;
-    }
-    
-    .status-dot {
-        width: 10px;
-        height: 10px;
-        background-color: #6bff6b;
-        border-radius: 50%;
-        animation: status-pulse 2s infinite;
-    }
-    
-    @keyframes status-pulse {
-        0% { box-shadow: 0 0 0 0 rgba(107, 255, 107, 0.7); }
-        70% { box-shadow: 0 0 0 10px rgba(107, 255, 107, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(107, 255, 107, 0); }
+    .tag.purple {
+        background: linear-gradient(135deg, #2a1a3a, #1a0d2a);
+        color: #ff6bcb;
     }
     
     /* 页脚 */
     .page-footer {
-        background-color: #070c14;
+        background-color: #0c0e1c;
         border-top: 1px solid #1a2a3a;
         padding: 40px 0;
         margin-top: 60px;
@@ -623,19 +578,19 @@
     }
     
     .footer-link {
-        color: #3377dd;
+        color: #4a7cff;
         text-decoration: none;
         font-size: 0.9rem;
         transition: color 0.3s ease;
     }
     
     .footer-link:hover {
-        color: #0055cc;
+        color: #2a5cff;
         text-decoration: underline;
     }
     
     .copyright {
-        color: #7b8baa;
+        color: #7a8baa;
         font-size: 0.9rem;
         padding-top: 20px;
         border-top: 1px solid #1a2a3a;
@@ -656,7 +611,7 @@
             font-size: 1.1rem;
         }
         
-        .motto-quote {
+        .motto-display {
             font-size: 1.2rem;
             flex-direction: column;
             gap: 10px;
@@ -678,11 +633,11 @@
             padding: 15px;
         }
         
-        .member-grid {
+        .members-grid {
             grid-template-columns: 1fr;
         }
         
-        .skills-section {
+        .capabilities-section {
             padding: 25px;
         }
         
@@ -716,12 +671,18 @@
         
         .member-header {
             flex-direction: column;
-            align-items: flex-start;
-            gap: 5px;
+            text-align: center;
+            gap: 10px;
         }
         
-        .detail-label {
-            min-width: 80px;
+        .member-info-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+        }
+        
+        .member-info-label {
+            min-width: auto;
         }
     }
     </style>
@@ -733,11 +694,11 @@
             <div class="header-content">
                 <div class="logo-section">
                     <div class="logo-icon">
-                        <i class="fas fa-dagger"></i>
+                        <i class="fas fa-shield-alt"></i>
                     </div>
                     <div>
                         <div class="logo-text">ST1102 "破碎匕首"</div>
-                        <div class="logo-subtext">全球超自然联盟攻击小组 | Site-114514 维基</div>
+                        <div class="logo-subtext">GOC攻击小组 | Site-114514 维基</div>
                     </div>
                 </div>
                 <a href="https://hakimi-meow.github.io/Hakimi_Site-114514-WebSite/" class="back-button">
@@ -752,7 +713,7 @@
     <div class="container">
         <div class="goc-banner">
             <div class="goc-text">
-                文件内容由全球超自然联盟(GOC)提供
+                文件内容由GOC提供
             </div>
         </div>
     </div>
@@ -764,236 +725,384 @@
             <section class="hero-section">
                 <div class="hero-title-container">
                     <h1 class="hero-title">ST1102 "破碎匕首"</h1>
-                    <div class="motto-quote">
+                    <div class="motto-display">
                         <span class="break">干翻他们</span>
                         <span class="separator">•</span>
-                        <span class="them">Break Em' Down</span>
+                        <span class="down">Break Em' Down</span>
                     </div>
                 </div>
                 <p class="hero-subtitle">
-                    全球超自然联盟驻爱尔兰攻击小组<br>
-                    精通奇术传送与全球快速反应的精锐部队
+                    驻扎于爱尔兰，基尔根尼外的GOC攻击小组。<br>
+                    精通于通过传送进行全球范围快速反应，专门清理高危险实体与目标。
                 </p>
                 
                 <!-- 图片显示区域 -->
                 <div class="image-display">
                     <img src="/Site-114514-WebSite-HELP/ST1102/3E20C94A54F9ABBC96FF58319813FFF1.png" 
-                         alt="ST1102 '破碎匕首' 纹章" 
+                         alt="ST1102 '破碎匕首' 徽章" 
                          class="unit-badge"
                          onerror="this.style.display='none'; 
                                   document.getElementById('image-fallback').style.display='flex';">
                     
                     <div id="image-fallback" class="image-fallback" style="display: none;">
-                        <i class="fas fa-dagger"></i>
+                        <i class="fas fa-shield-alt"></i>
                         <p>
-                            ST1102 "破碎匕首" 纹章<br>
-                            <small>GOC攻击小组的象征 - 图片加载失败</small>
+                            ST1102 "破碎匕首" 徽章<br>
+                            <small>三角盾形纹章，金色剑悬于蓝色大地 - 图片加载失败</small>
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- 单位简介 -->
+            <!-- 数据库对话 -->
             <section class="content-card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-info-circle"></i>
+                        <i class="fas fa-database"></i>
                     </div>
                     <div>
-                        <h2 class="card-title">单位简介</h2>
-                        <div class="card-subtitle">GOC Attack Team ST1102 "Broken Dagger"</div>
+                        <h2 class="card-title">GOC数据库访问记录</h2>
+                        <div class="card-subtitle">Global Occult Coalition Secure Database</div>
                     </div>
                 </div>
                 <div class="card-content">
-                    <p>
-                        <span class="highlight">ST1102 "破碎匕首"</span>是全球超自然联盟(GOC)的一支精锐攻击小组，驻扎于爱尔兰基尔根尼外围。该小组以其独特的<span class="goc-blue">奇术传送能力</span>而闻名，能够进行全球范围的快速反应。
-                    </p>
-                    <p>
-                        小组专门执行高风险的突袭任务，擅长通过传送直接进入敌方重要设施，清理高危险实体与目标。ST1102是一支常处于待命状态的高速反应攻击组。
-                    </p>
-                    <p>
-                        当前状态：<span class="status-indicator">待命<span class="status-dot"></span></span>
-                    </p>
-                    
-                    <!-- 纹章描述 -->
-                    <div class="emblem-description">
-                        <div class="emblem-header">纹章描述</div>
-                        <div class="emblem-details">
-                            <p><strong>形状：</strong>三角盾形</p>
-                            <p><strong>图案：</strong>带有斜向银光纹路的指向下的金色剑，悬于金色背景的蓝色大地上</p>
-                            <p><strong>顶部卷轴：</strong>黑色背景的白色卷轴上写着小队编号 "ST1102"</p>
-                            <p><strong>底部卷轴：</strong>黑色背景的白色卷轴上写着小队格言 "干翻他们 (Break Em' Down)"</p>
+                    <div class="database-dialogue">
+                        <div class="dialogue-header">GOC安全数据库 - 访问记录 ██████</div>
+                        
+                        <div class="aic-text">欢迎访问GOC数据库，请输入你的密钥</div>
+                        
+                        <div class="aic-text">天空为何而蓝？</div>
+                        
+                        <div class="user-input">因与天俱来</div>
+                        
+                        <div class="aic-text">欢迎访问GOC数据库，主管，你想知道什么？</div>
+                        
+                        <div class="user-input">1102-破碎匕首</div>
+                        
+                        <div class="aic-text">好的，正在为你调用……</div>
+                        
+                        <div class="aic-text" style="color: #4a7cff; margin-top: 20px;">
+                            驻扎于爱尔兰，基尔根尼外的攻击小队。精通于通过传送进行全球范围快速反应。
+                        </div>
+                        
+                        <div class="aic-text" style="color: #4a7cff; margin-top: 15px;">
+                            纹章: 三角盾形。图案为带有斜向银光纹路的指向下的金色剑，悬于金色背景的蓝色大地上。顶部黑色背景的白色卷轴上写着小队编号，底部黑色背景的白色卷轴上写着小队格言。
+                        </div>
+                        
+                        <div class="aic-text" style="color: #4a7cff; margin-top: 15px;">
+                            小队格言: "干翻他们。(Break Em' Down)"
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 成员档案 -->
+            <!-- 小队成员 -->
             <section class="content-card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-user-secret"></i>
+                        <i class="fas fa-users"></i>
                     </div>
                     <div>
-                        <h2 class="card-title">小组成员档案</h2>
-                        <div class="card-subtitle">ST1102 Personnel Files</div>
+                        <h2 class="card-title">攻击小组成员档案</h2>
+                        <div class="card-subtitle">ST1102 Operatives Personnel Files</div>
                     </div>
                 </div>
                 <div class="card-content">
-                    <p>ST1102由以下精锐成员组成：</p>
+                    <p>ST1102 "破碎匕首"由以下精英成员组成：</p>
                     
-                    <div class="member-grid">
-                        <!-- Fox -->
+                    <div class="members-grid">
+                        <!-- "Fox" 领队 -->
                         <div class="member-card">
                             <div class="member-header">
-                                <div class="member-codename">"Fox"</div>
-                                <div class="member-number">42921102/1102</div>
+                                <div class="member-icon">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                                <div>
+                                    <div class="member-name">"Fox"</div>
+                                    <div class="member-codename">领队 | 编号: 42921102/1102</div>
+                                </div>
                             </div>
-                            <div class="member-details">
-                                <div><span class="detail-label">头衔：</span><span class="detail-value">领队</span></div>
-                                <div><span class="detail-label">真名：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">国籍：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">性别：</span><span class="detail-value">女</span></div>
-                                <div><span class="detail-label">出生日期：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">传记资料：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">职业生涯：</span><span class="detail-value classified">██████████</span></div>
+                            <div class="member-info">
+                                <div class="member-info-item">
+                                    <span class="member-info-label">国籍:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">性别:</span>
+                                    <span class="member-info-value">女</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">出生:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">传记:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">简历:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Jackal -->
+                        <!-- "Jackal" 小队执行官 -->
                         <div class="member-card">
                             <div class="member-header">
-                                <div class="member-codename">"Jackal"</div>
-                                <div class="member-number">41021124/1102</div>
+                                <div class="member-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div>
+                                    <div class="member-name">"Jackal"</div>
+                                    <div class="member-codename">小队执行官 | 编号: 41021124/1102</div>
+                                </div>
                             </div>
-                            <div class="member-details">
-                                <div><span class="detail-label">头衔：</span><span class="detail-value">小队执行官</span></div>
-                                <div><span class="detail-label">真名：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">国籍：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">性别：</span><span class="detail-value">男</span></div>
-                                <div><span class="detail-label">出生日期：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">传记资料：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">职业生涯：</span><span class="detail-value classified">██████████</span></div>
+                            <div class="member-info">
+                                <div class="member-info-item">
+                                    <span class="member-info-label">国籍:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">性别:</span>
+                                    <span class="member-info-value">男</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">出生:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">传记:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">简历:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Pockets -->
+                        <!-- "Pockets" 通讯及技术专员 -->
                         <div class="member-card">
                             <div class="member-header">
-                                <div class="member-codename">"Pockets"</div>
-                                <div class="member-number">43855511/1102</div>
+                                <div class="member-icon">
+                                    <i class="fas fa-satellite-dish"></i>
+                                </div>
+                                <div>
+                                    <div class="member-name">"Pockets"</div>
+                                    <div class="member-codename">通讯及技术专员 | 编号: 43855511/1102</div>
+                                </div>
                             </div>
-                            <div class="member-details">
-                                <div><span class="detail-label">头衔：</span><span class="detail-value">通讯及技术专员</span></div>
-                                <div><span class="detail-label">真名：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">国籍：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">性别：</span><span class="detail-value">男</span></div>
-                                <div><span class="detail-label">出生日期：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">传记资料：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">职业生涯：</span><span class="detail-value classified">██████████</span></div>
+                            <div class="member-info">
+                                <div class="member-info-item">
+                                    <span class="member-info-label">国籍:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">性别:</span>
+                                    <span class="member-info-value">男</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">出生:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">传记:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">简历:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Tosser -->
+                        <!-- "Tosser" 医疗兵 -->
                         <div class="member-card">
                             <div class="member-header">
-                                <div class="member-codename">"Tosser"</div>
-                                <div class="member-number">43851126/1102</div>
+                                <div class="member-icon">
+                                    <i class="fas fa-medkit"></i>
+                                </div>
+                                <div>
+                                    <div class="member-name">"Tosser"</div>
+                                    <div class="member-codename">医疗兵 | 编号: 43851126/1102</div>
+                                </div>
                             </div>
-                            <div class="member-details">
-                                <div><span class="detail-label">头衔：</span><span class="detail-value">医疗兵</span></div>
-                                <div><span class="detail-label">真名：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">国籍：</span><span class="detail-value">英国</span></div>
-                                <div><span class="detail-label">性别：</span><span class="detail-value">男</span></div>
-                                <div><span class="detail-label">出生日期：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">传记资料：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">职业生涯：</span><span class="detail-value classified">██████████</span></div>
+                            <div class="member-info">
+                                <div class="member-info-item">
+                                    <span class="member-info-label">国籍:</span>
+                                    <span class="member-info-value">英国</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">性别:</span>
+                                    <span class="member-info-value">男</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">出生:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">传记:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">简历:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Redshirt -->
+                        <!-- "Redshirt" 奇术特工 -->
                         <div class="member-card">
                             <div class="member-header">
-                                <div class="member-codename">"Redshirt"</div>
-                                <div class="member-number">44307084/1102</div>
+                                <div class="member-icon">
+                                    <i class="fas fa-magic"></i>
+                                </div>
+                                <div>
+                                    <div class="member-name">"Redshirt"</div>
+                                    <div class="member-codename">奇术特工 | 编号: 44307084/1102</div>
+                                </div>
                             </div>
-                            <div class="member-details">
-                                <div><span class="detail-label">头衔：</span><span class="detail-value">奇术特工</span></div>
-                                <div><span class="detail-label">真名：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">国籍：</span><span class="detail-value">以色列</span></div>
-                                <div><span class="detail-label">性别：</span><span class="detail-value">男</span></div>
-                                <div><span class="detail-label">出生日期：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">传记资料：</span><span class="detail-value"><span class="classified">██████████</span> 同时值得注意的是，特工Redshirt在服役生涯中曾14次在不同场合负伤。这些伤势没有削弱他作为战场特工的能力。</span></div>
-                                <div><span class="detail-label">职业生涯：</span><span class="detail-value classified">██████████</span></div>
+                            <div class="member-info">
+                                <div class="member-info-item">
+                                    <span class="member-info-label">国籍:</span>
+                                    <span class="member-info-value">以色列</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">性别:</span>
+                                    <span class="member-info-value">男</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">出生:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">传记:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                    <div style="color: #ff6b6b; margin-top: 5px; font-size: 0.9rem;">
+                                        同时值得注意的是，特工Redshirt在服役生涯中曾14次在不同场合负伤。这些伤势没有削弱他作为战场特工的能力。
+                                    </div>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">简历:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Arsegike -->
+                        <!-- "Arsegike" -->
                         <div class="member-card">
                             <div class="member-header">
-                                <div class="member-codename">"Arsegike"</div>
-                                <div class="member-number">44297251/1102</div>
+                                <div class="member-icon">
+                                    <i class="fas fa-user-secret"></i>
+                                </div>
+                                <div>
+                                    <div class="member-name">"Arsegike"</div>
+                                    <div class="member-codename">编号: 44297251/1102</div>
+                                </div>
                             </div>
-                            <div class="member-details">
-                                <div><span class="detail-label">头衔：</span><span class="detail-value">攻击专家</span></div>
-                                <div><span class="detail-label">真名：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">国籍：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">性别：</span><span class="detail-value">男</span></div>
-                                <div><span class="detail-label">出生日期：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">传记资料：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">职业生涯：</span><span class="detail-value classified">██████████</span></div>
+                            <div class="member-info">
+                                <div class="member-info-item">
+                                    <span class="member-info-label">国籍:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">性别:</span>
+                                    <span class="member-info-value">男</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">出生:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">传记:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
+                                <div class="member-info-item">
+                                    <span class="member-info-label">简历:</span>
+                                    <span class="member-info-value classified">██████████</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <!-- Ferret -->
-                        <div class="member-card">
-                            <div class="member-header">
-                                <div class="member-codename">"Ferret"</div>
-                                <div class="member-number">44307084/1102</div>
+                    </div>
+                    
+                    <div style="margin-top: 25px; padding: 20px; background: rgba(42, 92, 255, 0.1); border-radius: 10px; border-left: 4px solid #ff6b35;">
+                        <h4 style="color: #ff6b35; margin-bottom: 10px;"><i class="fas fa-exclamation-triangle"></i> 其他成员</h4>
+                        <p style="color: #ffccff; line-height: 1.7;">
+                            此外，ST1102还包括以下成员：<br>
+                            • "Ferret" (编号: 44307084/1102)<br>
+                            • "Cartman" (编号: 44752412/1102，加拿大籍)<br>
+                            • "Shatner" (编号: 41212342/1102)
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 能力展示区 -->
+            <section class="capabilities-section">
+                <h2 class="capabilities-title">战术能力与行动特点</h2>
+                <p class="capabilities-content">
+                    ST1102擅长于进行奇术传送至敌方重要设施，并清理高危险实体以及目标，<br>
+                    是一支高速反应并常处于待命状态的攻击组。
+                </p>
+                
+                <div class="members-grid">
+                    <div class="member-card" style="border-top-color: #ff6b35;">
+                        <div class="member-header">
+                            <div class="member-icon">
+                                <i class="fas fa-bolt"></i>
                             </div>
-                            <div class="member-details">
-                                <div><span class="detail-label">头衔：</span><span class="detail-value">侦察专家</span></div>
-                                <div><span class="detail-label">真名：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">国籍：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">性别：</span><span class="detail-value">男</span></div>
-                                <div><span class="detail-label">出生日期：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">传记资料：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">职业生涯：</span><span class="detail-value classified">██████████</span></div>
+                            <div>
+                                <div class="member-name">奇术传送</div>
+                                <div class="member-codename">全球范围快速部署</div>
                             </div>
                         </div>
-                        
-                        <!-- Cartman -->
-                        <div class="member-card">
-                            <div class="member-header">
-                                <div class="member-codename">"Cartman"</div>
-                                <div class="member-number">44752412/1102</div>
+                        <div class="member-info">
+                            <p>精通奇术传送技术，能够在极短时间内部署至全球任何地点，实现真正的全球快速反应能力。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card" style="border-top-color: #ff6b35;">
+                        <div class="member-header">
+                            <div class="member-icon">
+                                <i class="fas fa-crosshairs"></i>
                             </div>
-                            <div class="member-details">
-                                <div><span class="detail-label">头衔：</span><span class="detail-value">战术支援</span></div>
-                                <div><span class="detail-label">真名：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">国籍：</span><span class="detail-value">加拿大</span></div>
-                                <div><span class="detail-label">性别：</span><span class="detail-value">男</span></div>
-                                <div><span class="detail-label">出生日期：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">传记资料：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">职业生涯：</span><span class="detail-value classified">██████████</span></div>
+                            <div>
+                                <div class="member-name">高价值目标清理</div>
+                                <div class="member-codename">精准打击与消除</div>
                             </div>
                         </div>
-                        
-                        <!-- Shatner -->
-                        <div class="member-card">
-                            <div class="member-header">
-                                <div class="member-codename">"Shatner"</div>
-                                <div class="member-number">41212342/1102</div>
+                        <div class="member-info">
+                            <p>专门针对高危险异常实体和关键目标进行精确清除，最小化附带损害，最大化行动效率。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card" style="border-top-color: #ff6b35;">
+                        <div class="member-header">
+                            <div class="member-icon">
+                                <i class="fas fa-shield-alt"></i>
                             </div>
-                            <div class="member-details">
-                                <div><span class="detail-label">头衔：</span><span class="detail-value">传送专家</span></div>
-                                <div><span class="detail-label">真名：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">国籍：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">性别：</span><span class="detail-value">男</span></div>
-                                <div><span class="detail-label">出生日期：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">传记资料：</span><span class="detail-value classified">██████████</span></div>
-                                <div><span class="detail-label">职业生涯：</span><span class="detail-value classified">██████████</span></div>
+                            <div>
+                                <div class="member-name">设施突袭</div>
+                                <div class="member-codename">敌方设施渗透与破坏</div>
                             </div>
+                        </div>
+                        <div class="member-info">
+                            <p>擅长突袭敌方异常收容或研究设施，执行设施破坏、目标清除和异常无效化任务。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card" style="border-top-color: #ff6b35;">
+                        <div class="member-header">
+                            <div class="member-icon">
+                                <i class="fas fa-user-clock"></i>
+                            </div>
+                            <div>
+                                <div class="member-name">常备待命状态</div>
+                                <div class="member-codename">24/7 战备值班</div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <p>始终保持高度战备状态，能够在接到命令后立即启动，执行紧急响应任务。</p>
                         </div>
                     </div>
                 </div>
@@ -1007,82 +1116,39 @@
                     </div>
                     <div>
                         <h2 class="card-title">任务记录查询</h2>
-                        <div class="card-subtitle">Mission Record Query</div>
+                        <div class="card-subtitle">ST1102 Mission Logs - GOC Database</div>
                     </div>
                 </div>
                 <div class="card-content">
-                    <p>正在查询ST1102任务记录...</p>
-                    
-                    <div class="mission-record">
-                        <div class="mission-header">
-                            任务记录 #ST1102-███-███
+                    <div class="database-dialogue">
+                        <div class="dialogue-header">GOC任务数据库 - 查询记录 ██████</div>
+                        
+                        <div class="user-input">攻击组状态</div>
+                        
+                        <div class="aic-text">待命，主管</div>
+                        
+                        <div class="user-input">调查任务记录</div>
+                        
+                        <div class="aic-text">正在查询……</div>
+                        
+                        <div class="aic-text" style="color: #4a7cff; margin-top: 20px;">
+                            ST1102突袭了一处为基金会的设施地点为site-■并制造成了该设施区域性毁灭，收容物全部无效化……
                         </div>
-                        <div class="mission-content">
-                            <p>任务日期：<span class="redacted">██-██-████</span></p>
-                            <p>任务类型：突袭行动</p>
-                            <p>目标：基金会设施 Site-<span class="redacted">■</span></p>
-                            <p>任务概要：</p>
-                            <p>ST1102突袭了一处为基金会的设施地点为Site-<span class="redacted">■</span>并制造成了该设施区域性毁灭，收容物全部无效化。</p>
-                            <p>结果：任务成功，目标设施已摧毁，所有敌对实体已清除。</p>
-                            <p>伤亡报告：无</p>
-                            <p>备注：奇术传送系统运作正常，小队协同效率超出预期。</p>
-                        </div>
+                        
+                        <div class="user-input" style="margin-top: 20px;">登出</div>
+                        
+                        <div class="aic-text">正在登出……已清除密钥……欢迎下一次访问，主管……</div>
                     </div>
                     
-                    <div class="mission-record">
-                        <div class="mission-header">
-                            任务记录 #ST1102-███-███
-                        </div>
-                        <div class="mission-content">
-                            <p>任务日期：<span class="redacted">██-██-████</span></p>
-                            <p>任务类型：高价值目标清除</p>
-                            <p>目标：<span class="redacted">██████████ 实体</span></p>
-                            <p>任务概要：</p>
-                            <p>通过奇术传送直接进入目标所在位置，在<span class="redacted">█</span>分钟内完成目标清除。</p>
-                            <p>结果：目标已无效化，小队无伤亡撤离。</p>
-                            <p>备注：Redshirt特工在此次任务中再次负伤，但未影响任务完成。</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 技能与专长 -->
-            <section class="skills-section">
-                <h2 class="skills-title">ST1102 专长与能力</h2>
-                <p class="skills-content">
-                    ST1102 "破碎匕首"是一支高度专业化的攻击小组，<br>
-                    以其独特的奇术传送能力和全球快速反应而闻名于GOC内部。
-                </p>
-                
-                <div class="member-grid">
-                    <div class="member-card" style="border-top-color: #33aaff;">
-                        <h4><i class="fas fa-random"></i> 奇术传送</h4>
-                        <p>能够进行全球范围的快速传送，直接进入目标设施内部</p>
-                    </div>
-                    
-                    <div class="member-card" style="border-top-color: #33aaff;">
-                        <h4><i class="fas fa-bolt"></i> 快速反应</h4>
-                        <p>常处于待命状态，能够在收到指令后极短时间内完成部署</p>
-                    </div>
-                    
-                    <div class="member-card" style="border-top-color: #33aaff;">
-                        <h4><i class="fas fa-crosshairs"></i> 精确打击</h4>
-                        <p>擅长对高价值目标进行精确清除，最小化附带损害</p>
-                    </div>
-                    
-                    <div class="member-card" style="border-top-color: #33aaff;">
-                        <h4><i class="fas fa-users"></i> 协同作战</h4>
-                        <p>成员之间配合默契，能够执行复杂的多阶段突袭任务</p>
-                    </div>
-                    
-                    <div class="member-card" style="border-top-color: #33aaff;">
-                        <h4><i class="fas fa-shield-alt"></i> 设施渗透</h4>
-                        <p>专门针对敌方设施进行突袭和破坏行动</p>
-                    </div>
-                    
-                    <div class="member-card" style="border-top-color: #33aaff;">
-                        <h4><i class="fas fa-skull-crossbones"></i> 实体清除</h4>
-                        <p>具备处理各类危险异常实体的专业能力和装备</p>
+                    <div style="margin-top: 25px; padding: 20px; background: rgba(42, 92, 255, 0.05); border-radius: 10px; border: 1px solid #2a5cff;">
+                        <h4 style="color: #4a7cff; margin-bottom: 10px;"><i class="fas fa-clipboard-list"></i> 任务类型分析</h4>
+                        <p style="color: #9cb0ff; line-height: 1.7;">
+                            ST1102 "破碎匕首"通常执行以下类型任务：<br>
+                            1. <span class="highlight">设施突袭</span> - 针对敌对组织异常收容设施<br>
+                            2. <span class="highlight">高价值目标清除</span> - 消灭高风险异常实体<br>
+                            3. <span class="highlight">快速反应</span> - 应对突发性异常事件<br>
+                            4. <span class="highlight">情报收集</span> - 渗透与侦察行动
+                        </p>
                     </div>
                 </div>
             </section>
@@ -1090,13 +1156,12 @@
             <!-- 标签 -->
             <div class="tag-container">
                 <span class="tag">GOC攻击小组</span>
-                <span class="tag red">破碎匕首</span>
-                <span class="tag">ST1102</span>
-                <span class="tag gold">奇术传送</span>
-                <span class="tag">快速反应</span>
-                <span class="tag silver">全球部署</span>
-                <span class="tag">爱尔兰驻地</span>
-                <span class="tag">设施突袭</span>
+                <span class="tag red">ST1102</span>
+                <span class="tag orange">破碎匕首</span>
+                <span class="tag">奇术传送</span>
+                <span class="tag purple">快速反应</span>
+                <span class="tag green">爱尔兰驻扎</span>
+                <span class="tag">全球部署</span>
             </div>
         </main>
     </div>
@@ -1112,8 +1177,8 @@
                 </div>
                 <div class="copyright">
                     © 2025-2026 Site-114514服务器社区<br>
-                    GOC攻击小组ST1102资料 - 保密等级：Level 4<br>
-                    警告：全球超自然联盟相关信息属于敏感内容
+                    ST1102 "破碎匕首"资料 - GOC机密等级：Level 4<br>
+                    警告：GOC攻击小组信息属于受保护内容，未经授权访问将受追责
                 </div>
             </div>
         </div>
@@ -1157,61 +1222,61 @@
                 });
             });
             
-            // 匕首图标动画增强
-            const daggerIcon = document.querySelector('.logo-icon');
-            if (daggerIcon) {
-                daggerIcon.addEventListener('mouseenter', function() {
+            // 盾牌图标动画增强
+            const shieldIcon = document.querySelector('.logo-icon');
+            if (shieldIcon) {
+                shieldIcon.addEventListener('mouseenter', function() {
                     this.style.animation = 'goc-pulse 0.8s infinite';
                 });
-                daggerIcon.addEventListener('mouseleave', function() {
+                shieldIcon.addEventListener('mouseleave', function() {
                     this.style.animation = 'goc-pulse 3s infinite';
                 });
             }
             
-            // 小队格言动画
-            const mottoQuote = document.querySelector('.motto-quote');
-            if (mottoQuote) {
+            // 格言动画
+            const mottoDisplay = document.querySelector('.motto-display');
+            if (mottoDisplay) {
                 setInterval(() => {
-                    const breakElement = mottoQuote.querySelector('.break');
-                    const themElement = mottoQuote.querySelector('.them');
+                    const breakElement = mottoDisplay.querySelector('.break');
+                    const downElement = mottoDisplay.querySelector('.down');
                     
-                    if (breakElement && themElement) {
+                    if (breakElement && downElement) {
                         // 交替强调效果
-                        breakElement.style.textShadow = '0 0 10px rgba(255, 107, 107, 0.7)';
-                        themElement.style.textShadow = '0 0 5px rgba(51, 170, 255, 0.5)';
+                        breakElement.style.textShadow = '0 0 10px rgba(42, 92, 255, 0.7)';
+                        downElement.style.textShadow = '0 0 5px rgba(255, 107, 53, 0.5)';
                         
                         setTimeout(() => {
-                            breakElement.style.textShadow = '0 0 5px rgba(255, 107, 107, 0.5)';
-                            themElement.style.textShadow = '0 0 10px rgba(51, 170, 255, 0.7)';
+                            breakElement.style.textShadow = '0 0 5px rgba(42, 92, 255, 0.5)';
+                            downElement.style.textShadow = '0 0 10px rgba(255, 107, 53, 0.7)';
                         }, 1000);
                     }
                 }, 2000);
             }
             
-            // 任务记录动画
-            const missionRecords = document.querySelectorAll('.mission-record');
-            missionRecords.forEach((record, index) => {
-                record.style.opacity = '0';
-                record.style.transform = 'translateY(20px)';
+            // 数据库对话动画
+            const dialogues = document.querySelectorAll('.database-dialogue');
+            dialogues.forEach((dialogue, index) => {
+                dialogue.style.opacity = '0';
+                dialogue.style.transform = 'translateY(20px)';
                 
                 setTimeout(() => {
-                    record.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    record.style.opacity = '1';
-                    record.style.transform = 'translateY(0)';
+                    dialogue.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    dialogue.style.opacity = '1';
+                    dialogue.style.transform = 'translateY(0)';
                 }, 300 + index * 200);
             });
             
             // 成员卡片动画
             const memberCards = document.querySelectorAll('.member-card');
-            memberCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
+            memberCards.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
                 
                 setTimeout(() => {
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 300 + index * 100);
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 500 + index * 100);
             });
             
             // GOC横幅闪烁效果
@@ -1219,7 +1284,7 @@
             if (gocBanner) {
                 setInterval(() => {
                     gocBanner.style.borderColor = 
-                        Math.random() > 0.5 ? '#33aaff' : '#66ccff';
+                        Math.random() > 0.5 ? '#4a7cff' : '#6b9bff';
                 }, 2000);
             }
             
@@ -1234,22 +1299,33 @@
                 });
             });
             
-            // 模拟任务记录加载效果
-            setTimeout(() => {
-                const missionQueryText = document.querySelector('.content-card:nth-child(3) .card-content p');
-                if (missionQueryText) {
-                    missionQueryText.innerHTML = '<i class="fas fa-check-circle" style="color:#6bff6b; margin-right:8px;"></i>已加载ST1102任务记录 (2条)';
-                }
-            }, 1500);
-            
-            // 状态指示灯效果
-            const statusDot = document.querySelector('.status-dot');
-            if (statusDot) {
-                setInterval(() => {
-                    statusDot.style.backgroundColor = 
-                        Math.random() > 0.1 ? '#6bff6b' : '#ffcc00';
-                }, 3000);
-            }
+            // 模拟数据库访问效果
+            const databaseTexts = document.querySelectorAll('.aic-text, .user-input');
+            databaseTexts.forEach((text, index) => {
+                text.style.opacity = '0';
+                
+                setTimeout(() => {
+                    text.style.transition = 'opacity 0.8s ease';
+                    text.style.opacity = '1';
+                    
+                    // 打字机效果
+                    if (index === 0) {
+                        const originalText = text.textContent;
+                        text.textContent = '';
+                        
+                        let i = 0;
+                        const typeWriter = () => {
+                            if (i < originalText.length) {
+                                text.textContent += originalText.charAt(i);
+                                i++;
+                                setTimeout(typeWriter, 50);
+                            }
+                        };
+                        
+                        setTimeout(typeWriter, 500);
+                    }
+                }, 500 + index * 300);
+            });
         });
     </script>
 </body>
