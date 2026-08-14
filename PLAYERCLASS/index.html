@@ -78,8 +78,6 @@
             border-color: #4a9eff;
             text-decoration: none;
         }
-
-        /* 阵营标题 */
         .faction-title {
             display: flex;
             align-items: center;
@@ -107,8 +105,6 @@
             margin-left: 8px;
             font-weight: 300;
         }
-
-        /* 角色卡片网格 */
         .role-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -172,8 +168,6 @@
             color: #6ab0ff;
             text-decoration: underline;
         }
-
-        /* 返回顶部 */
         .footer-bar {
             margin-top: 30px;
             padding-top: 18px;
@@ -205,7 +199,6 @@
         .footer-bar .to-top:hover {
             color: #6ab0ff;
         }
-
         @media (max-width: 700px) {
             .character-wrapper { padding: 20px 16px; }
             .character-header h1 { font-size: 1.5rem; }
@@ -219,7 +212,6 @@
 </head>
 <body>
     <div class="character-wrapper">
-        <!-- 头部 -->
         <div class="character-header">
             <i class="fas fa-user-astronaut"></i>
             <h1>角色简介 · Site-114514</h1>
@@ -229,7 +221,6 @@
             </a>
         </div>
 
-        <!-- ===== Foundation 阵营 ===== -->
         <div class="faction-title">
             <img src="Foundation" alt="基金会" onerror="this.style.display='none'">
             <h2>Foundation <span class="sub">SCP基金会 · 特殊部队与收容小组</span></h2>
@@ -279,7 +270,6 @@
             </div>
         </div>
 
-        <!-- ===== CI 阵营 ===== -->
         <div class="faction-title">
             <img src="Chaos" alt="混沌分裂者" onerror="this.style.display='none'">
             <h2>CI <span class="sub">混沌分裂者 · 突击与渗透部队</span></h2>
@@ -311,7 +301,6 @@
             </div>
         </div>
 
-        <!-- ===== GOC 阵营 ===== -->
         <div class="faction-title">
             <img src="IMG_1512.png" alt="GOC" onerror="this.style.display='none'">
             <h2>GOC <span class="sub">全球超自然联盟 · 战术与评估部队</span></h2>
@@ -323,10 +312,8 @@
                 <div class="role-desc">GOC精锐突击部队，专门负责摧毁异常实体和设施。</div>
                 <div class="role-link"><a href="https://hakimi-meow.github.io/Site-114514-WebSite-HELP/ST1102/index.html" target="_self">查看详情 <i class="fas fa-arrow-right"></i></a></div>
             </div>
-            <!-- AT735 火花塞 已删除 -->
         </div>
 
-        <!-- ===== Known 阵营 ===== -->
         <div class="faction-title">
             <img src="DBD61FDA5C2CC37849AB09FF5C3369BB.png" alt="Known" onerror="this.style.display='none'">
             <h2>Known <span class="sub">其他组织 · 未归类或第三方势力</span></h2>
@@ -340,7 +327,6 @@
             </div>
         </div>
 
-        <!-- 底部 -->
         <div class="footer-bar">
             <div class="count"><span><i class="fas fa-users"></i> 共 13 个角色</span></div>
             <a href="#" class="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
