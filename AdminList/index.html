@@ -1,1 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员列表 · Site-114514</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Linux Libertine', 'Georgia', 'Times', serif;
+        }
+        body {
+            background-color: #1a1a1a;
+            color: #e6e6e6;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+        }
+        .admin-list-wrapper {
+            max-width: 1200px;
+            width: 100%;
+            background-color: #222;
+            border-radius: 12px;
+            padding: 30px 25px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            border: 1px solid #3a3a3a;
+        }
+        .admin-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 2px solid #4a9eff;
+            padding-bottom: 18px;
+            margin-bottom: 28px;
+        }
+        .admin-header i {
+            font-size: 2.2rem;
+            color: #4a9eff;
+        }
+        .admin-header h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .admin-header .badge {
+            background-color: #4a9eff;
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .admin-card {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 18px 20px 16px;
+            border-left: 5px solid #4a9eff;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .admin-card:hover {
+            transform: translateY(-4px);
+            background-color: #303030;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+            border-left-color: #6ab0ff;
+        }
+        .admin-name {
+            color: #4a9eff;
+            font-size: 1.15rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .admin-name i {
+            font-size: 0.9rem;
+            color: #6c8bc7;
+        }
+        .admin-role {
+            color: #8a9bba;
+            font-size: 0.85rem;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .admin-role i {
+            font-size: 0.7rem;
+            color: #4a9eff;
+            opacity: 0.7;
+        }
+        .admin-note {
+            color: #b0b8c8;
+            font-size: 0.8rem;
+            font-style: italic;
+            margin-top: 4px;
+            border-top: 1px dashed #3a4a5a;
+            padding-top: 6px;
+        }
+        .admin-count {
+            text-align: right;
+            color: #6c8bc7;
+            font-size: 0.9rem;
+            margin-top: 25px;
+            padding-top: 16px;
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .admin-count span {
+            background-color: #2a2a2a;
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+        .back-link {
+            color: #4a9eff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+        .back-link:hover {
+            color: #6ab0ff;
+            text-decoration: underline;
+        }
+        /* 小屏适配 */
+        @media (max-width: 600px) {
+            .admin-list-wrapper { padding: 20px 15px; }
+            .admin-header h1 { font-size: 1.5rem; }
+            .admin-header .badge { font-size: 0.75rem; padding: 3px 10px; }
+            .admin-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-list-wrapper">
+        <div class="admin-header">
+            <i class="fas fa-users-cog"></i>
+            <h1>管理组 · Site-114514</h1>
+            <span class="badge"><i class="fas fa-user-shield"></i> 18 位成员</span>
+        </div>
 
+        <div class="admin-grid">
+            <!-- 0 -->
+            <div class="admin-card">
+                <div class="admin-name"><i class="fas fa-crown"></i> TouKuChaZi_CN</div>
+                <div class="admin-role"><i class="fas fa-user-tie"></i> 现任服主 · 监督</div>
+                <div class="admin-note">服务器主要负责人</div>
+            </div>
+            <!-- 1 -->
+            <div class="admin-card">
+                <div class="admin-name"><i class="fas fa-ghost"></i> 白喵&lt;前任服主&gt;</div>
+                <div class="admin-role"><i class="fas fa-history"></i> 前任服主</div>
+                <div class="admin-note">《免费可悦~》</div>
+            </div>
+            <!-- 2 -->
+            <div class="admin-card">
+                <div class="admin-name">614956qa</div>
+                <div class="admin-role"><i class="fas fa-microchip"></i> 管理 · 技术支持</div>
+                <div class="admin-note">技术问题解决</div>
+            </div>
+            <!-- 3 -->
+            <div class="admin-card">
+                <div class="admin-name">XXKK51</div>
+                <div class="admin-role"><i class="fas fa-microchip"></i> 管理 · 技术支持</div>
+                <div class="admin-note">技术问题解决</div>
+            </div>
+            <!-- 4 -->
+            <div class="admin-card">
+                <div class="admin-name">z1z2z3343</div>
+                <div class="admin-role"><i class="fas fa-balance-scale"></i> 管理 · 枪械平衡</div>
+                <div class="admin-note">《平衡》</div>
+            </div>
+            <!-- 5 -->
+            <div class="admin-card">
+                <div class="admin-name">nixiang</div>
+                <div class="admin-role"><i class="fas fa-server"></i> 管理 · 技术支持 · 服务器提供</div>
+                <div class="admin-note">服务器硬件支持</div>
+            </div>
+            <!-- 6 -->
+            <div class="admin-card">
+                <div class="admin-name">TZBDxiaoV</div>
+                <div class="admin-role"><i class="fas fa-users"></i> 管理 (CO)</div>
+                <div class="admin-note">社区运营</div>
+            </div>
+            <!-- 7 -->
+            <div class="admin-card">
+                <div class="admin-name">ccpe01</div>
+                <div class="admin-role"><i class="fas fa-pen-fancy"></i> 管理 · 文本支持</div>
+                <div class="admin-note">文档和内容支持</div>
+            </div>
+            <!-- 8 -->
+            <div class="admin-card">
+                <div class="admin-name">CN_CN666</div>
+                <div class="admin-role"><i class="fas fa-tasks"></i> 管理</div>
+                <div class="admin-note">日常管理</div>
+            </div>
+            <!-- 9 -->
+            <div class="admin-card">
+                <div class="admin-name">CN_bzxyl</div>
+                <div class="admin-role"><i class="fas fa-tasks"></i> 管理</div>
+                <div class="admin-note">日常管理</div>
+            </div>
+            <!-- 10 -->
+            <div class="admin-card">
+                <div class="admin-name">CN_guycloud</div>
+                <div class="admin-role"><i class="fas fa-tasks"></i> 管理</div>
+                <div class="admin-note">日常管理</div>
+            </div>
+            <!-- 11 -->
+            <div class="admin-card">
+                <div class="admin-name">zz10225</div>
+                <div class="admin-role"><i class="fas fa-tasks"></i> 管理</div>
+                <div class="admin-note">日常管理</div>
+            </div>
+            <!-- 12 -->
+            <div class="admin-card">
+                <div class="admin-name">CN_ngam</div>
+                <div class="admin-role"><i class="fas fa-tasks"></i> 管理</div>
+                <div class="admin-note">日常管理</div>
+            </div>
+            <!-- 13 -->
+            <div class="admin-card">
+                <div class="admin-name">kards7878</div>
+                <div class="admin-role"><i class="fas fa-tasks"></i> 管理</div>
+                <div class="admin-note">日常管理</div>
+            </div>
+            <!-- 14 -->
+            <div class="admin-card">
+                <div class="admin-name">ldMsdd6</div>
+                <div class="admin-role"><i class="fas fa-tasks"></i> 管理</div>
+                <div class="admin-note">日常管理</div>
+            </div>
+            <!-- 15 -->
+            <div class="admin-card">
+                <div class="admin-name">114514nnnj</div>
+                <div class="admin-role"><i class="fas fa-tasks"></i> 管理</div>
+                <div class="admin-note">日常管理</div>
+            </div>
+            <!-- 16 -->
+            <div class="admin-card">
+                <div class="admin-name">heyu_458</div>
+                <div class="admin-role"><i class="fas fa-tasks"></i> 管理</div>
+                <div class="admin-note">日常管理</div>
+            </div>
+            <!-- 17 -->
+            <div class="admin-card">
+                <div class="admin-name">JJOOKERR1</div>
+                <div class="admin-role"><i class="fas fa-tasks"></i> 管理</div>
+                <div class="admin-note">日常管理</div>
+            </div>
+            <!-- 18 -->
+            <div class="admin-card">
+                <div class="admin-name">Karmona074</div>
+                <div class="admin-role"><i class="fas fa-tasks"></i> 管理</div>
+                <div class="admin-note">日常管理</div>
+            </div>
+        </div>
+
+        <div class="admin-count">
+            <span><i class="fas fa-users"></i> 总计 18 名管理</span>
+            <a href="#" class="back-link" onclick="history.back(); return false;"><i class="fas fa-arrow-left"></i> 返回</a>
+        </div>
+    </div>
+</body>
+</html>
